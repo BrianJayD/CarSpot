@@ -14,6 +14,7 @@
 		02C32F1C25B24B97005CE759 /* ParkingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F1A25B24B97005CE759 /* ParkingApp.xcdatamodeld */; };
 		02C32F1E25B24B9A005CE759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F1D25B24B9A005CE759 /* Assets.xcassets */; };
 		02C32F2125B24B9A005CE759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F1F25B24B9A005CE759 /* LaunchScreen.storyboard */; };
+		02C32F2A25B24E78005CE759 /* HostUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F2925B24E78005CE759 /* HostUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		02C32F1D25B24B9A005CE759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02C32F2025B24B9A005CE759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02C32F2225B24B9A005CE759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02C32F2925B24E78005CE759 /* HostUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,10 @@
 		02C32F1025B24B97005CE759 /* ParkingApp */ = {
 			isa = PBXGroup;
 			children = (
+				02C32F2D25B256D5005CE759 /* Hosts */,
+				02C32F2C25B256C5005CE759 /* Views */,
 				02C32F1125B24B97005CE759 /* AppDelegate.swift */,
 				02C32F1325B24B97005CE759 /* SceneDelegate.swift */,
-				02C32F1525B24B97005CE759 /* ViewController.swift */,
 				02C32F1725B24B97005CE759 /* Main.storyboard */,
 				02C32F1D25B24B9A005CE759 /* Assets.xcassets */,
 				02C32F1F25B24B9A005CE759 /* LaunchScreen.storyboard */,
@@ -68,6 +71,22 @@
 				02C32F1A25B24B97005CE759 /* ParkingApp.xcdatamodeld */,
 			);
 			path = ParkingApp;
+			sourceTree = "<group>";
+		};
+		02C32F2C25B256C5005CE759 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				02C32F1525B24B97005CE759 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		02C32F2D25B256D5005CE759 /* Hosts */ = {
+			isa = PBXGroup;
+			children = (
+				02C32F2925B24E78005CE759 /* HostUIView.swift */,
+			);
+			path = Hosts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +162,7 @@
 				02C32F1C25B24B97005CE759 /* ParkingApp.xcdatamodeld in Sources */,
 				02C32F1625B24B97005CE759 /* ViewController.swift in Sources */,
 				02C32F1225B24B97005CE759 /* AppDelegate.swift in Sources */,
+				02C32F2A25B24E78005CE759 /* HostUIView.swift in Sources */,
 				02C32F1425B24B97005CE759 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
