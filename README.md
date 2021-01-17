@@ -1,9 +1,9 @@
 # CarSpot
 
-###### Authors
-======
+##### Authors
+___
 
-### Brian Domingo
+ Brian Domingo
 
-### Daryl Dyck
+ Daryl Dyck
 
