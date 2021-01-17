@@ -1,6 +1,6 @@
 # CarSpot
 
-##### Authors
+### Authors
 ___
 
  Brian Domingo
