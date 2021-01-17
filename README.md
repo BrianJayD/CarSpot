@@ -1,6 +1,8 @@
 # CarSpot
 
-###Brian Domingo
+Alt-H1 Authors
 
-###Daryl Dyck
+### Brian Domingo
+
+### Daryl Dyck
 
