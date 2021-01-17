@@ -1,9 +1,9 @@
-# CarSpot
+# CarSpot - iOS Parking App
 
 ### Authors
 ___
 
- Brian Domingo
+Brian Domingo
 
- Daryl Dyck
+Daryl Dyck
 
