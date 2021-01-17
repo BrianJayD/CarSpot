@@ -1,6 +1,7 @@
 # CarSpot
 
-Alt-H1 Authors
+###### Authors
+=========
 
 ### Brian Domingo
 
