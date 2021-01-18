@@ -15,17 +15,17 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        addChild(hostController)
-//        hostController.view.translatesAutoresizingMaskIntoConstraints = false
-//
-//        view.addSubview(hostController.view)
-//
-//        hostController.view.centerXAnchor.constraint(
-//            equalTo: view.centerXAnchor).isActive = true
-//        hostController.view.centerYAnchor.constraint(
-//            equalTo: view.centerYAnchor).isActive = true
-//
-//        hostController.didMove(toParent: self)
+        addChild(hostController)
+        hostController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(hostController.view)
+
+        hostController.view.centerXAnchor.constraint(
+            equalTo: view.centerXAnchor).isActive = true
+        hostController.view.centerYAnchor.constraint(
+            equalTo: view.centerYAnchor).isActive = true
+
+        hostController.didMove(toParent: self)
     }
     
 }
