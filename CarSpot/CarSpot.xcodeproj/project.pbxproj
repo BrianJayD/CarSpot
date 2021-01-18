@@ -102,7 +102,6 @@
 				02C32F5325B4BC14005CE759 /* AppDelegate.swift */,
 				02C32F5525B4BC14005CE759 /* SceneDelegate.swift */,
 				02C32F5F25B4BC18005CE759 /* Assets.xcassets */,
-				02C32F6125B4BC18005CE759 /* LaunchScreen.storyboard */,
 				02C32F5C25B4BC14005CE759 /* CarSpot.xcdatamodeld */,
 				02C32F6425B4BC18005CE759 /* Info.plist */,
 			);
@@ -137,6 +136,7 @@
 		E13A271025B5CD150019FD56 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				02C32F6125B4BC18005CE759 /* LaunchScreen.storyboard */,
 				02C32F5925B4BC14005CE759 /* Main.storyboard */,
 			);
 			path = Storyboards;
