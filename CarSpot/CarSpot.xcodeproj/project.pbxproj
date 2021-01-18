@@ -9,35 +9,59 @@
 /* Begin PBXBuildFile section */
 		02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5325B4BC14005CE759 /* AppDelegate.swift */; };
 		02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5525B4BC14005CE759 /* SceneDelegate.swift */; };
-		02C32F5825B4BC14005CE759 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5725B4BC14005CE759 /* ViewController.swift */; };
 		02C32F5B25B4BC14005CE759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F5925B4BC14005CE759 /* Main.storyboard */; };
 		02C32F5E25B4BC14005CE759 /* CarSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5C25B4BC14005CE759 /* CarSpot.xcdatamodeld */; };
 		02C32F6025B4BC18005CE759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F5F25B4BC18005CE759 /* Assets.xcassets */; };
 		02C32F6325B4BC18005CE759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F6125B4BC18005CE759 /* LaunchScreen.storyboard */; };
-		02C32F6C25B4BC4F005CE759 /* HostUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F6B25B4BC4F005CE759 /* HostUIView.swift */; };
 		E13A272125B5D37B0019FD56 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271B25B5D3790019FD56 /* UIView.swift */; };
 		E13A272225B5D37B0019FD56 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271C25B5D37A0019FD56 /* UIButton.swift */; };
 		E13A272325B5D37B0019FD56 /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271D25B5D37A0019FD56 /* Int64.swift */; };
 		E13A272425B5D37B0019FD56 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271E25B5D37A0019FD56 /* ZFRippleButton.swift */; };
 		E13A272525B5D37B0019FD56 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271F25B5D37A0019FD56 /* UITextField.swift */; };
+		E13A272A25B5D6630019FD56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A272925B5D6630019FD56 /* User.swift */; };
+		E13A272D25B5D6780019FD56 /* ParkingTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A272C25B5D6780019FD56 /* ParkingTicket.swift */; };
+		E13A273025B5D6AC0019FD56 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A272F25B5D6AC0019FD56 /* UserController.swift */; };
+		E13A273325B5D6C30019FD56 /* ParkingTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273225B5D6C30019FD56 /* ParkingTicketController.swift */; };
+		E13A273625B5D7040019FD56 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273525B5D7040019FD56 /* MainViewController.swift */; };
+		E13A273A25B5D71C0019FD56 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273925B5D71C0019FD56 /* HistoryViewController.swift */; };
+		E13A273D25B5D7310019FD56 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273C25B5D7310019FD56 /* ProfileViewController.swift */; };
+		E13A274025B5D7470019FD56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273F25B5D7470019FD56 /* LoginViewController.swift */; };
+		E13A274325B5D78B0019FD56 /* MainSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274225B5D78B0019FD56 /* MainSwiftUIView.swift */; };
+		E13A274625B5D7970019FD56 /* LoginSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */; };
+		E13A274925B5D7AB0019FD56 /* HistorySwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274825B5D7AB0019FD56 /* HistorySwiftUIView.swift */; };
+		E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */; };
+		E13A275325B5D97A0019FD56 /* TicketItemSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275225B5D97A0019FD56 /* TicketItemSwiftUIView.swift */; };
+		E13A275625B5DA0F0019FD56 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275525B5DA0F0019FD56 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02C32F5025B4BC14005CE759 /* CarSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02C32F5325B4BC14005CE759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02C32F5525B4BC14005CE759 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02C32F5725B4BC14005CE759 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02C32F5A25B4BC14005CE759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02C32F5D25B4BC14005CE759 /* CarSpot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarSpot.xcdatamodel; sourceTree = "<group>"; };
 		02C32F5F25B4BC18005CE759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02C32F6225B4BC18005CE759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02C32F6425B4BC18005CE759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02C32F6B25B4BC4F005CE759 /* HostUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostUIView.swift; sourceTree = "<group>"; };
 		E13A271B25B5D3790019FD56 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E13A271C25B5D37A0019FD56 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		E13A271D25B5D37A0019FD56 /* Int64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int64.swift; sourceTree = "<group>"; };
 		E13A271E25B5D37A0019FD56 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		E13A271F25B5D37A0019FD56 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		E13A272925B5D6630019FD56 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E13A272C25B5D6780019FD56 /* ParkingTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicket.swift; sourceTree = "<group>"; };
+		E13A272F25B5D6AC0019FD56 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		E13A273225B5D6C30019FD56 /* ParkingTicketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicketController.swift; sourceTree = "<group>"; };
+		E13A273525B5D7040019FD56 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E13A273925B5D71C0019FD56 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		E13A273C25B5D7310019FD56 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E13A273F25B5D7470019FD56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E13A274225B5D78B0019FD56 /* MainSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSwiftUIView.swift; sourceTree = "<group>"; };
+		E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIView.swift; sourceTree = "<group>"; };
+		E13A274825B5D7AB0019FD56 /* HistorySwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySwiftUIView.swift; sourceTree = "<group>"; };
+		E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwiftUIView.swift; sourceTree = "<group>"; };
+		E13A275225B5D97A0019FD56 /* TicketItemSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketItemSwiftUIView.swift; sourceTree = "<group>"; };
+		E13A275525B5DA0F0019FD56 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,16 +96,15 @@
 			children = (
 				E13A271225B5CD430019FD56 /* Models */,
 				E13A271A25B5D2F80019FD56 /* Extensions */,
-				E13A271325B5CD620019FD56 /* Presenters */,
+				E13A271325B5CD620019FD56 /* Controllers */,
 				02C32F6E25B4C12C005CE759 /* Views */,
 				E13A271025B5CD150019FD56 /* Storyboards */,
-				E13A270F25B5CD0E0019FD56 /* Utils */,
 				02C32F5325B4BC14005CE759 /* AppDelegate.swift */,
 				02C32F5525B4BC14005CE759 /* SceneDelegate.swift */,
 				02C32F5F25B4BC18005CE759 /* Assets.xcassets */,
 				02C32F6125B4BC18005CE759 /* LaunchScreen.storyboard */,
-				02C32F6425B4BC18005CE759 /* Info.plist */,
 				02C32F5C25B4BC14005CE759 /* CarSpot.xcdatamodeld */,
+				02C32F6425B4BC18005CE759 /* Info.plist */,
 			);
 			path = CarSpot;
 			sourceTree = "<group>";
@@ -89,26 +112,26 @@
 		02C32F6E25B4C12C005CE759 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				02C32F6F25B4C13C005CE759 /* HostUIs */,
+				02C32F6F25B4C13C005CE759 /* SwiftUIs */,
 				E13A271525B5CD870019FD56 /* SupportingViews */,
-				02C32F5725B4BC14005CE759 /* ViewController.swift */,
+				E13A273525B5D7040019FD56 /* MainViewController.swift */,
+				E13A273925B5D71C0019FD56 /* HistoryViewController.swift */,
+				E13A273C25B5D7310019FD56 /* ProfileViewController.swift */,
+				E13A273F25B5D7470019FD56 /* LoginViewController.swift */,
+				E13A275525B5DA0F0019FD56 /* TabBarController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		02C32F6F25B4C13C005CE759 /* HostUIs */ = {
+		02C32F6F25B4C13C005CE759 /* SwiftUIs */ = {
 			isa = PBXGroup;
 			children = (
-				02C32F6B25B4BC4F005CE759 /* HostUIView.swift */,
+				E13A274225B5D78B0019FD56 /* MainSwiftUIView.swift */,
+				E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */,
+				E13A274825B5D7AB0019FD56 /* HistorySwiftUIView.swift */,
+				E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */,
 			);
-			path = HostUIs;
-			sourceTree = "<group>";
-		};
-		E13A270F25B5CD0E0019FD56 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
+			path = SwiftUIs;
 			sourceTree = "<group>";
 		};
 		E13A271025B5CD150019FD56 /* Storyboards */ = {
@@ -122,20 +145,25 @@
 		E13A271225B5CD430019FD56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E13A272925B5D6630019FD56 /* User.swift */,
+				E13A272C25B5D6780019FD56 /* ParkingTicket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E13A271325B5CD620019FD56 /* Presenters */ = {
+		E13A271325B5CD620019FD56 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E13A272F25B5D6AC0019FD56 /* UserController.swift */,
+				E13A273225B5D6C30019FD56 /* ParkingTicketController.swift */,
 			);
-			path = Presenters;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		E13A271525B5CD870019FD56 /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
+				E13A275225B5D97A0019FD56 /* TicketItemSwiftUIView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -222,16 +250,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13A274025B5D7470019FD56 /* LoginViewController.swift in Sources */,
 				02C32F5E25B4BC14005CE759 /* CarSpot.xcdatamodeld in Sources */,
 				E13A272525B5D37B0019FD56 /* UITextField.swift in Sources */,
-				02C32F5825B4BC14005CE759 /* ViewController.swift in Sources */,
+				E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */,
 				02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */,
 				E13A272325B5D37B0019FD56 /* Int64.swift in Sources */,
-				02C32F6C25B4BC4F005CE759 /* HostUIView.swift in Sources */,
+				E13A273025B5D6AC0019FD56 /* UserController.swift in Sources */,
+				E13A273325B5D6C30019FD56 /* ParkingTicketController.swift in Sources */,
+				E13A273D25B5D7310019FD56 /* ProfileViewController.swift in Sources */,
+				E13A273A25B5D71C0019FD56 /* HistoryViewController.swift in Sources */,
+				E13A272D25B5D6780019FD56 /* ParkingTicket.swift in Sources */,
+				E13A273625B5D7040019FD56 /* MainViewController.swift in Sources */,
 				E13A272225B5D37B0019FD56 /* UIButton.swift in Sources */,
+				E13A275625B5DA0F0019FD56 /* TabBarController.swift in Sources */,
+				E13A274325B5D78B0019FD56 /* MainSwiftUIView.swift in Sources */,
 				E13A272425B5D37B0019FD56 /* ZFRippleButton.swift in Sources */,
+				E13A274925B5D7AB0019FD56 /* HistorySwiftUIView.swift in Sources */,
+				E13A275325B5D97A0019FD56 /* TicketItemSwiftUIView.swift in Sources */,
+				E13A274625B5D7970019FD56 /* LoginSwiftUIView.swift in Sources */,
 				E13A272125B5D37B0019FD56 /* UIView.swift in Sources */,
 				02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */,
+				E13A272A25B5D6630019FD56 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

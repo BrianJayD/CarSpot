@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="Fh3-md-fax">
             <objects>
-                <hostingController id="1AB-rV-d2L" customClass="ViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
+                <hostingController id="1AB-rV-d2L" customClass="LoginViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="B5o-vy-IJt"/>
                     <connections>
                         <segue destination="uVX-XS-5nt" kind="show" identifier="LoginToMainSegua" id="SGu-gp-613"/>
@@ -24,7 +24,7 @@
         <!--History-->
         <scene sceneID="N2n-ej-PVB">
             <objects>
-                <viewController id="hNu-YS-7nN" sceneMemberID="viewController">
+                <viewController id="hNu-YS-7nN" customClass="HistoryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLj-7o-bmy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
         <!--Profile-->
         <scene sceneID="s5S-M2-pPe">
             <objects>
-                <viewController id="Xrh-ta-AMx" sceneMemberID="viewController">
+                <viewController id="Xrh-ta-AMx" customClass="ProfileViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Skx-rf-2hB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
         <!--Main-->
         <scene sceneID="Ih8-UH-ed8">
             <objects>
-                <viewController id="F7U-Xb-6Un" sceneMemberID="viewController">
+                <viewController id="F7U-Xb-6Un" customClass="MainViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jc9-zK-dRd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,12 +67,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pN-ty-PDT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="799"/>
+            <point key="canvasLocation" x="1046" y="799"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Xvw-sJ-Sqc">
             <objects>
-                <tabBarController id="uVX-XS-5nt" sceneMemberID="viewController">
+                <tabBarController id="uVX-XS-5nt" customClass="TabBarController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="M39-YS-WcS"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dyy-hc-IqY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

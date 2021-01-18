@@ -1,16 +1,16 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  CarSpot
 //
-//  Created by Brian Domingo on 2021-01-17.
+//  Created by Daryl Dyck on 2021-01-18.
 //
 
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    let hostController = UIHostingController(rootView: HostUIView())
+    let hostController = UIHostingController(rootView: LoginSwiftUIView())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,5 @@ class ViewController: UIViewController {
 
         hostController.didMove(toParent: self)
     }
-
-
+    
 }
-
