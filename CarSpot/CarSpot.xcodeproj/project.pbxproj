@@ -32,6 +32,7 @@
 		E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */; };
 		E13A275325B5D97A0019FD56 /* TicketItemSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275225B5D97A0019FD56 /* TicketItemSwiftUIView.swift */; };
 		E13A275625B5DA0F0019FD56 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275525B5DA0F0019FD56 /* TabBarController.swift */; };
+		E13A275925B5E6800019FD56 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275825B5E6800019FD56 /* Login.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwiftUIView.swift; sourceTree = "<group>"; };
 		E13A275225B5D97A0019FD56 /* TicketItemSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketItemSwiftUIView.swift; sourceTree = "<group>"; };
 		E13A275525B5DA0F0019FD56 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E13A275825B5E6800019FD56 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				E13A272925B5D6630019FD56 /* User.swift */,
 				E13A272C25B5D6780019FD56 /* ParkingTicket.swift */,
+				E13A275825B5E6800019FD56 /* Login.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				E13A274325B5D78B0019FD56 /* MainSwiftUIView.swift in Sources */,
 				E13A272425B5D37B0019FD56 /* ZFRippleButton.swift in Sources */,
 				E13A274925B5D7AB0019FD56 /* HistorySwiftUIView.swift in Sources */,
+				E13A275925B5E6800019FD56 /* Login.swift in Sources */,
 				E13A275325B5D97A0019FD56 /* TicketItemSwiftUIView.swift in Sources */,
 				E13A274625B5D7970019FD56 /* LoginSwiftUIView.swift in Sources */,
 				E13A272125B5D37B0019FD56 /* UIView.swift in Sources */,
