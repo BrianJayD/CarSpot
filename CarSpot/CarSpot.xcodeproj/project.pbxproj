@@ -60,7 +60,10 @@
 		02C32F5225B4BC14005CE759 /* CarSpot */ = {
 			isa = PBXGroup;
 			children = (
-				02C32F6F25B4C13C005CE759 /* HostUI */,
+				E13A271225B5CD430019FD56 /* Models */,
+				E13A271325B5CD620019FD56 /* Presenters */,
+				E13A271025B5CD150019FD56 /* Storyboards */,
+				E13A270F25B5CD0E0019FD56 /* Utils */,
 				02C32F6E25B4C12C005CE759 /* Views */,
 				02C32F5325B4BC14005CE759 /* AppDelegate.swift */,
 				02C32F5525B4BC14005CE759 /* SceneDelegate.swift */,
@@ -76,17 +79,54 @@
 		02C32F6E25B4C12C005CE759 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				02C32F6F25B4C13C005CE759 /* HostUIs */,
+				E13A271525B5CD870019FD56 /* SupportingViews */,
 				02C32F5725B4BC14005CE759 /* ViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		02C32F6F25B4C13C005CE759 /* HostUI */ = {
+		02C32F6F25B4C13C005CE759 /* HostUIs */ = {
 			isa = PBXGroup;
 			children = (
 				02C32F6B25B4BC4F005CE759 /* HostUIView.swift */,
 			);
-			path = HostUI;
+			path = HostUIs;
+			sourceTree = "<group>";
+		};
+		E13A270F25B5CD0E0019FD56 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E13A271025B5CD150019FD56 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E13A271225B5CD430019FD56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E13A271325B5CD620019FD56 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		E13A271525B5CD870019FD56 /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
