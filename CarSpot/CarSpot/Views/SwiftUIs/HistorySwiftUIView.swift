@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct HistorySwiftUIView: View {
+struct HistorySwiftUIView: View
+{
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("History Page")
     }
 }
 
-struct HistorySwiftUIView_Previews: PreviewProvider {
+struct HistorySwiftUIView_Previews: PreviewProvider
+{
     static var previews: some View {
         HistorySwiftUIView()
     }
