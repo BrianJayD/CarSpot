@@ -15,20 +15,16 @@ class HistoryViewController: UIViewController
     {
         super.viewDidLoad()
 
-        setupView()
+        setupSwiftUIView()
     }
-    
 
-    func setupView()
+
+    func setupSwiftUIView()
     {
         let hostController = UIHostingController(rootView: HistorySwiftUIView())
-        hostController.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChild(hostController)
+        hostController.view.frame = self.view.frame
         self.view.addSubview(hostController.view)
-        hostController.view.centerXAnchor.constraint(
-            equalTo: view.centerXAnchor).isActive = true
-        hostController.view.centerYAnchor.constraint(
-            equalTo: view.centerYAnchor).isActive = true
         hostController.didMove(toParent: self)
     }
 
