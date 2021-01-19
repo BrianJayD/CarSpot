@@ -6,24 +6,30 @@
 //
 
 import UIKit
+import SwiftUI
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupView()
+    {
+        let hostController = UIHostingController(rootView: HistorySwiftUIView())
+        hostController.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChild(hostController)
+        self.view.addSubview(hostController.view)
+        hostController.view.centerXAnchor.constraint(
+            equalTo: view.centerXAnchor).isActive = true
+        hostController.view.centerYAnchor.constraint(
+            equalTo: view.centerYAnchor).isActive = true
+        hostController.didMove(toParent: self)
     }
-    */
 
 }
