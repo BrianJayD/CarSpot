@@ -16,18 +16,19 @@
                     <navigationItem key="navigationItem" id="B5o-vy-IJt"/>
                     <connections>
                         <segue destination="uVX-XS-5nt" kind="show" identifier="LoginToMainSegua" id="SGu-gp-613"/>
+                        <segue destination="Xrh-ta-AMx" kind="showDetail" identifier="profileSegua" id="a31-4m-kxP"/>
                     </connections>
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddv-2q-Lf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1017" y="45"/>
+            <point key="canvasLocation" x="1900" y="-724"/>
         </scene>
         <!--History-->
         <scene sceneID="N2n-ej-PVB">
             <objects>
                 <viewController id="hNu-YS-7nN" customClass="HistoryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLj-7o-bmy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="MbB-I0-tx6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,7 +44,7 @@
             <objects>
                 <viewController id="Xrh-ta-AMx" customClass="ProfileViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Skx-rf-2hB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FjZ-um-4oW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,7 +60,7 @@
             <objects>
                 <viewController id="F7U-Xb-6Un" customClass="MainViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jc9-zK-dRd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nuh-t9-liL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,9 +121,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6S-HH-Pwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149" y="45"/>
+            <point key="canvasLocation" x="970" y="-724"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="adL-m6-xOi"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
     <resources>
         <image name="car.2" catalog="system" width="128" height="72"/>
