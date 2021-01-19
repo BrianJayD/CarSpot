@@ -33,6 +33,7 @@
 		E13A275325B5D97A0019FD56 /* TicketItemSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275225B5D97A0019FD56 /* TicketItemSwiftUIView.swift */; };
 		E13A275625B5DA0F0019FD56 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275525B5DA0F0019FD56 /* TabBarController.swift */; };
 		E13A275925B5E6800019FD56 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275825B5E6800019FD56 /* Login.swift */; };
+		E13BE3EA25B77BBB0022B496 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE3E925B77BBB0022B496 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		E13A275225B5D97A0019FD56 /* TicketItemSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketItemSwiftUIView.swift; sourceTree = "<group>"; };
 		E13A275525B5DA0F0019FD56 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E13A275825B5E6800019FD56 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		E13BE3E925B77BBB0022B496 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				E13A271325B5CD620019FD56 /* Controllers */,
 				02C32F6E25B4C12C005CE759 /* Views */,
 				E13A271025B5CD150019FD56 /* Storyboards */,
+				E13BE3E825B77B8D0022B496 /* Utils */,
 				02C32F5325B4BC14005CE759 /* AppDelegate.swift */,
 				02C32F5525B4BC14005CE759 /* SceneDelegate.swift */,
 				02C32F5F25B4BC18005CE759 /* Assets.xcassets */,
@@ -181,6 +184,14 @@
 				E13A271E25B5D37A0019FD56 /* ZFRippleButton.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E13BE3E825B77B8D0022B496 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E13BE3E925B77BBB0022B496 /* LocationManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				E13A275925B5E6800019FD56 /* Login.swift in Sources */,
 				E13A275325B5D97A0019FD56 /* TicketItemSwiftUIView.swift in Sources */,
 				E13A274625B5D7970019FD56 /* LoginSwiftUIView.swift in Sources */,
+				E13BE3EA25B77BBB0022B496 /* LocationManager.swift in Sources */,
 				E13A272125B5D37B0019FD56 /* UIView.swift in Sources */,
 				02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */,
 				E13A272A25B5D6630019FD56 /* User.swift in Sources */,
@@ -423,13 +435,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W48382BB5G;
+				DEVELOPMENT_TEAM = R9YD53V86C;
 				INFOPLIST_FILE = CarSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BrianJayD.CarSpot;
+				PRODUCT_BUNDLE_IDENTIFIER = daryl.CarSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
