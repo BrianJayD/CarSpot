@@ -14,6 +14,7 @@
 		02C32F5E25B4BC14005CE759 /* CarSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5C25B4BC14005CE759 /* CarSpot.xcdatamodeld */; };
 		02C32F6025B4BC18005CE759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F5F25B4BC18005CE759 /* Assets.xcassets */; };
 		02C32F6325B4BC18005CE759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F6125B4BC18005CE759 /* LaunchScreen.storyboard */; };
+		E13978E625B8734400342933 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13978E525B8734400342933 /* Location.swift */; };
 		E13A272125B5D37B0019FD56 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271B25B5D3790019FD56 /* UIView.swift */; };
 		E13A272225B5D37B0019FD56 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271C25B5D37A0019FD56 /* UIButton.swift */; };
 		E13A272325B5D37B0019FD56 /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271D25B5D37A0019FD56 /* Int64.swift */; };
@@ -47,6 +48,7 @@
 		02C32F5F25B4BC18005CE759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02C32F6225B4BC18005CE759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02C32F6425B4BC18005CE759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E13978E525B8734400342933 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E13A271B25B5D3790019FD56 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E13A271C25B5D37A0019FD56 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		E13A271D25B5D37A0019FD56 /* Int64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int64.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				E13A272925B5D6630019FD56 /* User.swift */,
 				E13A272C25B5D6780019FD56 /* ParkingTicket.swift */,
 				E13A275825B5E6800019FD56 /* Login.swift */,
+				E13978E525B8734400342933 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */,
 				025F2DE325B808820063DDCF /* UIViewController.swift in Sources */,
 				02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */,
+				E13978E625B8734400342933 /* Location.swift in Sources */,
 				E13A272325B5D37B0019FD56 /* Int64.swift in Sources */,
 				E13A273025B5D6AC0019FD56 /* UserController.swift in Sources */,
 				E13A273325B5D6C30019FD56 /* ParkingTicketController.swift in Sources */,
@@ -439,13 +443,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W48382BB5G;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BrianJayD.CarSpot;
+				PRODUCT_BUNDLE_IDENTIFIER = denite.carspot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
