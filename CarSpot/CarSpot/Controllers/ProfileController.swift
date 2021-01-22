@@ -35,7 +35,7 @@ class ProfileController {
             return InsertStatus.success
             
         } catch let error as NSError {
-            print(#function, "Error occured during insert")
+            print(#function, error.localizedDescription)
             return InsertStatus.failed
         }
     }
