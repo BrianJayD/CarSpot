@@ -14,8 +14,7 @@ class MainEntryViewController: UIViewController
     {
         super.viewDidLoad()
 
-
-        UserDefaults.standard.setValue(true, forKey: Login.LOGGED_IN.rawValue)
+        UserDefaults.standard.setValue(false, forKey: Login.LOGGED_IN.rawValue)
 
         loadStartingPage()
     }
@@ -29,7 +28,7 @@ class MainEntryViewController: UIViewController
         }
         else
         {
-            performSegue(withIdentifier: "loginSegua", sender: nil)
+            performSegue(withIdentifier: "loginSeguaTemp", sender: nil)
         }
     }
 

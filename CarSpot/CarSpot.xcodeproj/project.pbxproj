@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		025F2DE325B808820063DDCF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F2DE225B808820063DDCF /* UIViewController.swift */; };
+		02A0759F25BB3E5500129803 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0759E25BB3E5500129803 /* ProfileController.swift */; };
+		02A075A225BB3E5E00129803 /* LicensePlateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A075A125BB3E5E00129803 /* LicensePlateController.swift */; };
 		02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5325B4BC14005CE759 /* AppDelegate.swift */; };
 		02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5525B4BC14005CE759 /* SceneDelegate.swift */; };
 		02C32F5B25B4BC14005CE759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F5925B4BC14005CE759 /* Main.storyboard */; };
@@ -16,8 +18,6 @@
 		02C32F6325B4BC18005CE759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F6125B4BC18005CE759 /* LaunchScreen.storyboard */; };
 		E138DB8725BB1405003BEEDC /* TicketDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DB8625BB1405003BEEDC /* TicketDetailsViewController.swift */; };
 		E138DBA725BB2468003BEEDC /* ParkingTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DBA425BB2468003BEEDC /* ParkingTicketController.swift */; };
-		E138DBA825BB2468003BEEDC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DBA525BB2468003BEEDC /* ProfileController.swift */; };
-		E138DBA925BB2468003BEEDC /* LicensePlateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DBA625BB2468003BEEDC /* LicensePlateController.swift */; };
 		E138DBAC25BB25F1003BEEDC /* MainEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DBAB25BB25F1003BEEDC /* MainEntryViewController.swift */; };
 		E138F31525B9CA5E00257879 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E138F31425B9CA5E00257879 /* GoogleService-Info.plist */; };
 		E138F31B25B9D3DA00257879 /* ParkingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138F31A25B9D3DA00257879 /* ParkingHours.swift */; };
@@ -49,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		025F2DE225B808820063DDCF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		02A0759E25BB3E5500129803 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		02A075A125BB3E5E00129803 /* LicensePlateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePlateController.swift; sourceTree = "<group>"; };
 		02C32F5025B4BC14005CE759 /* CarSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02C32F5325B4BC14005CE759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02C32F5525B4BC14005CE759 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,8 +61,6 @@
 		02C32F6425B4BC18005CE759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E138DB8625BB1405003BEEDC /* TicketDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsViewController.swift; sourceTree = "<group>"; };
 		E138DBA425BB2468003BEEDC /* ParkingTicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingTicketController.swift; sourceTree = "<group>"; };
-		E138DBA525BB2468003BEEDC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = "../../../../CarSpot-main/CarSpot/CarSpot/Controllers/ProfileController.swift"; sourceTree = "<group>"; };
-		E138DBA625BB2468003BEEDC /* LicensePlateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LicensePlateController.swift; path = "../../../../CarSpot-main/CarSpot/CarSpot/Controllers/LicensePlateController.swift"; sourceTree = "<group>"; };
 		E138DBAB25BB25F1003BEEDC /* MainEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntryViewController.swift; sourceTree = "<group>"; };
 		E138F31425B9CA5E00257879 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E138F31A25B9D3DA00257879 /* ParkingHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHours.swift; sourceTree = "<group>"; };
@@ -187,9 +187,9 @@
 		E13A271325B5CD620019FD56 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E138DBA625BB2468003BEEDC /* LicensePlateController.swift */,
+				02A075A125BB3E5E00129803 /* LicensePlateController.swift */,
+				02A0759E25BB3E5500129803 /* ProfileController.swift */,
 				E138DBA425BB2468003BEEDC /* ParkingTicketController.swift */,
-				E138DBA525BB2468003BEEDC /* ProfileController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -298,15 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02A0759F25BB3E5500129803 /* ProfileController.swift in Sources */,
 				E13A274025B5D7470019FD56 /* LoginViewController.swift in Sources */,
 				E138F32D25BA01AF00257879 /* TicketDetails.swift in Sources */,
 				02C32F5E25B4BC14005CE759 /* CarSpot.xcdatamodeld in Sources */,
 				E13A272525B5D37B0019FD56 /* UITextField.swift in Sources */,
 				E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */,
-				E138DBA925BB2468003BEEDC /* LicensePlateController.swift in Sources */,
 				025F2DE325B808820063DDCF /* UIViewController.swift in Sources */,
+				02A075A225BB3E5E00129803 /* LicensePlateController.swift in Sources */,
 				02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */,
-				E138DBA825BB2468003BEEDC /* ProfileController.swift in Sources */,
 				E138F33025BA05D800257879 /* MapView.swift in Sources */,
 				E13978E625B8734400342933 /* Location.swift in Sources */,
 				E13A272325B5D37B0019FD56 /* Int64.swift in Sources */,
@@ -479,13 +479,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JLH6SS5T42;
 				INFOPLIST_FILE = CarSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gb.carspot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgebrown.carspot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -498,13 +498,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JLH6SS5T42;
 				INFOPLIST_FILE = CarSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BrianJayD.CarSpot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgebrown.carspot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

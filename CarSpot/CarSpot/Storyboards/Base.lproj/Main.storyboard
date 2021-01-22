@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="Cal-vz-WJR" customClass="MainEntryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UCs-PM-yLU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="jhc-AU-Eg5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -23,16 +23,17 @@
                     <connections>
                         <segue destination="1AB-rV-d2L" kind="show" identifier="loginSegua" id="xhb-6l-fYr"/>
                         <segue destination="uVX-XS-5nt" kind="show" identifier="mainPageSegua" id="UVz-Rf-2eD"/>
+                        <segue destination="fov-e3-KDx" kind="show" identifier="loginSeguaTemp" id="7KQ-HC-Y3T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="793-w8-LAx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1900" y="-1491"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Hosting Controller-->
         <scene sceneID="Fh3-md-fax">
             <objects>
-                <hostingController id="1AB-rV-d2L" customClass="LoginViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
+                <hostingController id="1AB-rV-d2L" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="B5o-vy-IJt"/>
                     <connections>
                         <segue destination="uVX-XS-5nt" kind="show" identifier="LoginToMainSegua" id="SGu-gp-613"/>
@@ -43,12 +44,58 @@
             </objects>
             <point key="canvasLocation" x="1900" y="-724"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="sBI-7h-ZOZ">
+            <objects>
+                <viewController id="fov-e3-KDx" customClass="LoginViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dGG-Np-ygS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q31-Gs-EXC">
+                                <rect key="frame" x="64" y="305" width="123" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <segue destination="Xrh-ta-AMx" kind="show" identifier="profileSeguaTemp" id="01Q-Gh-twi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGB-ih-fmb">
+                                <rect key="frame" x="227" y="305" width="123" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <segue destination="uVX-XS-5nt" kind="show" identifier="mainPageSeguaTemp" id="hVq-Er-EhI"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arY-w0-5KD">
+                                <rect key="frame" x="90" y="97" width="235" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyU-Ay-AgB">
+                                <rect key="frame" x="90" y="179" width="235" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="txK-fk-eZT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dWY-TZ-KR2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOX-fF-hWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837.68115942029" y="-718.52678571428567"/>
+        </scene>
         <!--History-->
         <scene sceneID="N2n-ej-PVB">
             <objects>
                 <viewController id="hNu-YS-7nN" customClass="HistoryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLj-7o-bmy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WFW-Vq-niD">
@@ -215,7 +262,7 @@
             <objects>
                 <viewController id="c2P-LI-utu" customClass="TicketDetailsViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6z3-JE-81F">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Vit-ch-7Xk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -231,12 +278,13 @@
             <objects>
                 <viewController id="Xrh-ta-AMx" customClass="ProfileViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Skx-rf-2hB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FjZ-um-4oW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="36x-NV-dP4"/>
+                    <navigationItem key="navigationItem" id="JTQ-RP-Vb7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8GF-6N-QFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +295,7 @@
             <objects>
                 <viewController id="F7U-Xb-6Un" customClass="MainViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jc9-zK-dRd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nuh-t9-liL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -308,8 +356,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UVz-Rf-2eD"/>
-        <segue reference="adL-m6-xOi"/>
+        <segue reference="hVq-Er-EhI"/>
+        <segue reference="01Q-Gh-twi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
     <resources>
