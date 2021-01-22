@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uVX-XS-5nt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N5J-QV-VxE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -13,22 +13,89 @@
         <scene sceneID="Fh3-md-fax">
             <objects>
                 <hostingController id="1AB-rV-d2L" customClass="LoginViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4uJ-es-K2N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                    </button>
                     <navigationItem key="navigationItem" id="B5o-vy-IJt"/>
-                    <connections>
-                        <segue destination="uVX-XS-5nt" kind="show" identifier="LoginToMainSegua" id="SGu-gp-613"/>
-                        <segue destination="Xrh-ta-AMx" kind="showDetail" identifier="profileSegua" id="a31-4m-kxP"/>
-                    </connections>
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddv-2q-Lf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="-724"/>
+            <point key="canvasLocation" x="958" y="-708"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="eRj-zC-OTL">
+            <objects>
+                <viewController id="N5J-QV-VxE" customClass="LoginViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vee-vB-WRg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uzt-gc-xAV">
+                                <rect key="frame" x="90" y="190" width="235" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-ak-PJ7">
+                                <rect key="frame" x="60" y="304" width="143" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="btnBorderColor"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" name="primary"/>
+                                </state>
+                                <connections>
+                                    <segue destination="I8A-aa-fyb" kind="show" identifier="signUpSegue" id="khb-e7-It7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYt-mk-X5p">
+                                <rect key="frame" x="211" y="304" width="143" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="btnBorderColor"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" name="primary"/>
+                                </state>
+                                <connections>
+                                    <action selector="logIn:" destination="N5J-QV-VxE" eventType="touchUpInside" id="a37-t0-3Xc"/>
+                                    <segue destination="uVX-XS-5nt" kind="show" identifier="toMain" id="K4w-PW-edD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-uE-d75">
+                                <rect key="frame" x="90" y="83" width="235" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cmc-X2-bnt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="tfEmail" destination="PjW-uE-d75" id="9SX-pN-A8Z"/>
+                        <outlet property="tfPassword" destination="uzt-gc-xAV" id="goF-ZH-9Jl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klM-vd-hjo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900.0000000000002" y="-708.48214285714278"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="sN5-CB-5MA">
+            <objects>
+                <hostingController storyboardIdentifier="CreateAccountHC" id="I8A-aa-fyb" customClass="SignUpViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Gds-mV-L00"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0f0-Yo-6YB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2855" y="-708"/>
         </scene>
         <!--History-->
         <scene sceneID="N2n-ej-PVB">
             <objects>
                 <viewController id="hNu-YS-7nN" customClass="HistoryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLj-7o-bmy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="MbB-I0-tx6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -44,7 +111,7 @@
             <objects>
                 <viewController id="Xrh-ta-AMx" customClass="ProfileViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Skx-rf-2hB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FjZ-um-4oW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -60,7 +127,7 @@
             <objects>
                 <viewController id="F7U-Xb-6Un" customClass="MainViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jc9-zK-dRd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nuh-t9-liL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -116,16 +183,16 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1AB-rV-d2L" kind="relationship" relationship="rootViewController" id="8db-6k-yHC"/>
+                        <segue destination="uVX-XS-5nt" kind="relationship" relationship="rootViewController" id="Mds-ls-joy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6S-HH-Pwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="-724"/>
+            <point key="canvasLocation" x="958" y="44"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="adL-m6-xOi"/>
+        <segue reference="K4w-PW-edD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
     <resources>
@@ -135,6 +202,9 @@
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="btnBorderColor">
+            <color red="0.3880000114440918" green="0.74900001287460327" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="navBackground">
             <color red="0.063000001013278961" green="0.43900001049041748" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -148,7 +218,7 @@
             <color red="0.53299999237060547" green="0.82700002193450928" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="transparent">
-            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92500001192092896" green="0.92500001192092896" blue="0.92500001192092896" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
