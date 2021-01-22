@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0224D5E425BAB80400DA3CB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0224D5E325BAB80400DA3CB3 /* GoogleService-Info.plist */; };
 		025F2DE325B808820063DDCF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F2DE225B808820063DDCF /* UIViewController.swift */; };
+		02A0755725BAC1AD00129803 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0755625BAC1AD00129803 /* Profile.swift */; };
+		02A0755A25BAC1EA00129803 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0755925BAC1EA00129803 /* ProfileController.swift */; };
+		02A0758625BADF8300129803 /* LicensePlateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0758525BADF8300129803 /* LicensePlateController.swift */; };
+		02BBFB6725BA6C4300CA8939 /* SignUpSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBFB6625BA6C4300CA8939 /* SignUpSwiftUIView.swift */; };
+		02BBFB6A25BA6C5700CA8939 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BBFB6925BA6C5700CA8939 /* SignUpViewController.swift */; };
 		02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5325B4BC14005CE759 /* AppDelegate.swift */; };
 		02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5525B4BC14005CE759 /* SceneDelegate.swift */; };
 		02C32F5B25B4BC14005CE759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F5925B4BC14005CE759 /* Main.storyboard */; };
@@ -22,7 +28,6 @@
 		E13A272525B5D37B0019FD56 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271F25B5D37A0019FD56 /* UITextField.swift */; };
 		E13A272A25B5D6630019FD56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A272925B5D6630019FD56 /* User.swift */; };
 		E13A272D25B5D6780019FD56 /* ParkingTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A272C25B5D6780019FD56 /* ParkingTicket.swift */; };
-		E13A273025B5D6AC0019FD56 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A272F25B5D6AC0019FD56 /* UserController.swift */; };
 		E13A273325B5D6C30019FD56 /* ParkingTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273225B5D6C30019FD56 /* ParkingTicketController.swift */; };
 		E13A273625B5D7040019FD56 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273525B5D7040019FD56 /* MainViewController.swift */; };
 		E13A273A25B5D71C0019FD56 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273925B5D71C0019FD56 /* HistoryViewController.swift */; };
@@ -36,10 +41,17 @@
 		E13A275625B5DA0F0019FD56 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275525B5DA0F0019FD56 /* TabBarController.swift */; };
 		E13A275925B5E6800019FD56 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275825B5E6800019FD56 /* Login.swift */; };
 		E13BE3EA25B77BBB0022B496 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE3E925B77BBB0022B496 /* LocationManager.swift */; };
+		F6D05128E5579842BB8E2660 /* Pods_CarSpot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B08283C14A52D490DD8D97 /* Pods_CarSpot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0224D5E325BAB80400DA3CB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		025F2DE225B808820063DDCF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		02A0755625BAC1AD00129803 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		02A0755925BAC1EA00129803 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		02A0758525BADF8300129803 /* LicensePlateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateController.swift; sourceTree = "<group>"; };
+		02BBFB6625BA6C4300CA8939 /* SignUpSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSwiftUIView.swift; sourceTree = "<group>"; };
+		02BBFB6925BA6C5700CA8939 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		02C32F5025B4BC14005CE759 /* CarSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02C32F5325B4BC14005CE759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02C32F5525B4BC14005CE759 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +60,8 @@
 		02C32F5F25B4BC18005CE759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02C32F6225B4BC18005CE759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02C32F6425B4BC18005CE759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3695F0DE118CF2AC7F346826 /* Pods-CarSpot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarSpot.debug.xcconfig"; path = "Target Support Files/Pods-CarSpot/Pods-CarSpot.debug.xcconfig"; sourceTree = "<group>"; };
+		84B08283C14A52D490DD8D97 /* Pods_CarSpot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarSpot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13978E525B8734400342933 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E13A271B25B5D3790019FD56 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E13A271C25B5D37A0019FD56 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
@@ -56,7 +70,6 @@
 		E13A271F25B5D37A0019FD56 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		E13A272925B5D6630019FD56 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E13A272C25B5D6780019FD56 /* ParkingTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicket.swift; sourceTree = "<group>"; };
-		E13A272F25B5D6AC0019FD56 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E13A273225B5D6C30019FD56 /* ParkingTicketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicketController.swift; sourceTree = "<group>"; };
 		E13A273525B5D7040019FD56 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E13A273925B5D71C0019FD56 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +83,7 @@
 		E13A275525B5DA0F0019FD56 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E13A275825B5E6800019FD56 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E13BE3E925B77BBB0022B496 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F10AD6898C7C24625FCBBA2E /* Pods-CarSpot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarSpot.release.xcconfig"; path = "Target Support Files/Pods-CarSpot/Pods-CarSpot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,17 +91,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D05128E5579842BB8E2660 /* Pods_CarSpot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02A0755525BAC17800129803 /* ObservableObjects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ObservableObjects;
+			sourceTree = "<group>";
+		};
 		02C32F4725B4BC14005CE759 = {
 			isa = PBXGroup;
 			children = (
 				02C32F5225B4BC14005CE759 /* CarSpot */,
 				02C32F5125B4BC14005CE759 /* Products */,
+				6549491E16E676D9C06A2D3B /* Pods */,
+				24C541AA68A0DC52BE12C2EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +136,7 @@
 				02C32F5525B4BC14005CE759 /* SceneDelegate.swift */,
 				02C32F5F25B4BC18005CE759 /* Assets.xcassets */,
 				02C32F5C25B4BC14005CE759 /* CarSpot.xcdatamodeld */,
+				0224D5E325BAB80400DA3CB3 /* GoogleService-Info.plist */,
 				02C32F6425B4BC18005CE759 /* Info.plist */,
 			);
 			path = CarSpot;
@@ -127,6 +152,7 @@
 				E13A273C25B5D7310019FD56 /* ProfileViewController.swift */,
 				E13A273F25B5D7470019FD56 /* LoginViewController.swift */,
 				E13A275525B5DA0F0019FD56 /* TabBarController.swift */,
+				02BBFB6925BA6C5700CA8939 /* SignUpViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,8 +164,26 @@
 				E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */,
 				E13A274825B5D7AB0019FD56 /* HistorySwiftUIView.swift */,
 				E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */,
+				02BBFB6625BA6C4300CA8939 /* SignUpSwiftUIView.swift */,
 			);
 			path = SwiftUIs;
+			sourceTree = "<group>";
+		};
+		24C541AA68A0DC52BE12C2EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B08283C14A52D490DD8D97 /* Pods_CarSpot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6549491E16E676D9C06A2D3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3695F0DE118CF2AC7F346826 /* Pods-CarSpot.debug.xcconfig */,
+				F10AD6898C7C24625FCBBA2E /* Pods-CarSpot.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E13A271025B5CD150019FD56 /* Storyboards */ = {
@@ -154,7 +198,9 @@
 		E13A271225B5CD430019FD56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				02A0755525BAC17800129803 /* ObservableObjects */,
 				E13A272925B5D6630019FD56 /* User.swift */,
+				02A0755625BAC1AD00129803 /* Profile.swift */,
 				E13A272C25B5D6780019FD56 /* ParkingTicket.swift */,
 				E13A275825B5E6800019FD56 /* Login.swift */,
 				E13978E525B8734400342933 /* Location.swift */,
@@ -165,8 +211,9 @@
 		E13A271325B5CD620019FD56 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E13A272F25B5D6AC0019FD56 /* UserController.swift */,
 				E13A273225B5D6C30019FD56 /* ParkingTicketController.swift */,
+				02A0755925BAC1EA00129803 /* ProfileController.swift */,
+				02A0758525BADF8300129803 /* LicensePlateController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,9 +254,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02C32F6725B4BC18005CE759 /* Build configuration list for PBXNativeTarget "CarSpot" */;
 			buildPhases = (
+				C58275D63D81A50DB83AC2A2 /* [CP] Check Pods Manifest.lock */,
 				02C32F4C25B4BC14005CE759 /* Sources */,
 				02C32F4D25B4BC14005CE759 /* Frameworks */,
 				02C32F4E25B4BC14005CE759 /* Resources */,
+				CE120E5362F3B55F100BF5A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,12 +307,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				02C32F6325B4BC18005CE759 /* LaunchScreen.storyboard in Resources */,
+				0224D5E425BAB80400DA3CB3 /* GoogleService-Info.plist in Resources */,
 				02C32F6025B4BC18005CE759 /* Assets.xcassets in Resources */,
 				02C32F5B25B4BC14005CE759 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C58275D63D81A50DB83AC2A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarSpot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE120E5362F3B55F100BF5A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarSpot/Pods-CarSpot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarSpot/Pods-CarSpot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarSpot/Pods-CarSpot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		02C32F4C25B4BC14005CE759 /* Sources */ = {
@@ -272,13 +364,15 @@
 			files = (
 				E13A274025B5D7470019FD56 /* LoginViewController.swift in Sources */,
 				02C32F5E25B4BC14005CE759 /* CarSpot.xcdatamodeld in Sources */,
+				02A0755725BAC1AD00129803 /* Profile.swift in Sources */,
 				E13A272525B5D37B0019FD56 /* UITextField.swift in Sources */,
 				E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */,
+				02A0755A25BAC1EA00129803 /* ProfileController.swift in Sources */,
 				025F2DE325B808820063DDCF /* UIViewController.swift in Sources */,
 				02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */,
+				02BBFB6725BA6C4300CA8939 /* SignUpSwiftUIView.swift in Sources */,
 				E13978E625B8734400342933 /* Location.swift in Sources */,
 				E13A272325B5D37B0019FD56 /* Int64.swift in Sources */,
-				E13A273025B5D6AC0019FD56 /* UserController.swift in Sources */,
 				E13A273325B5D6C30019FD56 /* ParkingTicketController.swift in Sources */,
 				E13A273D25B5D7310019FD56 /* ProfileViewController.swift in Sources */,
 				E13A273A25B5D71C0019FD56 /* HistoryViewController.swift in Sources */,
@@ -291,8 +385,10 @@
 				E13A274925B5D7AB0019FD56 /* HistorySwiftUIView.swift in Sources */,
 				E13A275925B5E6800019FD56 /* Login.swift in Sources */,
 				E13A275325B5D97A0019FD56 /* TicketItemSwiftUIView.swift in Sources */,
+				02BBFB6A25BA6C5700CA8939 /* SignUpViewController.swift in Sources */,
 				E13A274625B5D7970019FD56 /* LoginSwiftUIView.swift in Sources */,
 				E13BE3EA25B77BBB0022B496 /* LocationManager.swift in Sources */,
+				02A0758625BADF8300129803 /* LicensePlateController.swift in Sources */,
 				E13A272125B5D37B0019FD56 /* UIView.swift in Sources */,
 				02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */,
 				E13A272A25B5D6630019FD56 /* User.swift in Sources */,
@@ -439,18 +535,21 @@
 		};
 		02C32F6825B4BC18005CE759 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3695F0DE118CF2AC7F346826 /* Pods-CarSpot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JLH6SS5T42;
 				INFOPLIST_FILE = CarSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = denite.carspot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgebrown.CarSpotParkingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,17 +557,18 @@
 		};
 		02C32F6925B4BC18005CE759 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F10AD6898C7C24625FCBBA2E /* Pods-CarSpot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W48382BB5G;
+				DEVELOPMENT_TEAM = JLH6SS5T42;
 				INFOPLIST_FILE = CarSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BrianJayD.CarSpot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgebrown.CarSpotParkingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
