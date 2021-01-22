@@ -14,16 +14,29 @@ extension UITextField
     func checkForValidInput() -> Bool
     {
         var valid = true
-        
+
         if (self.text == nil || self.text == "" || self.text!.count <= 1)
         {
             valid = false
             setTextFieldError()
         }
-        
+
         return valid
     }
-    
+
+    func checkLicensePlate(min: Int, max: Int) -> Bool
+    {
+        var valid = true
+
+        if (self.text == "" || self.text!.count < min || self.text!.count > max)
+        {
+            valid = false
+            setTextFieldError()
+        }
+
+        return valid
+    }
+
     // set error on current textField
     func setTextFieldError()
     {

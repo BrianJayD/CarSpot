@@ -9,14 +9,86 @@ import SwiftUI
 
 struct HistorySwiftUIView: View
 {
-    var body: some View {
-        Text("History Page")
+    let ticketList: [ParkingTicket]
+    @State private var isPresented: Bool = false
+    @State var ticketToDisplay: ParkingTicket?
+
+    init(ticketList: [ParkingTicket])
+    {
+        self.ticketList = ticketList
+        UITableView.appearance().separatorStyle = .none
+        UITableViewCell.appearance().backgroundColor = .clear
+        UITableView.appearance().backgroundColor = .clear
     }
+
+    var body: some View
+    {
+        VStack
+        {
+            Text("Previous Parking Tickets")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .bold()
+                .foregroundColor(Color("primary"))
+
+            List
+            {
+                ForEach(ticketList) { ticket in
+
+                    TicketRow(parkingTicket: ticket)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets())
+                        .onTapGesture {
+                            self.ticketToDisplay = ticket
+                            self.isPresented.toggle()
+                        }
+                        .sheet(isPresented: self.$isPresented) { TicketDetails(ticket: ticket) }
+                }
+            }
+                .padding(-20)
+
+        }
+            .onAppear()
+        {
+            UITableView.appearance().backgroundColor = .clear
+            UITableViewCell.appearance().backgroundColor = .clear
+            UITableView.appearance().separatorStyle = .none
+            UITableView.appearance().separatorColor = .clear
+
+        }
+            .background(Color("mainBackground"))
+    }
+
 }
 
 struct HistorySwiftUIView_Previews: PreviewProvider
 {
-    static var previews: some View {
-        HistorySwiftUIView()
+    static var previews: some View
+    {
+        let ticketList: [ParkingTicket] = [ParkingTicket(email: "user@emailaddress.com",
+                                                         buildingCode: "12345",
+                                                         noOfHours: 12,
+                                                         licensePlate: "12AD78",
+                                                         hostSuite: "1305",
+                                                         location:
+                                                             Location(lat: 43.6532,
+                                                                      lon: -79.3832,
+                                                                      streetAddress: "123 Carlton Street",
+                                                                      city: "Toronto",
+                                                                      country: "Canada")
+            ),
+                                           ParkingTicket(email: "user2@emailaddress.com",
+                                                         buildingCode: "12345",
+                                                         noOfHours: 12,
+                                                         licensePlate: "12AD78",
+                                                         hostSuite: "1305",
+                                                         location:
+                                                             Location(lat: 43.653,
+                                                                      lon: -79.383,
+                                                                      streetAddress: "98 Carlton Street",
+                                                                      city: "Toronto",
+                                                                      country: "Canada")
+                                           )]
+
+        HistorySwiftUIView(ticketList: ticketList)
     }
 }

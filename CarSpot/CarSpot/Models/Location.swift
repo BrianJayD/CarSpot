@@ -22,18 +22,28 @@ struct Location: Codable, Identifiable
     {
         return CLLocationCoordinate2D(latitude: CLLocationDegrees(self.lat), longitude: CLLocationDegrees(self.lon))
     }
-    
+
     init()
     {
-        
+
     }
-    
+
     init(lat: Double, lon: Double, isCurrentLocation: Bool)
     {
         self.lat = lat
         self.lon = lon
         self.isCurrentLocation = isCurrentLocation
     }
-    
-    
+
+    init(lat: Double, lon: Double, streetAddress: String, city: String, country: String)
+    {
+        self.lat = lat
+        self.lon = lon
+        self.streetAddress = streetAddress
+        self.city = city
+        self.country = country
+        self.isCurrentLocation = false
+    }
+
+
 }
