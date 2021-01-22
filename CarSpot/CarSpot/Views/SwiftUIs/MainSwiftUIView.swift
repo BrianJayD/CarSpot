@@ -15,15 +15,21 @@ struct MainSwiftUIView: View
     @State private var cancellable: AnyCancellable?
     @State private var region = MKCoordinateRegion()
     @State var tracking: MapUserTrackingMode = MapUserTrackingMode.none
-    @State private var currentLocation: [Location] = [Location]()
+    @State private var locationList: [Location] = [Location]()
 
     @State var buildingCode: String = ""
     @State var suitNumber: String = ""
     @State var streetAddress: String = ""
     @State var noOfHoursSelection = 0
-    let noOfHoursList: [String] = ["1 Hr", "4 Hrs", "12 Hrs", "24 Hrs"]
+    let noOfHoursList: [String] = [ParkingHours.one.rawValue, ParkingHours.four.rawValue, ParkingHours.twelve.rawValue, ParkingHours.twentyfour.rawValue]
     @State var licensePlateSelection = 0
     let licensePlateList: [String] = ["V7T00M", "V6C9VM", "Al86HO"]
+    var licensePlate: String
+    {
+        return self.licensePlateList[self.licensePlateSelection]
+    }
+    @State var alertAddLicensePlate: Bool = false
+    @State var addLicensePlate: String = ""
 
     init()
     {
@@ -37,14 +43,14 @@ struct MainSwiftUIView: View
             self.region = MKCoordinateRegion(center: location?.coordinate ?? CLLocationCoordinate2D(),
                                              latitudinalMeters: 1000, longitudinalMeters: 1000)
 
-            if(self.currentLocation.count == 0)
+            if(self.locationList.count == 0)
             {
-                self.currentLocation.append(
+                self.locationList.append(
                     Location(lat: Double(location?.coordinate.latitude ?? 0) + 0.002,
                              lon: Double(location?.coordinate.longitude ?? 0) + 0.002,
                              isCurrentLocation: false))
 
-                self.currentLocation.append(
+                self.locationList.append(
                     Location(lat: Double(location?.coordinate.latitude ?? 0),
                              lon: Double(location?.coordinate.longitude ?? 0),
                              isCurrentLocation: true))
@@ -58,7 +64,7 @@ struct MainSwiftUIView: View
         {
             if (locationManager.location != nil)
             {
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: false, userTrackingMode: $tracking, annotationItems: currentLocation, annotationContent: { place in
+                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: false, userTrackingMode: $tracking, annotationItems: locationList, annotationContent: { place in
                     MapAnnotation(coordinate: place.coordinate) {
                         if (place.isCurrentLocation)
                         {
@@ -80,7 +86,7 @@ struct MainSwiftUIView: View
                                 Spacer(minLength: 5)
 
                                 Image("ic_nav_map")
-                                    .colorMultiply(Color("secondary"))
+                                    .colorMultiply(Color("youAreHerePin"))
                                     .shadow(color: Color("shadow"), radius: 2, x: 1, y: 1)
 
                                 Spacer(minLength: 30)
@@ -162,30 +168,62 @@ struct MainSwiftUIView: View
 
                                 HStack
                                 {
-                                    Picker("licensePlate", selection: $licensePlateSelection)
+                                    Picker(self.licensePlate, selection: self.$licensePlateSelection)
                                     {
                                         ForEach(0 ..< self.licensePlateList.count)
                                         {
                                             Text("\(self.licensePlateList[$0])")
                                         }
                                     }
-                                        .pickerStyle(SegmentedPickerStyle())
+                                        .pickerStyle(MenuPickerStyle())
 
-                                    Button(action:
-                                            {
-                                            //behavior
+                                    Spacer()
 
-                                    })
-                                    {
-                                        Image(systemName: "plus.circle.fill")
-                                            .foregroundColor(Color("textOnBackgroundSecondary"))
-                                    }
+                                    // add license plate
+//                                    Button(action:
+//                                            {
+//                                            let alert = UIAlertController(title: "Add License Plate", message: "Enter the license plate you would like to add.", preferredStyle: .alert)
+//                                            alert.addTextField ()
+//
+//                                            alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
+//
+//                                                if(alert!.textFields![0].checkLicensePlate(min: 2, max: 8))
+//                                                {
+//                                                    addLicensePlate = alert!.textFields![0].text!
+//                                                    self.licensePlateList.append(addLicensePlate)
+//                                                    print("License Plates: \(licensePlateList.count)")
+//                                                }
+//                                                else
+//                                                {
+//                                                    print("Invalid")
+//                                                    alert!.actions[1].isEnabled = false
+//                                                }
+//
+//
+//
+//                                            }))
+//
+//                                            UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
+//                                    })
+//                                    {
+//                                        Image(systemName: "plus.circle.fill")
+//                                            .foregroundColor(Color("textOnBackgroundSecondary"))
+//                                    }
                                 }
                             }
 
                             Button(action:
                                     {
-                                    //behavior
+                                    let ticket: ParkingTicket = ParkingTicket(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue) ?? "",
+                                                                              buildingCode: self.buildingCode,
+                                                                              noOfHours: ParkingHours.getIntValue(selection: self.noOfHoursSelection),
+                                                                              licensePlate: self.licensePlate,
+                                                                              hostSuite: self.suitNumber,
+                                                                              location: Location())
+
+                                    // add ticket to user
+
+                                    // save ticket to firestore
 
                             })
                             {

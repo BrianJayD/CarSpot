@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N5J-QV-VxE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uVX-XS-5nt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -13,23 +13,22 @@
         <scene sceneID="Fh3-md-fax">
             <objects>
                 <hostingController id="1AB-rV-d2L" customClass="LoginViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4uJ-es-K2N">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                    </button>
                     <navigationItem key="navigationItem" id="B5o-vy-IJt"/>
+                    <connections>
+                        <segue destination="uVX-XS-5nt" kind="show" identifier="LoginToMainSegua" id="SGu-gp-613"/>
+                        <segue destination="Xrh-ta-AMx" kind="showDetail" identifier="profileSegua" id="a31-4m-kxP"/>
+                    </connections>
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddv-2q-Lf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="-708"/>
+            <point key="canvasLocation" x="1900" y="-724"/>
         </scene>
-        <!--Login View Controller-->
-        <scene sceneID="eRj-zC-OTL">
+        <!--History-->
+        <scene sceneID="N2n-ej-PVB">
             <objects>
-                <viewController id="N5J-QV-VxE" customClass="LoginViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vee-vB-WRg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="hNu-YS-7nN" customClass="HistoryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cLj-7o-bmy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uzt-gc-xAV">
@@ -75,50 +74,47 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Cmc-X2-bnt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <connections>
-                        <outlet property="tfEmail" destination="PjW-uE-d75" id="9SX-pN-A8Z"/>
-                        <outlet property="tfPassword" destination="uzt-gc-xAV" id="goF-ZH-9Jl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="klM-vd-hjo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1900.0000000000002" y="-708.48214285714278"/>
-        </scene>
-        <!--Sign Up View Controller-->
-        <scene sceneID="sN5-CB-5MA">
-            <objects>
-                <hostingController storyboardIdentifier="CreateAccountHC" id="I8A-aa-fyb" customClass="SignUpViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Gds-mV-L00"/>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0f0-Yo-6YB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2855" y="-708"/>
-        </scene>
-        <!--History-->
-        <scene sceneID="N2n-ej-PVB">
-            <objects>
-                <viewController id="hNu-YS-7nN" customClass="HistoryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cLj-7o-bmy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="MbB-I0-tx6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="mainBackground"/>
+                        <constraints>
+                            <constraint firstItem="MbB-I0-tx6" firstAttribute="trailing" secondItem="WFW-Vq-niD" secondAttribute="trailing" id="V1Z-he-2Wp"/>
+                            <constraint firstItem="MbB-I0-tx6" firstAttribute="bottom" secondItem="WFW-Vq-niD" secondAttribute="bottom" id="jmQ-kE-YQr"/>
+                            <constraint firstItem="WFW-Vq-niD" firstAttribute="top" secondItem="MbB-I0-tx6" secondAttribute="top" id="n83-Wu-iSX"/>
+                            <constraint firstItem="WFW-Vq-niD" firstAttribute="leading" secondItem="MbB-I0-tx6" secondAttribute="leading" id="vrU-cN-N5E"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="car.2" catalog="system" selectedImage="car.2.fill" id="0Fq-PT-lvN"/>
+                    <connections>
+                        <outlet property="tableView" destination="WFW-Vq-niD" id="cEw-92-7Lf"/>
+                        <segue destination="c2P-LI-utu" kind="show" identifier="ticketDetailsSegua" id="Ow8-Ez-JIH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfy-yg-whb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="799"/>
+            <point key="canvasLocation" x="1900.0000000000002" y="798.88392857142856"/>
+        </scene>
+        <!--Ticket Details View Controller-->
+        <scene sceneID="17w-yX-GAc">
+            <objects>
+                <viewController id="c2P-LI-utu" customClass="TicketDetailsViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6z3-JE-81F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Vit-ch-7Xk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I2H-4u-fLq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1T-aM-91j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="1549"/>
         </scene>
         <!--Profile-->
         <scene sceneID="s5S-M2-pPe">
             <objects>
                 <viewController id="Xrh-ta-AMx" customClass="ProfileViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Skx-rf-2hB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FjZ-um-4oW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -134,7 +130,7 @@
             <objects>
                 <viewController id="F7U-Xb-6Un" customClass="MainViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jc9-zK-dRd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nuh-t9-liL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -190,16 +186,16 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uVX-XS-5nt" kind="relationship" relationship="rootViewController" id="Mds-ls-joy"/>
+                        <segue destination="1AB-rV-d2L" kind="relationship" relationship="rootViewController" id="8db-6k-yHC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6S-HH-Pwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="44"/>
+            <point key="canvasLocation" x="970" y="-724"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="K4w-PW-edD"/>
+        <segue reference="adL-m6-xOi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
     <resources>
@@ -209,8 +205,14 @@
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <namedColor name="btnBorderColor">
-            <color red="0.3880000114440918" green="0.74900001287460327" blue="0.90600001811981201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="cardBackground">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cardOutline">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainBackground">
+            <color red="0.92500001192092896" green="0.92500001192092896" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="navBackground">
             <color red="0.063000001013278961" green="0.43900001049041748" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,11 +220,20 @@
         <namedColor name="primary">
             <color red="0.10199999809265137" green="0.31400001049041748" blue="0.45500001311302185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="primaryLight">
+            <color red="0.14900000393390656" green="0.45100000500679016" blue="0.65100002288818359" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondary">
+            <color red="0.063000001013278961" green="0.43900001049041748" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="tabSelected">
             <color red="0.82400000095367432" green="0.82700002193450928" blue="0.60799998044967651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="tabUnselected">
             <color red="0.53299999237060547" green="0.82700002193450928" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textOnBackgroundSecondary">
+            <color red="0.25099998712539673" green="0.25099998712539673" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="transparent">
             <color red="0.92500001192092896" green="0.92500001192092896" blue="0.92500001192092896" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
