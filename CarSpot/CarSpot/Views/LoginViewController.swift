@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var tfPassword: UITextField!
     
     let profileController = ProfileController()
+    let licensePlateController = LicensePlateController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,24 @@ class LoginViewController: UIViewController {
 //        self.addSubSwiftUIView(swiftUIView: LoginSwiftUIView())
         profileController.getAllAccounts()
         
+        //removes navigation back button to entry point
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
+        profileController.getAllAccounts()
+        licensePlateController.getAllLicensePlate()
         
     }
     
     
     @IBAction func logIn(_ sender: Any) {
         
+//        print(profileController.checkCredentials(email: tfEmail.text
+//                                                ?? "", password: tfPassword.text ?? ""))
+        
         if(profileController.checkCredentials(email: tfEmail.text ?? "", password: tfPassword.text ?? "")) {
             print("Log In Successful")
-            //self.performSegue(withIdentifier: "ToMain", sender: self)
+
+            performSegue(withIdentifier: "mainPageSeguaTemp", sender: nil)
         } else {
             print("Log In Failed")
         }

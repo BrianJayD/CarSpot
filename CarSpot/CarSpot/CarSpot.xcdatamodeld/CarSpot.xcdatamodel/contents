@@ -7,6 +7,9 @@
             <uniquenessConstraint>
                 <constraint value="plateNumber"/>
             </uniquenessConstraint>
+            <uniquenessConstraint>
+                <constraint value="email"/>
+            </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
     <entity name="Profile" representedClassName="Profile" syncable="YES" codeGenerationType="class">
@@ -22,16 +25,18 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Ticket" representedClassName="Ticket" syncable="YES" codeGenerationType="class">
+        <attribute name="buildingCode" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="length" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hostSuite" optional="YES" attributeType="String"/>
+        <attribute name="licensePlate" optional="YES" attributeType="String"/>
         <attribute name="location" optional="YES" attributeType="String"/>
-        <attribute name="plateNumber" optional="YES" attributeType="String"/>
-        <attribute name="price" optional="YES" attributeType="String"/>
-        <attribute name="ticketNumber" optional="YES" attributeType="String"/>
+        <attribute name="noOfHours" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ticketID" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="LicensePlate" positionX="135.9152221679688" positionY="-18.2197265625" width="128" height="59"/>
         <element name="Profile" positionX="-66.3990478515625" positionY="-45.27969360351562" width="128" height="118"/>
-        <element name="LicensePlate" positionX="135.9152221679688" positionY="-18.2197265625" width="128" height="73"/>
-        <element name="Ticket" positionX="54" positionY="18" width="128" height="119"/>
+        <element name="Ticket" positionX="54" positionY="18" width="128" height="149"/>
     </elements>
 </model>

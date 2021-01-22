@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="Cal-vz-WJR" customClass="MainEntryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UCs-PM-yLU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="jhc-AU-Eg5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,7 +49,7 @@
             <objects>
                 <viewController id="fov-e3-KDx" customClass="LoginViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dGG-Np-ygS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q31-Gs-EXC">
@@ -65,7 +65,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <segue destination="uVX-XS-5nt" kind="show" identifier="mainPageSeguaTemp" id="hVq-Er-EhI"/>
+                                    <action selector="logIn:" destination="fov-e3-KDx" eventType="touchUpInside" id="P5b-WU-O7o"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arY-w0-5KD">
@@ -85,6 +85,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="dWY-TZ-KR2"/>
+                    <connections>
+                        <outlet property="tfEmail" destination="arY-w0-5KD" id="1gL-lz-3vs"/>
+                        <outlet property="tfPassword" destination="eyU-Ay-AgB" id="Fbx-Ju-xGU"/>
+                        <segue destination="uVX-XS-5nt" kind="show" identifier="mainPageSeguaTemp" id="Ymy-Ww-ShV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOX-fF-hWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +100,7 @@
             <objects>
                 <viewController id="hNu-YS-7nN" customClass="HistoryViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cLj-7o-bmy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WFW-Vq-niD">
@@ -262,7 +267,7 @@
             <objects>
                 <viewController id="c2P-LI-utu" customClass="TicketDetailsViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6z3-JE-81F">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Vit-ch-7Xk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -278,7 +283,7 @@
             <objects>
                 <viewController id="Xrh-ta-AMx" customClass="ProfileViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Skx-rf-2hB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FjZ-um-4oW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -295,7 +300,7 @@
             <objects>
                 <viewController id="F7U-Xb-6Un" customClass="MainViewController" customModule="CarSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jc9-zK-dRd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nuh-t9-liL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -356,7 +361,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hVq-Er-EhI"/>
+        <segue reference="Ymy-Ww-ShV"/>
         <segue reference="01Q-Gh-twi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
