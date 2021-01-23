@@ -32,18 +32,7 @@ struct TicketDetails: View
             self.region = MKCoordinateRegion(center: location?.coordinate ?? CLLocationCoordinate2D(),
                                              latitudinalMeters: 1000, longitudinalMeters: 1000)
 
-            if(self.locationList.count == 0)
-            {
-                self.locationList.append(
-                    Location(lat: Double(location?.coordinate.latitude ?? 0),
-                             lon: Double(location?.coordinate.longitude ?? 0),
-                             isCurrentLocation: true))
-
-                self.locationList.append(
-                    Location(lat: Double(parkingTicket.location.lat),
-                             lon: Double(parkingTicket.location.lon),
-                             isCurrentLocation: false))
-            }
+           // add location
         }
     }
 
@@ -52,7 +41,7 @@ struct TicketDetails: View
         ZStack
         {
             Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: false, userTrackingMode: $tracking, annotationItems: locationList, annotationContent: { place in
-                MapAnnotation(coordinate: place.coordinate) {
+                MapAnnotation(coordinate: place.coordinates) {
                     if (place.isCurrentLocation)
                     {
                         VStack {
@@ -88,8 +77,7 @@ struct TicketDetails: View
             })
                 .onAppear {
                     setCurrentLocation()
-                }
-                .ignoresSafeArea()
+            }
 
             VStack
             {
@@ -170,13 +158,12 @@ struct TicketDetails: View
                     .padding(10)
             }
                 .padding(.top, 10)
-                .padding(.bottom, 30)
                 .background(Rectangle()
                     .foregroundColor(.clear)
                     .background(LinearGradient(gradient: Gradient(colors: [Color("transparent"), Color("mainBackground")]),
                                                startPoint: UnitPoint(x: 0.5, y: 0.25),
                                                endPoint: UnitPoint(x: 0.5, y: 0.75))))
-                .ignoresSafeArea()
+
         }
     }
 
@@ -187,20 +174,22 @@ struct TicketDetails_Previews: PreviewProvider
     static var previews: some View
     {
         let parkingTicket: ParkingTicket =
-            ParkingTicket(email: "user@emailaddress.com",
+            ParkingTicket(id: UUID(),
+                          email: "user@emailaddress.com",
                           buildingCode: "12345",
                           noOfHours: 12,
                           licensePlate: "12AD78",
                           hostSuite: "1305",
                           location:
-                              Location(lat: 43.6532,
+                              Location(id: UUID(),
+                                       lat: 43.6532,
                                        lon: -79.3832,
                                        streetAddress: "123 Carlton Street",
                                        city: "Toronto",
-                                       country: "Canada")
+                                       country: "Canada"),
+                          date: Date()
             )
 
         TicketDetails(ticket: parkingTicket)
-
     }
 }

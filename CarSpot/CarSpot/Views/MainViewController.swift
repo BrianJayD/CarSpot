@@ -15,6 +15,8 @@ class MainViewController: UIViewController
     {
         super.viewDidLoad()
 
+        UserDefaults.standard.set(true, forKey: Login.LOGGED_IN.rawValue)
+        
         addSubSwiftUIView(swiftUIView: MainSwiftUIView())
     }
 

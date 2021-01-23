@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct SignUpSwiftUIView: View {
-    @State private var tfEmail:String = ""
-    @State private var tfPassword:String = ""
-    @State private var tfPhone:String = ""
-    @State private var tfFirstName:String = ""
-    @State private var tfLastName:String = ""
-    @State private var tfConfirmation:String = ""
-    @State private var tfPlates:String = ""
-    
+    @State private var tfEmail: String = ""
+    @State private var tfPassword: String = ""
+    @State private var tfPhone: String = ""
+    @State private var tfFirstName: String = ""
+    @State private var tfLastName: String = ""
+    @State private var tfConfirmation: String = ""
+    @State private var tfPlates: String = ""
+
     let profileController = ProfileController()
-    
+
     @Environment(\.presentationMode) var presentationMode
-    
+
     var body: some View {
-        
+
         NavigationView {
             VStack {
                 Form {
                     Section(header: Text("Account Information")) {
-                        
+
                         VStack {
                             Text("Enter Name:")
-                            HStack{
+                            HStack {
                                 TextField("First Name", text: $tfFirstName)
                                 TextField("Last Name", text: $tfLastName)
                             }
                         }
-    
-                        VStack{
+
+                        VStack {
                             Text("Enter your phone number:")
                             TextField("Phone Number", text: $tfPhone)
                                 .multilineTextAlignment(.center)
@@ -64,7 +64,7 @@ struct SignUpSwiftUIView: View {
                 }
                 //TODO: Error msg display
                 Text("")
-                
+
 //                Button(action: {
 //                    print("Adding new License Plate")
 //                }, label: {
@@ -72,17 +72,17 @@ struct SignUpSwiftUIView: View {
 //                    Image(systemName: "plus.circle.fill")
 //                        .foregroundColor(Color("textOnBackgroundSecondary"))
 //                }).padding()
-                
+
                 Button(action: {
                     print("\(tfEmail), \(tfPassword)")
-                    let status = profileController.insertAccount(email: tfEmail, password: tfPassword, firstName: tfFirstName, lastName: tfLastName, phoneNumber: Int(tfPhone)!)
+                    let status = profileController.insertAccount(email: tfEmail, password: tfPassword, firstName: tfFirstName, lastName: tfLastName, phoneNumber: Int(tfPhone)!, licensePlate: tfPlates)
                     print(status)
                     self.presentationMode.wrappedValue.dismiss()
 
                 }, label: {
                     Text("Create Account")
                 }).padding()
-                
+
             }.navigationBarTitle("New Account")
         }
     }

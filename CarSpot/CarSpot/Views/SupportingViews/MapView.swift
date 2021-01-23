@@ -20,7 +20,7 @@ struct MapView: UIViewRepresentable
 
     func updateUIView(_ uiView: UIViewType, context: Context)
     {
-     //   let coordinates
+        //   let coordinates
     }
 
 
@@ -30,7 +30,8 @@ struct MapView: UIViewRepresentable
 struct MapView_Previews: PreviewProvider
 {
     static var previews: some View {
-        MapView(location: Location(lat: 43.6532,
+        MapView(location: Location(id: UUID(),
+                                   lat: 43.6532,
                                    lon: -79.3832,
                                    streetAddress: "123 Carlton Street",
                                    city: "Toronto",

@@ -14,8 +14,13 @@ class MainEntryViewController: UIViewController
     {
         super.viewDidLoad()
 
-        UserDefaults.standard.setValue(false, forKey: Login.LOGGED_IN.rawValue)
+        //  UserDefaults.standard.setValue(false, forKey: Login.LOGGED_IN.rawValue)
 
+        loadStartingPage()
+    }
+
+    override func viewDidAppear(_ animated: Bool)
+    {
         loadStartingPage()
     }
 

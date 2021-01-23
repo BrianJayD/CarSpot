@@ -37,6 +37,8 @@ class TabBarController: UITabBarController
     @objc func logout(sender: AnyObject)
     {
         defaults.set(nil, forKey: Login.CURRENT_USER.rawValue)
+        defaults.set(false, forKey: Login.LOGGED_IN.rawValue)
+        // prepare segua
         _ = navigationController?.popToRootViewController(animated: true)
     }
 }

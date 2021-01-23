@@ -18,7 +18,7 @@ class ParkingTicket: Codable, Identifiable
     var location: Location    // street address, lat and lng
     var date: Date            // system date
 
-    init(email: String, buildingCode: String, noOfHours: Int, licensePlate: String, hostSuite: String, location: Location)
+    init(id: UUID, email: String, buildingCode: String, noOfHours: Int, licensePlate: String, hostSuite: String, location: Location, date: Date)
     {
         self.email = email
         self.buildingCode = buildingCode
@@ -26,7 +26,7 @@ class ParkingTicket: Codable, Identifiable
         self.licensePlate = licensePlate
         self.hostSuite = hostSuite
         self.location = location
-        self.date = Date()
+        self.date = date
     }
     
     var dateString: String

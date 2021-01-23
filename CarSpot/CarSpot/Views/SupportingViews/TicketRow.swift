@@ -73,18 +73,20 @@ struct TicketItemSwiftUIView_Previews: PreviewProvider
     static var previews: some View
     {
         let parkingTicket: ParkingTicket =
-            ParkingTicket(email: "user@emailaddress.com",
+            ParkingTicket(id: UUID(),
+                          email: "user@emailaddress.com",
                           buildingCode: "12345",
                           noOfHours: 12,
                           licensePlate: "12AD78",
                           hostSuite: "1305",
                           location:
-                              Location(lat: 43.6532,
+                              Location(id: UUID(),
+                                       lat: 43.6532,
                                        lon: -79.3832,
                                        streetAddress: "123 Carlton Street",
                                        city: "Toronto",
-                                       country: "Canada")
-            )
+                                       country: "Canada"),
+                          date: Date())
 
         TicketRow(parkingTicket: parkingTicket)
     }

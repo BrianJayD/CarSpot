@@ -11,70 +11,61 @@ import UIKit
 //import SwiftUI
 //import FirebaseFirestore
 
-class LicensePlateController {
-    
-    private var moc:NSManagedObjectContext
+class LicensePlateController
+{
+
+    private var moc: NSManagedObjectContext
     let fetchRequest = NSFetchRequest<LicensePlate>(entityName: "LicensePlate")
-    
+
     init() {
         self.moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
-    
-    func insertLicensePlate(email:String, plateNumber:String) -> InsertStatus {
+
+    func insertLicensePlate(email: String, plateNumber: String) -> InsertStatus
+    {
         do {
             let newLicensePlate = NSEntityDescription.insertNewObject(forEntityName: "LicensePlate", into: moc) as! LicensePlate
-            
+
             newLicensePlate.email = email
             newLicensePlate.plateNumber = plateNumber
-            
+
             try moc.save()
-            
+
             return InsertStatus.success
-            
-        } catch let error as NSError {
+
+        }
+        catch let error as NSError
+        {
             print(#function, "Error occured during insert")
             return InsertStatus.failed
         }
     }
-    
-    func getAllLicensePlate() {
+
+    // get a list of all license plates for a specific user
+    func getAllLicensePlatesForUser(email: String) -> [String]
+    {
         do {
             let result = try moc.fetch(fetchRequest)
             let licensePlates = result as [LicensePlate]
-            
-            for plate in licensePlates {
-                print("Email: \(plate.email) Plate: \(plate.plateNumber)")
+
+            var licensePlatesToReturn: [String] = [String]()
+
+            for plate in licensePlates
+            {
+                if(plate.email == email)
+                {
+                    licensePlatesToReturn.append(plate.plateNumber!)
+                }
+//                print("Email: \(plate.email) Plate: \(plate.plateNumber)")
             }
-            
+            return licensePlatesToReturn
+
         } catch let error {
             print(#function, "Couldn't fetch records", error.localizedDescription)
         }
+        return [String]()
     }
-    
-    func searchLicensePlate(email:String) -> LicensePlate? {
-        let fetchRequest = NSFetchRequest<LicensePlate>(entityName: "LicensePlate")
-        
-        //equivalent to a WHERE statement
-        let predicate = NSPredicate(format: "email == %@", email)
-        fetchRequest.predicate = predicate
-        
-        do {
-            let result = try moc.fetch(fetchRequest).first
-            if result != nil {
-                print(#function, "Matching account found wwith email \(email)")
-                
-                let licensePlate = result as! LicensePlate
-                return licensePlate
-                
-            }
-        } catch let error {
-            print(#function, error.localizedDescription)
-        }
-        
-        print(#function, "No account found with \(email)")
-        return nil
-    }
-    
+
     //TODO
     //MARK: This is from my experiment to get firebase to work.
 //    @Published var profileList = [Profile]
@@ -93,5 +84,5 @@ class LicensePlateController {
 //            print(#function, "Error inserting new profile")
 //        }
 //    }
-    
+
 }

@@ -1,10 +1,3 @@
-//
-//  Int64.swift
-//  WhatTOdo
-//
-//  Created by Daryl Dyck on 2020-11-30.
-//
-
 import Foundation
 
 extension Int64
