@@ -1,9 +1,4 @@
-//
-//  UIView.swift
-//  WhatTOdo
-//
-//  Created by Daryl Dyck on 2020-12-02.
-//
+
 
 import UIKit
 
@@ -95,3 +90,4 @@ extension UIView
         }
     }
 }
+

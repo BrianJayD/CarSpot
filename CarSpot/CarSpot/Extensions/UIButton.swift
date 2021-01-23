@@ -1,10 +1,4 @@
-//
-//  UIButton.swift
-//  Day2Exercise
-//
-//  Created by Daryl Dyck on 2020-11-19.
-//  Copyright © 2020 Daryl Dyck. All rights reserved.
-//
+
 
 import UIKit
 import ObjectiveC

@@ -1,9 +1,4 @@
-//
-//  UITextField.swift
-//  WhatTOdo
-//
-//  Created by Daryl Dyck on 2020-12-01.
-//
+
 
 import UIKit
 import Foundation

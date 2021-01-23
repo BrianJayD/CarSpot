@@ -11,6 +11,13 @@ import Combine
 
 struct MainSwiftUIView: View
 {
+    let profileController = ProfileController()
+    let ticketController = TicketController()
+
+    var currentUser: User?
+    let geoCoder = CLGeocoder()
+    @State var currentLocation = Location()
+
     @ObservedObject private var locationManager = LocationManager()
     @State private var cancellable: AnyCancellable?
     @State private var region = MKCoordinateRegion()
@@ -23,16 +30,26 @@ struct MainSwiftUIView: View
     @State var noOfHoursSelection = 0
     let noOfHoursList: [String] = [ParkingHours.one.rawValue, ParkingHours.four.rawValue, ParkingHours.twelve.rawValue, ParkingHours.twentyfour.rawValue]
     @State var licensePlateSelection = 0
-    let licensePlateList: [String] = ["V7T00M", "V6C9VM", "Al86HO"]
+    let licensePlateList: [String]
     var licensePlate: String
     {
-        return self.licensePlateList[self.licensePlateSelection]
+        if(licensePlateList.count >= self.licensePlateSelection + 1)
+        {
+            return self.licensePlateList[self.licensePlateSelection]
+        }
+        else
+        {
+            return "BNMETY"
+        }
     }
     @State var alertAddLicensePlate: Bool = false
     @State var addLicensePlate: String = ""
 
     init()
     {
+        currentUser = profileController.getUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!)
+        licensePlateList = profileController.getUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!).licensPlates
+
         UITableView.appearance().backgroundColor = .clear
     }
 
@@ -40,20 +57,23 @@ struct MainSwiftUIView: View
     {
         cancellable = locationManager.$location.sink { (location) in
 
-            self.region = MKCoordinateRegion(center: location?.coordinate ?? CLLocationCoordinate2D(),
-                                             latitudinalMeters: 1000, longitudinalMeters: 1000)
+            getNewLocation(lat: Double(location!.coordinate.latitude), lon: Double(location!.coordinate.longitude))
 
-            if(self.locationList.count == 0)
+            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            self.region = MKCoordinateRegion(center: location!.coordinate, span: span)
+
+            // add locations to pin on map (initial)
+            if (self.locationList.count == 0)
             {
-                self.locationList.append(
-                    Location(lat: Double(location?.coordinate.latitude ?? 0) + 0.002,
-                             lon: Double(location?.coordinate.longitude ?? 0) + 0.002,
-                             isCurrentLocation: false))
+                for location in currentUser!.parkingTickets
+                {
+                    self.locationList.append(location.location)
+                }
 
-                self.locationList.append(
-                    Location(lat: Double(location?.coordinate.latitude ?? 0),
-                             lon: Double(location?.coordinate.longitude ?? 0),
-                             isCurrentLocation: true))
+                print("Current Location: \(currentLocation.streetAddress)")
+
+                // add current location
+                self.locationList.append(currentLocation)
             }
         }
     }
@@ -65,13 +85,14 @@ struct MainSwiftUIView: View
             if (locationManager.location != nil)
             {
                 Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: false, userTrackingMode: $tracking, annotationItems: locationList, annotationContent: { place in
-                    MapAnnotation(coordinate: place.coordinate) {
+                    MapAnnotation(coordinate: place.coordinates) {
                         if (place.isCurrentLocation)
                         {
+                            // mark pin for current location
                             VStack {
                                 VStack
                                 {
-                                    Text("Current Location")
+                                    Text(place.streetAddress)
                                 }
                                     .padding(.top, 5)
                                     .padding(.bottom, 5)
@@ -94,15 +115,16 @@ struct MainSwiftUIView: View
                         }
                         else
                         {
-                            Image(systemName: "mappin")
+                            // mark pins for all previous tickets
+                            Image(systemName: "car.circle")
                                 .foregroundColor(Color("parkingPin"))
                         }
                     }
                 })
                     .onAppear {
                         setCurrentLocation()
-                    }
-                    .ignoresSafeArea()
+                }
+                //  .ignoresSafeArea()
             }
             else
             {
@@ -211,41 +233,94 @@ struct MainSwiftUIView: View
 //                                    }
                                 }
                             }
-
-                            Button(action:
-                                    {
-                                    let ticket: ParkingTicket = ParkingTicket(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue) ?? "",
-                                                                              buildingCode: self.buildingCode,
-                                                                              noOfHours: ParkingHours.getIntValue(selection: self.noOfHoursSelection),
-                                                                              licensePlate: self.licensePlate,
-                                                                              hostSuite: self.suitNumber,
-                                                                              location: Location())
-
-                                    // add ticket to user
-
-                                    // save ticket to firestore
-
-                            })
-                            {
-                                HStack
-                                {
-                                    Spacer()
-                                    Text("Purchase Parking Ticket")
-                                        .foregroundColor(Color("secondaryLight"))
-                                    Spacer()
-                                }
-                            }
-                                .padding(.top, 7)
-                                .padding(.bottom, 7)
-                                .background(RoundedRectangle(cornerRadius: 5)
-                                    .stroke(Color("primaryLight"), lineWidth: 1))
-                                .padding(.top, 7)
-                                .padding(.bottom, 7)
                         }
                     }
                         .background(Color("transparent"))
                         .padding(.top, -18)
-                        .frame(height: 285)
+                        .frame(height: 220)
+
+                    HStack
+                    {
+                        Spacer(minLength: 20)
+
+                        Button(action:
+                                {
+                                    // TODO - update temp values...
+                                var newLocation = Location(id: UUID(),
+                                                           lat: 43.67320576928311,
+                                                           lon: -79.32873082962467,
+                                                           streetAddress: "327 Greenwood Ave",
+                                                           city: self.locationList.last!.city,
+                                                           country: self.locationList.last!.country)
+                                newLocation.isCurrentLocation = true
+
+                                self.locationList.append(newLocation)
+                                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                                self.region = MKCoordinateRegion(center: newLocation.coordinates, span: span)
+                        })
+                        {
+                            HStack
+                            {
+                                Spacer()
+                                Text("Update Map")
+                                    .foregroundColor(Color("secondaryLight"))
+                                Spacer()
+                            }
+                        }
+                            .padding(.top, 7)
+                            .padding(.bottom, 7)
+                            .background(RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color("primaryLight"), lineWidth: 1))
+                            .padding(.top, 7)
+                            .padding(.bottom, 7)
+
+                        Spacer()
+
+                        Button(action:
+                                {
+                                let id = UUID()
+                                let location = Location(id: id,
+                                                        lat: self.locationList.last!.lat,
+                                                        lon: self.locationList.last!.lon,
+                                                        streetAddress: self.locationList.last!.streetAddress,
+                                                        city: self.locationList.last!.city,
+                                                        country: self.locationList.last!.country)
+
+                                let ticket: ParkingTicket =
+                                    ParkingTicket(id: id,
+                                                  email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue) ?? "",
+                                                  buildingCode: self.buildingCode,
+                                                  noOfHours: ParkingHours.getIntValue(selection: self.noOfHoursSelection),
+                                                  licensePlate: self.licensePlate,
+                                                  hostSuite: self.suitNumber,
+                                                  location: location,
+                                                  date: Date())
+
+                                // save Ticket to coreData
+                                ticketController.insertTicket(ticket: ticket)
+                        })
+                        {
+                            HStack
+                            {
+                                Spacer()
+                                Text("Purchase Ticket")
+                                    .foregroundColor(Color("secondaryLight"))
+                                Spacer()
+                            }
+                        }
+                            .padding(.top, 7)
+                            .padding(.bottom, 7)
+                            .background(RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color("primaryLight"), lineWidth: 1))
+                            .padding(.top, 7)
+                            .padding(.bottom, 7)
+
+                        Spacer(minLength: 20)
+
+                    }
+
+
+
                 }
                     .padding(.top, 10)
                     .padding(.bottom, 10)
@@ -267,4 +342,61 @@ struct MainSwiftUIView_Previews: PreviewProvider
     {
         MainSwiftUIView()
     }
+}
+
+extension MainSwiftUIView
+{
+    func getNewLocation(lat: Double, lon: Double)
+    {
+        self.currentLocation.isCurrentLocation = true
+        self.currentLocation.lat = lat
+        self.currentLocation.lon = lon
+        self.currentLocation.streetAddress = "Current Location"
+
+        let location: CLLocation = CLLocation(latitude: lat, longitude: lon)
+
+        self.geoCoder.reverseGeocodeLocation(location) { (placemark, error) in
+
+            self.setCurrentLocation(placemarks: placemark, error: error)
+
+//            let locationArray = [
+//                Location(name: address, coordinates: CLLocationCoordinate2D(latitude: Double(self.latTextField.text!)!, longitude: Double(self.longTextField.text!)!))]
+//
+//            self.displayMarker(locations: locationArray)
+        }
+    }
+
+    func setCurrentLocation(placemarks: [CLPlacemark]?, error: Error?)
+    {
+        if (error != nil)
+        {
+            print("error")
+        }
+        else
+        {
+            if let placemarks = placemarks, let placemark = placemarks.first
+            {
+                var addressString: String = ""
+
+                if placemark.locality != nil
+                {
+                    addressString = addressString + placemark.locality!
+                    self.currentLocation.city = placemark.locality!
+                }
+                if placemark.country != nil
+                {
+                    addressString = addressString + placemark.country! + ", "
+                    self.currentLocation.country = placemark.country!
+                }
+
+                print("Address: \(addressString)")
+
+            }
+            else
+            {
+                print("error")
+            }
+        }
+    }
+
 }

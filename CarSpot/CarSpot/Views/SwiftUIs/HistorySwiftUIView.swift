@@ -25,10 +25,10 @@ struct HistorySwiftUIView: View
     {
         VStack
         {
-            Text("Previous Parking Tickets")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                .bold()
-                .foregroundColor(Color("primary"))
+//            Text("Previous Parking Tickets")
+//                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+//                .bold()
+//                .foregroundColor(Color("primary"))
 
             List
             {
@@ -44,7 +44,6 @@ struct HistorySwiftUIView: View
                         .sheet(isPresented: self.$isPresented) { TicketDetails(ticket: ticket) }
                 }
             }
-                .padding(-20)
 
         }
             .onAppear()
@@ -55,7 +54,10 @@ struct HistorySwiftUIView: View
             UITableView.appearance().separatorColor = .clear
 
         }
+
+
             .background(Color("mainBackground"))
+            .navigationTitle("Previous Parking Tickets")
     }
 
 }
@@ -64,30 +66,34 @@ struct HistorySwiftUIView_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        let ticketList: [ParkingTicket] = [ParkingTicket(email: "user@emailaddress.com",
+        let ticketList: [ParkingTicket] = [ParkingTicket(id: UUID(),
+                                                         email: "user@emailaddress.com",
                                                          buildingCode: "12345",
                                                          noOfHours: 12,
                                                          licensePlate: "12AD78",
                                                          hostSuite: "1305",
                                                          location:
-                                                             Location(lat: 43.6532,
+                                                             Location(id: UUID(),
+                                                                      lat: 43.6532,
                                                                       lon: -79.3832,
                                                                       streetAddress: "123 Carlton Street",
                                                                       city: "Toronto",
-                                                                      country: "Canada")
-            ),
-                                           ParkingTicket(email: "user2@emailaddress.com",
+                                                                      country: "Canada"),
+                                                         date: Date()),
+
+                                           ParkingTicket(id: UUID(),
+                                                         email: "user2@emailaddress.com",
                                                          buildingCode: "12345",
                                                          noOfHours: 12,
                                                          licensePlate: "12AD78",
                                                          hostSuite: "1305",
                                                          location:
-                                                             Location(lat: 43.653,
+                                                             Location(id: UUID(), lat: 43.653,
                                                                       lon: -79.383,
                                                                       streetAddress: "98 Carlton Street",
                                                                       city: "Toronto",
-                                                                      country: "Canada")
-                                           )]
+                                                                      country: "Canada"),
+                                                         date: Date())]
 
         HistorySwiftUIView(ticketList: ticketList)
     }

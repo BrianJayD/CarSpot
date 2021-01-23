@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct Location: Codable, Identifiable
+struct Location: Codable, Identifiable, Equatable
 {
     var id = UUID()
     var lat: Double = 0
@@ -18,7 +18,7 @@ struct Location: Codable, Identifiable
     var country: String = ""
     var isCurrentLocation: Bool = false
 
-    var coordinate: CLLocationCoordinate2D
+    var coordinates: CLLocationCoordinate2D
     {
         return CLLocationCoordinate2D(latitude: CLLocationDegrees(self.lat), longitude: CLLocationDegrees(self.lon))
     }
@@ -28,14 +28,15 @@ struct Location: Codable, Identifiable
 
     }
 
-    init(lat: Double, lon: Double, isCurrentLocation: Bool)
+    init(lat: Double, lon: Double, streetAddress: String, isCurrentLocation: Bool)
     {
         self.lat = lat
         self.lon = lon
         self.isCurrentLocation = isCurrentLocation
+        self.streetAddress = streetAddress
     }
-
-    init(lat: Double, lon: Double, streetAddress: String, city: String, country: String)
+    
+    init(id: UUID, lat: Double, lon: Double, streetAddress: String, city: String, country: String)
     {
         self.lat = lat
         self.lon = lon

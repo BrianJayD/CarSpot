@@ -10,16 +10,18 @@
 		025F2DE325B808820063DDCF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F2DE225B808820063DDCF /* UIViewController.swift */; };
 		02A0759F25BB3E5500129803 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0759E25BB3E5500129803 /* ProfileController.swift */; };
 		02A075A225BB3E5E00129803 /* LicensePlateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A075A125BB3E5E00129803 /* LicensePlateController.swift */; };
-		02A075A625BB43A200129803 /* SignUpSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A075A525BB43A200129803 /* SignUpSwiftUIView.swift */; };
 		02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5325B4BC14005CE759 /* AppDelegate.swift */; };
 		02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5525B4BC14005CE759 /* SceneDelegate.swift */; };
 		02C32F5B25B4BC14005CE759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F5925B4BC14005CE759 /* Main.storyboard */; };
 		02C32F5E25B4BC14005CE759 /* CarSpot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02C32F5C25B4BC14005CE759 /* CarSpot.xcdatamodeld */; };
 		02C32F6025B4BC18005CE759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F5F25B4BC18005CE759 /* Assets.xcassets */; };
 		02C32F6325B4BC18005CE759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02C32F6125B4BC18005CE759 /* LaunchScreen.storyboard */; };
+		E132D14025BB6C97007867E5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132D13F25BB6C97007867E5 /* GradientView.swift */; };
+		E135125D25BC726300A98B71 /* AddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E135125C25BC726300A98B71 /* AddressController.swift */; };
 		E138DB8725BB1405003BEEDC /* TicketDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DB8625BB1405003BEEDC /* TicketDetailsViewController.swift */; };
-		E138DBA725BB2468003BEEDC /* ParkingTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DBA425BB2468003BEEDC /* ParkingTicketController.swift */; };
+		E138DBA725BB2468003BEEDC /* TicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DBA425BB2468003BEEDC /* TicketController.swift */; };
 		E138DBAC25BB25F1003BEEDC /* MainEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DBAB25BB25F1003BEEDC /* MainEntryViewController.swift */; };
+		E138DBC225BB5588003BEEDC /* SignUpSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138DBC125BB5588003BEEDC /* SignUpSwiftUIView.swift */; };
 		E138F31525B9CA5E00257879 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E138F31425B9CA5E00257879 /* GoogleService-Info.plist */; };
 		E138F31B25B9D3DA00257879 /* ParkingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138F31A25B9D3DA00257879 /* ParkingHours.swift */; };
 		E138F32325B9E3B300257879 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138F32225B9E3B300257879 /* String.swift */; };
@@ -30,7 +32,6 @@
 		E13A272125B5D37B0019FD56 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271B25B5D3790019FD56 /* UIView.swift */; };
 		E13A272225B5D37B0019FD56 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271C25B5D37A0019FD56 /* UIButton.swift */; };
 		E13A272325B5D37B0019FD56 /* Int64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271D25B5D37A0019FD56 /* Int64.swift */; };
-		E13A272425B5D37B0019FD56 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271E25B5D37A0019FD56 /* ZFRippleButton.swift */; };
 		E13A272525B5D37B0019FD56 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271F25B5D37A0019FD56 /* UITextField.swift */; };
 		E13A272A25B5D6630019FD56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A272925B5D6630019FD56 /* User.swift */; };
 		E13A272D25B5D6780019FD56 /* ParkingTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A272C25B5D6780019FD56 /* ParkingTicket.swift */; };
@@ -52,7 +53,6 @@
 		025F2DE225B808820063DDCF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		02A0759E25BB3E5500129803 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		02A075A125BB3E5E00129803 /* LicensePlateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePlateController.swift; sourceTree = "<group>"; };
-		02A075A525BB43A200129803 /* SignUpSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpSwiftUIView.swift; path = "../../../../../CarSpotOld/New Folder With Items/CarSpot/CarSpot/Views/SwiftUIs/SignUpSwiftUIView.swift"; sourceTree = "<group>"; };
 		02C32F5025B4BC14005CE759 /* CarSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02C32F5325B4BC14005CE759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02C32F5525B4BC14005CE759 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,9 +61,12 @@
 		02C32F5F25B4BC18005CE759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02C32F6225B4BC18005CE759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02C32F6425B4BC18005CE759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E132D13F25BB6C97007867E5 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		E135125C25BC726300A98B71 /* AddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressController.swift; sourceTree = "<group>"; };
 		E138DB8625BB1405003BEEDC /* TicketDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsViewController.swift; sourceTree = "<group>"; };
-		E138DBA425BB2468003BEEDC /* ParkingTicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingTicketController.swift; sourceTree = "<group>"; };
+		E138DBA425BB2468003BEEDC /* TicketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketController.swift; sourceTree = "<group>"; };
 		E138DBAB25BB25F1003BEEDC /* MainEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntryViewController.swift; sourceTree = "<group>"; };
+		E138DBC125BB5588003BEEDC /* SignUpSwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpSwiftUIView.swift; sourceTree = "<group>"; };
 		E138F31425B9CA5E00257879 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E138F31A25B9D3DA00257879 /* ParkingHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHours.swift; sourceTree = "<group>"; };
 		E138F32225B9E3B300257879 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		E13A271B25B5D3790019FD56 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E13A271C25B5D37A0019FD56 /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		E13A271D25B5D37A0019FD56 /* Int64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int64.swift; sourceTree = "<group>"; };
-		E13A271E25B5D37A0019FD56 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		E13A271F25B5D37A0019FD56 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		E13A272925B5D6630019FD56 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E13A272C25B5D6780019FD56 /* ParkingTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTicket.swift; sourceTree = "<group>"; };
@@ -157,7 +159,7 @@
 		02C32F6F25B4C13C005CE759 /* SwiftUIs */ = {
 			isa = PBXGroup;
 			children = (
-				02A075A525BB43A200129803 /* SignUpSwiftUIView.swift */,
+				E138DBC125BB5588003BEEDC /* SignUpSwiftUIView.swift */,
 				E13A274225B5D78B0019FD56 /* MainSwiftUIView.swift */,
 				E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */,
 				E13A274825B5D7AB0019FD56 /* HistorySwiftUIView.swift */,
@@ -192,7 +194,8 @@
 			children = (
 				02A075A125BB3E5E00129803 /* LicensePlateController.swift */,
 				02A0759E25BB3E5500129803 /* ProfileController.swift */,
-				E138DBA425BB2468003BEEDC /* ParkingTicketController.swift */,
+				E138DBA425BB2468003BEEDC /* TicketController.swift */,
+				E135125C25BC726300A98B71 /* AddressController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,9 +218,9 @@
 				E13A271C25B5D37A0019FD56 /* UIButton.swift */,
 				E13A271F25B5D37A0019FD56 /* UITextField.swift */,
 				E13A271B25B5D3790019FD56 /* UIView.swift */,
-				E13A271E25B5D37A0019FD56 /* ZFRippleButton.swift */,
 				025F2DE225B808820063DDCF /* UIViewController.swift */,
 				E138F32225B9E3B300257879 /* String.swift */,
+				E132D13F25BB6C97007867E5 /* GradientView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,12 +324,13 @@
 				E13A272D25B5D6780019FD56 /* ParkingTicket.swift in Sources */,
 				E13A273625B5D7040019FD56 /* MainViewController.swift in Sources */,
 				E13A272225B5D37B0019FD56 /* UIButton.swift in Sources */,
-				02A075A625BB43A200129803 /* SignUpSwiftUIView.swift in Sources */,
+				E138DBC225BB5588003BEEDC /* SignUpSwiftUIView.swift in Sources */,
 				E13A275625B5DA0F0019FD56 /* TabBarController.swift in Sources */,
+				E135125D25BC726300A98B71 /* AddressController.swift in Sources */,
 				E13A274325B5D78B0019FD56 /* MainSwiftUIView.swift in Sources */,
 				E138F32325B9E3B300257879 /* String.swift in Sources */,
-				E13A272425B5D37B0019FD56 /* ZFRippleButton.swift in Sources */,
 				E138DBAC25BB25F1003BEEDC /* MainEntryViewController.swift in Sources */,
+				E132D14025BB6C97007867E5 /* GradientView.swift in Sources */,
 				E13A274925B5D7AB0019FD56 /* HistorySwiftUIView.swift in Sources */,
 				E13A275925B5E6800019FD56 /* Login.swift in Sources */,
 				E13A275325B5D97A0019FD56 /* TicketRow.swift in Sources */,
@@ -334,7 +338,7 @@
 				E13BE3EA25B77BBB0022B496 /* LocationManager.swift in Sources */,
 				E13A272125B5D37B0019FD56 /* UIView.swift in Sources */,
 				02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */,
-				E138DBA725BB2468003BEEDC /* ParkingTicketController.swift in Sources */,
+				E138DBA725BB2468003BEEDC /* TicketController.swift in Sources */,
 				E13A272A25B5D6630019FD56 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,7 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JLH6SS5T42;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -502,7 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JLH6SS5T42;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CarSpot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
