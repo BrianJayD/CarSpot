@@ -40,6 +40,8 @@ class LicensePlateController
             return InsertStatus.failed
         }
     }
+    
+    
 
     // get a list of all license plates for a specific user
     func getAllLicensePlatesForUser(email: String) -> [String]

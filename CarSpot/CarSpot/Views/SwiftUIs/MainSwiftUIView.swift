@@ -48,7 +48,7 @@ struct MainSwiftUIView: View
     init()
     {
         currentUser = profileController.getUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!)
-        licensePlateList = profileController.getUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!).licensPlates
+        licensePlateList = profileController.getUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!).licensePlates
 
         UITableView.appearance().backgroundColor = .clear
     }
