@@ -7,8 +7,7 @@
 
 import Foundation
 
-enum Login:String
-{
+enum Login:String {
     case REMEMBER_ME = "rememberMe"
     case CURRENT_USER = "currentUser"
     case LOGGED_IN = "loggedIn"
