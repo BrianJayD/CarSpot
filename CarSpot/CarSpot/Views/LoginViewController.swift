@@ -12,7 +12,9 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-
+    @IBOutlet weak var lblErrorMessage: UILabel!
+    @IBOutlet weak var switchRememberMe: UISwitch!
+    
     let profileController = ProfileController()
     let licensePlateController = LicensePlateController()
 
@@ -20,15 +22,18 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
 //        self.addSubSwiftUIView(swiftUIView: LoginSwiftUIView())
-        profileController.getAllAccounts()
+        //profileController.getAllAccounts()
 
         // if you want to completely remove the nav bar in the login screen
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //removes navigation back button to entry point
         self.navigationItem.setHidesBackButton(true, animated: true)
 
-        profileController.getAllAccounts()
-        //  licensePlateController.getAllLicensePlate()
+        //profileController.getAllAccounts()
+        //CHANGE email depending which user you are checking 
+        for plate in licensePlateController.getAllLicensePlatesForUser(email: "b@b.com") {
+            print(plate)
+        }
 
     }
 
@@ -43,18 +48,44 @@ class LoginViewController: UIViewController {
 
 //        print(profileController.checkCredentials(email: tfEmail.text
 //                                                ?? "", password: tfPassword.text ?? ""))
+        if(checkTextFields()) {
+            if(profileController.checkCredentials(email: tfEmail.text ?? "", password: tfPassword.text ?? "")) {
+                print("Log In Successful")
+                
+                // set user defaults for current verified user
+                UserDefaults.standard.setValue(tfEmail.text!, forKey: Login.CURRENT_USER.rawValue)
+                UserDefaults.standard.setValue(true, forKey: Login.LOGGED_IN.rawValue)
+                
+                //check remember me switch
+                if(switchRememberMe.isOn) {
+                    UserDefaults.standard.setValue(true, forKey: Login.REMEMBER_ME.rawValue)
+                    print(#function, UserDefaults.standard.string(forKey: Login.REMEMBER_ME.rawValue))
+                }
 
-        if(profileController.checkCredentials(email: tfEmail.text ?? "", password: tfPassword.text ?? "")) {
-            print("Log In Successful")
-
-            // set user defaults for current verified user
-            UserDefaults.standard.setValue(tfEmail.text!, forKey: Login.CURRENT_USER.rawValue)
-            UserDefaults.standard.setValue(true, forKey: Login.LOGGED_IN.rawValue)
-
-            performSegue(withIdentifier: "mainPageSeguaTemp", sender: nil)
+                //reset error message
+                if(!lblErrorMessage.isHidden) {
+                    lblErrorMessage.text = "Error label"
+                    lblErrorMessage.isHidden = true
+                }
+                
+                performSegue(withIdentifier: "mainPageSeguaTemp", sender: nil)
+                
+            } else {
+                lblErrorMessage.text = "Incorrect Username/Password"
+                lblErrorMessage.isHidden = false
+                print("Log In Failed")
+            }
         } else {
-            print("Log In Failed")
+            lblErrorMessage.isHidden = false
+            lblErrorMessage.text = "Username/Password can not be empty"
         }
+    }
+    
+    func checkTextFields() -> Bool {
+        if (tfEmail.text == nil || tfPassword == nil) {
+            return false
+        }
+        return true
     }
 
 }

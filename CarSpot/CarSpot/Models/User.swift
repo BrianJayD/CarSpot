@@ -7,29 +7,24 @@
 
 import Foundation
 
-struct User
-{
+struct User {
     var email: String = ""
     var password: String = ""
     var phone: Int = 0
     var firstName: String = ""
     var lastName: String = ""
-    var licensPlates: [String] = [String()]
+    var licensePlates: [String] = [String()]
     var parkingTickets: [ParkingTicket] = [ParkingTicket]()
 
-    init()
-    {
+    init(){}
 
-    }
-
-    init(email: String, password: String, phone: Int, firstName: String, lastName: String, licensPlates: [String], parkingTickets: [ParkingTicket])
-    {
+    init(email: String, password: String, phone: Int, firstName: String, lastName: String, licensePlates: [String], parkingTickets: [ParkingTicket]) {
         self.email = email
         self.password = password
         self.phone = phone
         self.firstName = firstName
         self.lastName = lastName
-        self.licensPlates = licensPlates
+        self.licensePlates = licensePlates
         self.parkingTickets = parkingTickets
     }
 

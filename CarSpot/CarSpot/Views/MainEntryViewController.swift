@@ -15,7 +15,7 @@ class MainEntryViewController: UIViewController
         super.viewDidLoad()
 
         //  UserDefaults.standard.setValue(false, forKey: Login.LOGGED_IN.rawValue)
-
+        
         loadStartingPage()
     }
 
@@ -27,7 +27,7 @@ class MainEntryViewController: UIViewController
 
     func loadStartingPage()
     {
-        if (UserDefaults.standard.bool(forKey: Login.LOGGED_IN.rawValue))
+        if (UserDefaults.standard.bool(forKey: Login.REMEMBER_ME.rawValue))
         {
             performSegue(withIdentifier: "mainPageSegua", sender: nil)
         }

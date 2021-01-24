@@ -7,8 +7,7 @@
 
 import Foundation
 
-class ParkingTicket: Codable, Identifiable
-{
+class ParkingTicket: Codable, Identifiable {
     var id = UUID()
     var email: String
     var buildingCode: String  // exactly 5 alphanumeric
@@ -18,8 +17,7 @@ class ParkingTicket: Codable, Identifiable
     var location: Location    // street address, lat and lng
     var date: Date            // system date
 
-    init(id: UUID, email: String, buildingCode: String, noOfHours: Int, licensePlate: String, hostSuite: String, location: Location, date: Date)
-    {
+    init(id: UUID, email: String, buildingCode: String, noOfHours: Int, licensePlate: String, hostSuite: String, location: Location, date: Date) {
         self.email = email
         self.buildingCode = buildingCode
         self.noOfHours = noOfHours

@@ -20,22 +20,23 @@ class ProfileController {
         self.moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     }
 
-    func insertAccount(email: String, password: String, firstName: String, lastName: String, phoneNumber: Int, licensePlate: String) -> InsertStatus {
+    func insertAccount(email: String, password: String, firstName: String, lastName: String, phoneNumber: Int, licensePlates: [String]) -> InsertStatus {
         do {
             let newAccount = NSEntityDescription.insertNewObject(forEntityName: "Profile", into: moc) as! Profile
 
-            newAccount.email = email
+            newAccount.email = email.lowercased()
             newAccount.password = password
             newAccount.firstName = firstName
             newAccount.lastName = lastName
             newAccount.phoneNumber = Int64(phoneNumber)
-
-            let newLicensePlate = NSEntityDescription.insertNewObject(forEntityName: "LicensePlate", into: moc) as! LicensePlate
-
-            newLicensePlate.email = email
-            newLicensePlate.plateNumber = licensePlate
-
             try moc.save()
+            
+            for lPlate in licensePlates {
+                let licensePlateController = LicensePlateController()
+                licensePlateController.insertLicensePlate(email: email.lowercased(), plateNumber: lPlate)
+            }
+
+            
 
             return InsertStatus.success
 
@@ -83,7 +84,7 @@ class ProfileController {
         do {
             let result = try moc.fetch(fetchRequest).first
             if result != nil {
-                print(#function, "Matching account found wwith email \(email)")
+                print(#function, "Matching account found with email \(email)")
 
                 let account = result as! Profile
                 return account
@@ -112,20 +113,20 @@ class ProfileController {
                 print(#function, "Matching account found wwith email \(email)")
 
                 let licensePlateController = LicensePlateController()
-                let licensPlates = licensePlateController.getAllLicensePlatesForUser(email: email)
+                let licensePlates = licensePlateController.getAllLicensePlatesForUser(email: email)
 
                 let ticketController = TicketController()
                 let tickets = ticketController.getAllTicketsForUser(email: email)
 
 
-                let account = result as! Profile
+                let account = result! as Profile
 
                 let user: User = User(email: account.email!,
                                       password: account.password!,
                                       phone: Int(account.phoneNumber),
                                       firstName: account.firstName!,
                                       lastName: account.lastName!,
-                                      licensPlates: licensPlates,
+                                      licensePlates: licensePlates,
                                       parkingTickets: tickets)
 
                 return user
@@ -138,26 +139,6 @@ class ProfileController {
         print(#function, "No account found with \(email)")
         return User()
     }
-
-
-    //TODO
-    //MARK: This is from my experiment to get firebase to work.
-//    @Published var profileList = [Profile]
-//    private let
-//
-//    let store:Firestore
-//
-//    init(database:Firestore) {
-//        self.store = database
-//    }
-//
-//    func insertProfile(profile:Profile) {
-//        do {
-//            _ = try self.store.collection
-//        } catch error as NSError {
-//            print(#function, "Error inserting new profile")
-//        }
-//    }
 
 }
 

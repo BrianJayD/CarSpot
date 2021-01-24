@@ -14,13 +14,14 @@ struct SignUpSwiftUIView: View {
     @State private var tfFirstName: String = ""
     @State private var tfLastName: String = ""
     @State private var tfConfirmation: String = ""
-    @State private var tfPlates: String = ""
+    @State private var tfNewPlate: String = ""
 
     let profileController = ProfileController()
 
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
+        var ownedLicensePlates: [PlateNumber] = []
 
         NavigationView {
             VStack {
@@ -56,26 +57,62 @@ struct SignUpSwiftUIView: View {
                                 .multilineTextAlignment(.center)
                         }
                     }
+                    
                     Section(header: Text("License Plates")) {
                         Text("Enter license plate:")
-                        TextField("License Plate", text: $tfPlates)
-                            .multilineTextAlignment(.center)
+                        HStack {
+                            
+                            
+                            TextField("License Plate", text: $tfNewPlate)
+                                .multilineTextAlignment(.center)
+                            
+                            Button(action: {
+                                guard tfNewPlate != nil else {
+                                    print(#function, "Invalid plates, please try again.")
+                                    return
+                                }
+                                
+                                //TODO
+                                let plateNumber = PlateNumber(plateNumber: tfNewPlate)
+                                ownedLicensePlates.append(plateNumber)
+                                
+                                tfNewPlate = ""
+                                print("NEW PLATE \(plateNumber.plateNumber)")
+                                print("All plates \(ownedLicensePlates)")
+                            }, label: {
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundColor(Color("textOnBackgroundSecondary"))
+                            }).padding()
+                        }
                     }
+                    
                 }
                 //TODO: Error msg display
                 Text("")
-
-//                Button(action: {
-//                    print("Adding new License Plate")
-//                }, label: {
-//                    Text("Add another license plate")
-//                    Image(systemName: "plus.circle.fill")
-//                        .foregroundColor(Color("textOnBackgroundSecondary"))
-//                }).padding()
+                
+                //TODO: FIX LISTS
+//                List {
+//                    ForEach(ownedLicensePlates) { plate in
+//
+//                        LicensePlateSwiftUIView(plateNumber: plate.plateNumber)
+//                            .listRowBackground(Color.blue)
+//                            .listRowInsets(EdgeInsets())
+//                    }
+//                }
+                
+                
 
                 Button(action: {
                     print("\(tfEmail), \(tfPassword)")
-                    let status = profileController.insertAccount(email: tfEmail, password: tfPassword, firstName: tfFirstName, lastName: tfLastName, phoneNumber: Int(tfPhone)!, licensePlate: tfPlates)
+                    
+                    var addedPlates:[String] = []
+                    
+                    for plateNumber in ownedLicensePlates {
+                        addedPlates.append(plateNumber.plateNumber)
+                    }
+                    
+                    let status = profileController.insertAccount(email: tfEmail, password: tfPassword, firstName: tfFirstName, lastName: tfLastName, phoneNumber: Int(tfPhone)!, licensePlates: addedPlates)
+                    
                     print(status)
                     self.presentationMode.wrappedValue.dismiss()
 

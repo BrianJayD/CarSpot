@@ -38,6 +38,7 @@ class TabBarController: UITabBarController
     {
         defaults.set(nil, forKey: Login.CURRENT_USER.rawValue)
         defaults.set(false, forKey: Login.LOGGED_IN.rawValue)
+        defaults.set(false, forKey: Login.REMEMBER_ME.rawValue)
         // prepare segua
         _ = navigationController?.popToRootViewController(animated: true)
     }
