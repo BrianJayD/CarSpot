@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Address" representedClassName="Address" syncable="YES" codeGenerationType="class">
         <attribute name="city" attributeType="String"/>
         <attribute name="country" attributeType="String"/>
@@ -22,9 +22,6 @@
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="plateNumber"/>
-            </uniquenessConstraint>
-            <uniquenessConstraint>
-                <constraint value="email"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
@@ -60,7 +57,7 @@
     </entity>
     <elements>
         <element name="Address" positionX="36" positionY="36" width="128" height="163"/>
-        <element name="LicensePlate" positionX="135.9152221679688" positionY="-18.2197265625" width="128" height="88"/>
+        <element name="LicensePlate" positionX="135.9152221679688" positionY="-18.2197265625" width="128" height="74"/>
         <element name="Profile" positionX="-66.3990478515625" positionY="-45.27969360351562" width="128" height="148"/>
         <element name="Ticket" positionX="54" positionY="18" width="128" height="178"/>
     </elements>
