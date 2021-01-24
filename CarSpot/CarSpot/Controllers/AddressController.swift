@@ -56,7 +56,7 @@ class AddressController
             let result = try moc.fetch(fetchRequest).first
             if result != nil
             {
-                print(#function, "Matching address found wwith id: \(id)")
+             //   print(#function, "Matching address found wwith id: \(id)")
 
                 let address = result as! Address
 
@@ -67,7 +67,7 @@ class AddressController
                                                   city: address.city!,
                                                   country: address.country!)
 
-                print(#function, "Address Found")
+               // print(#function, "Address Found")
                 return location
             }
         } catch let error {

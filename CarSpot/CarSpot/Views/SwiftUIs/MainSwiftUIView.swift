@@ -17,6 +17,8 @@ struct MainSwiftUIView: View
     var currentUser: User?
     let geoCoder = CLGeocoder()
     @State var currentLocation = Location()
+    @State var newLocation: Location = Location()
+    @State var newLocationAdded = false
 
     @ObservedObject private var locationManager = LocationManager()
     @State private var cancellable: AnyCancellable?
@@ -44,6 +46,9 @@ struct MainSwiftUIView: View
     }
     @State var alertAddLicensePlate: Bool = false
     @State var addLicensePlate: String = ""
+    @State var displayTicketAlert = false
+    @State var ticketAlertTitle: String = ""
+    @State var ticketAlertMessage: String = ""
 
     init()
     {
@@ -51,12 +56,14 @@ struct MainSwiftUIView: View
         licensePlateList = profileController.getUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!).licensePlates
 
         UITableView.appearance().backgroundColor = .clear
+        UITableView.appearance().isScrollEnabled = false
     }
 
     private func setCurrentLocation()
     {
         cancellable = locationManager.$location.sink { (location) in
 
+            // get address info for current location
             getNewLocation(lat: Double(location!.coordinate.latitude), lon: Double(location!.coordinate.longitude))
 
             let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -69,11 +76,6 @@ struct MainSwiftUIView: View
                 {
                     self.locationList.append(location.location)
                 }
-
-                print("Current Location: \(currentLocation.streetAddress)")
-
-                // add current location
-                self.locationList.append(currentLocation)
             }
         }
     }
@@ -245,18 +247,8 @@ struct MainSwiftUIView: View
 
                         Button(action:
                                 {
-                                    // TODO - update temp values...
-                                var newLocation = Location(id: UUID(),
-                                                           lat: 43.67320576928311,
-                                                           lon: -79.32873082962467,
-                                                           streetAddress: "327 Greenwood Ave",
-                                                           city: self.locationList.last!.city,
-                                                           country: self.locationList.last!.country)
-                                newLocation.isCurrentLocation = true
-
-                                self.locationList.append(newLocation)
-                                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-                                self.region = MKCoordinateRegion(center: newLocation.coordinates, span: span)
+                                // get new location
+                                self.getLocation(address: "\(self.currentLocation.country), \(self.currentLocation.city), \(self.streetAddress)")
                         })
                         {
                             HStack
@@ -282,9 +274,9 @@ struct MainSwiftUIView: View
                                 let location = Location(id: id,
                                                         lat: self.locationList.last!.lat,
                                                         lon: self.locationList.last!.lon,
-                                                        streetAddress: self.locationList.last!.streetAddress,
-                                                        city: self.locationList.last!.city,
-                                                        country: self.locationList.last!.country)
+                                                        streetAddress: self.streetAddress,
+                                                        city: self.currentLocation.city,
+                                                        country: self.currentLocation.country)
 
                                 let ticket: ParkingTicket =
                                     ParkingTicket(id: id,
@@ -296,8 +288,41 @@ struct MainSwiftUIView: View
                                                   location: location,
                                                   date: Date())
 
-                                // save Ticket to coreData
-                                ticketController.insertTicket(ticket: ticket)
+                                // verify all fields
+                                if (!buildingCode.checkBuildingCode())
+                                {
+                                    self.ticketAlertTitle = "Error!"
+                                    self.ticketAlertMessage = "Please verify you have the correct building code."
+                                    self.displayTicketAlert = true
+                                }
+                                else if (!suitNumber.checkSuiteNumber())
+                                {
+                                    self.ticketAlertTitle = "Error!"
+                                    self.ticketAlertMessage = "Please verify you have the correct suite number."
+                                    self.displayTicketAlert = true
+                                }
+                                else if (!streetAddress.checkStreetAddress())
+                                {
+                                    self.ticketAlertTitle = "Error!"
+                                    self.ticketAlertMessage = "Please enter a valid street address."
+                                    self.displayTicketAlert = true
+                                }
+                                else
+                                {
+                                    // save Ticket to coreData
+                                    if(ticketController.insertTicket(ticket: ticket) == InsertStatus.success)
+                                    {
+                                        self.ticketAlertTitle = "Success!"
+                                        self.ticketAlertMessage = "You have successfully purchased a parking ticket."
+                                        self.displayTicketAlert = true
+                                    }
+                                    else
+                                    {
+                                        self.ticketAlertTitle = "Error!"
+                                        self.ticketAlertMessage = "There was an error purchasing this parking ticket."
+                                        self.displayTicketAlert = true
+                                    }
+                                }
                         })
                         {
                             HStack
@@ -316,7 +341,12 @@ struct MainSwiftUIView: View
                             .padding(.bottom, 7)
 
                         Spacer(minLength: 20)
-
+                    }
+                        .alert(isPresented: self.$displayTicketAlert)
+                    {
+                        Alert(title: Text(self.ticketAlertTitle),
+                              message: Text(self.ticketAlertMessage),
+                              dismissButton: .default(Text("OK")))
                     }
 
 
@@ -331,6 +361,7 @@ struct MainSwiftUIView: View
                                                    endPoint: UnitPoint(x: 0.5, y: 0.75))))
                     .shadow(color: Color("shadow"), radius: 4, x: 0.5, y: 0.5)
             }
+
         }
 
     }
@@ -351,18 +382,11 @@ extension MainSwiftUIView
         self.currentLocation.isCurrentLocation = true
         self.currentLocation.lat = lat
         self.currentLocation.lon = lon
-        self.currentLocation.streetAddress = "Current Location"
 
         let location: CLLocation = CLLocation(latitude: lat, longitude: lon)
 
         self.geoCoder.reverseGeocodeLocation(location) { (placemark, error) in
-
             self.setCurrentLocation(placemarks: placemark, error: error)
-
-//            let locationArray = [
-//                Location(name: address, coordinates: CLLocationCoordinate2D(latitude: Double(self.latTextField.text!)!, longitude: Double(self.longTextField.text!)!))]
-//
-//            self.displayMarker(locations: locationArray)
         }
     }
 
@@ -378,17 +402,31 @@ extension MainSwiftUIView
             {
                 var addressString: String = ""
 
+                if placemark.subThoroughfare != nil
+                {
+                    self.streetAddress = placemark.subThoroughfare! + " "
+                }
+                if placemark.thoroughfare != nil
+                {
+                    self.streetAddress = self.streetAddress + placemark.thoroughfare!
+                    self.currentLocation.streetAddress = self.streetAddress
+                }
                 if placemark.locality != nil
                 {
-                    addressString = addressString + placemark.locality!
+                    addressString = addressString + placemark.locality! + ", "
                     self.currentLocation.city = placemark.locality!
                 }
                 if placemark.country != nil
                 {
-                    addressString = addressString + placemark.country! + ", "
+                    addressString = addressString + placemark.country!
                     self.currentLocation.country = placemark.country!
                 }
 
+                print("Current Location: \(currentLocation.streetAddress)")
+                
+                // add current location
+                self.locationList.append(currentLocation)
+                
                 print("Address: \(addressString)")
 
             }
@@ -398,5 +436,56 @@ extension MainSwiftUIView
             }
         }
     }
+
+    func getLocation(address: String)
+    {
+        self.geoCoder.geocodeAddressString(address) { (placemark, error) in
+            self.processGeoResponse(withPlacemarks: placemark, error: error)
+        }
+    }
+
+    func processGeoResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?)
+    {
+        if (error != nil)
+        {
+            print(#function, "Error getting location")
+        }
+        else
+        {
+            var myLocation: CLLocation?
+
+            if let placemark = placemarks, placemarks!.count > 0
+            {
+                myLocation = placemark.first?.location
+            }
+
+            if let myLocation = myLocation
+            {
+                self.locationList.removeLast()
+
+                // set new location on map
+                var newLocation = Location(id: UUID(),
+                                           lat: myLocation.coordinate.latitude,
+                                           lon: myLocation.coordinate.longitude,
+                                           streetAddress: self.streetAddress,
+                                           city: self.currentLocation.city,
+                                           country: self.currentLocation.country)
+
+                newLocation.isCurrentLocation = true
+
+                self.locationList.append(newLocation)
+
+                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                self.region = MKCoordinateRegion(center: newLocation.coordinates, span: span)
+            }
+            else
+            {
+                print(#function, "Error getting location")
+            }
+        }
+    }
+
+
+
 
 }
