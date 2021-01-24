@@ -57,6 +57,10 @@ struct TicketController
     func getAllTicketsForUser(email: String) -> [ParkingTicket]
     {
         do {
+            // SORT
+            let sort = NSSortDescriptor(key: "date", ascending: false)
+            fetchRequest.sortDescriptors = [sort]
+            
             let result = try moc.fetch(fetchRequest)
             let tickets = result as [Ticket]
 
@@ -77,7 +81,7 @@ struct TicketController
                                                     licensePlate: ticket.licensePlate!,
                                                     hostSuite: ticket.hostSuite!,
                                                     location: location,
-                                                    date: Date())
+                                                    date: ticket.date!)
 
                     parkingTickets.append(ticketToAdd)
                 }

@@ -17,6 +17,8 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lengthLabel: UILabel!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var buildingCodeLabel: UILabel!
     @IBOutlet weak var suiteLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -27,8 +29,6 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
     {
         super.viewDidLoad()
 
-        //  setupSwiftUIView()
-
         setupFields()
         setupLocations()
     }
@@ -37,10 +37,12 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
     {
         self.dateLabel.text = ticket!.dateString
         self.lengthLabel.text = "\(ticket!.noOfHours) hour(s)"
+        self.startTimeLabel.text = ticket!.startTime
+        self.endTimeLabel.text = ticket!.endTime
         self.buildingCodeLabel.text = ticket!.buildingCode
         self.suiteLabel.text = ticket!.hostSuite
         self.addressLabel.text = ticket!.location.streetAddress
-        self.address2Label.text = "\(ticket!.location.city) \(ticket!.location.country)"
+        self.address2Label.text = "\(ticket!.location.city), \(ticket!.location.country)"
         self.licensePlateLabel.text = ticket!.licensePlate
     }
 
@@ -59,14 +61,6 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
             self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             self.locationManager.startUpdatingLocation()
         }
-
-//        let locationArray = [
-//            Location(name: "Toronto", coordinates: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832)),
-//            Location(name: "Waterloo", coordinates: CLLocationCoordinate2D(latitude: 43.4643, longitude: -80.3832))]
-
-        //  self.displayMarker(locations: locationArray)
-
-//        self.showRoute(start: locationArray[0].coordinates, end: locationArray[1].coordinates)
     }
 
 
@@ -83,7 +77,6 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
 }
 
 
-//MARK: Display the current location
 extension TicketDetailsViewController
 {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
@@ -100,15 +93,6 @@ extension TicketDetailsViewController
 
         self.mapView.setRegion(region, animated: true)
 
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = myLocation
-        annotation.title = "Current Location"
-
-
-//        let locationArray = [
-//            Location(name: "Toronto", coordinates: CLLocationCoordinate2D(latitude: 43.6532, longitude: -79.3832)),
-//            Location(name: "Waterloo", coordinates: CLLocationCoordinate2D(latitude: 43.4643, longitude: -80.3832))]
-
         getAddress(lat: myLocation.latitude, lon: myLocation.longitude)
 
         var locationArray: [Location] = [Location]()
@@ -116,17 +100,14 @@ extension TicketDetailsViewController
         locationArray.append(Location(id: UUID(),
                                       lat: myLocation.latitude,
                                       lon: myLocation.longitude,
-                                      streetAddress: "Street",
+                                      streetAddress: "Current Location",
                                       city: "Toronto",
                                       country: "Canada"))
 
         locationArray.append(self.ticket!.location)
 
-        //  self.displayMarker(locations: locationArray)
-
         self.showRoute(start: locationArray[0].coordinates, end: locationArray[1].coordinates)
-
-        self.mapView.addAnnotation(annotation)
+        self.displayMarker(locations: locationArray)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
@@ -176,12 +157,7 @@ extension TicketDetailsViewController
                         addressString = addressString + placemark.postalCode! + " "
                     }
 
-
                     print("Address String: \(addressString)")
-
-
-//                    let address = (placemark.areasOfInterest! + ", " + placemark.locality! + ", " + placemark.administrativeArea! + ", " + placemark.country!)
-//                    print("\(address)")
                 }
                 else
                 {
@@ -208,10 +184,6 @@ extension TicketDetailsViewController
     func showRoute(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D)
     {
         print("showRoute")
-
-        //        let span = MKCoordinateSpan(latitudeDelta: 0.20, longitudeDelta: 0.20)
-        //        let region = MKCoordinateRegion(center: start, span: span)
-        //        self.mapView.setRegion(region, animated: true)
 
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: start, addressDictionary: nil))
