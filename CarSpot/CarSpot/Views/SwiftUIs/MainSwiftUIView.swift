@@ -67,7 +67,10 @@ struct MainSwiftUIView: View
             getNewLocation(lat: Double(location!.coordinate.latitude), lon: Double(location!.coordinate.longitude))
 
             let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-            self.region = MKCoordinateRegion(center: location!.coordinate, span: span)
+
+            let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude - 0.02, longitude: location!.coordinate.longitude)
+
+            self.region = MKCoordinateRegion(center: center, span: span)
 
             // add locations to pin on map (initial)
             if (self.locationList.count == 0)
@@ -86,47 +89,51 @@ struct MainSwiftUIView: View
         {
             if (locationManager.location != nil)
             {
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: false, userTrackingMode: $tracking, annotationItems: locationList, annotationContent: { place in
-                    MapAnnotation(coordinate: place.coordinates) {
-                        if (place.isCurrentLocation)
-                        {
-                            // mark pin for current location
-                            VStack {
-                                VStack
-                                {
-                                    Text(place.streetAddress)
+                VStack
+                {
+                    Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: false, userTrackingMode: $tracking, annotationItems: locationList, annotationContent: { place in
+                        MapAnnotation(coordinate: place.coordinates) {
+                            if (place.isCurrentLocation)
+                            {
+                                // mark pin for current location
+                                VStack {
+                                    VStack
+                                    {
+                                        Text(place.streetAddress)
+                                    }
+                                        .padding(.top, 5)
+                                        .padding(.bottom, 5)
+                                        .padding(.leading, 10)
+                                        .padding(.trailing, 10)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 5)
+                                                .stroke(Color("cardOutline"), lineWidth: 1)
+                                                .background(Color("cardBackground"))
+                                                .shadow(color: Color("shadow"), radius: 3, x: 1, y: 1))
+
+                                    Spacer(minLength: 5)
+
+                                    Image("ic_nav_map")
+                                        .colorMultiply(Color("youAreHerePin"))
+                                        .shadow(color: Color("shadow"), radius: 2, x: 1, y: 1)
+
+                                    Spacer(minLength: 30)
                                 }
-                                    .padding(.top, 5)
-                                    .padding(.bottom, 5)
-                                    .padding(.leading, 10)
-                                    .padding(.trailing, 10)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .stroke(Color("cardOutline"), lineWidth: 1)
-                                            .background(Color("cardBackground"))
-                                            .shadow(color: Color("shadow"), radius: 3, x: 1, y: 1))
-
-                                Spacer(minLength: 5)
-
-                                Image("ic_nav_map")
-                                    .colorMultiply(Color("youAreHerePin"))
-                                    .shadow(color: Color("shadow"), radius: 2, x: 1, y: 1)
-
-                                Spacer(minLength: 30)
+                            }
+                            else
+                            {
+                                // mark pins for all previous tickets
+                                Image(systemName: "car.circle")
+                                    .foregroundColor(Color("parkingPin"))
                             }
                         }
-                        else
-                        {
-                            // mark pins for all previous tickets
-                            Image(systemName: "car.circle")
-                                .foregroundColor(Color("parkingPin"))
-                        }
+                    })
+                        .onAppear {
+                            setCurrentLocation()
                     }
-                })
-                    .onAppear {
-                        setCurrentLocation()
+
+                    //  .ignoresSafeArea()
                 }
-                //  .ignoresSafeArea()
             }
             else
             {
@@ -255,14 +262,14 @@ struct MainSwiftUIView: View
                             {
                                 Spacer()
                                 Text("Update Map")
-                                    .foregroundColor(Color("secondaryLight"))
+                                    .foregroundColor(Color("buttonText"))
                                 Spacer()
                             }
                         }
                             .padding(.top, 7)
                             .padding(.bottom, 7)
                             .background(RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color("primaryLight"), lineWidth: 1))
+                                .stroke(Color("buttonOutline"), lineWidth: 1))
                             .padding(.top, 7)
                             .padding(.bottom, 7)
 
@@ -329,14 +336,14 @@ struct MainSwiftUIView: View
                             {
                                 Spacer()
                                 Text("Purchase Ticket")
-                                    .foregroundColor(Color("secondaryLight"))
+                                    .foregroundColor(Color("buttonText"))
                                 Spacer()
                             }
                         }
                             .padding(.top, 7)
                             .padding(.bottom, 7)
                             .background(RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color("primaryLight"), lineWidth: 1))
+                                .stroke(Color("buttonOutline"), lineWidth: 1))
                             .padding(.top, 7)
                             .padding(.bottom, 7)
 
@@ -423,10 +430,10 @@ extension MainSwiftUIView
                 }
 
                 print("Current Location: \(currentLocation.streetAddress)")
-                
+
                 // add current location
                 self.locationList.append(currentLocation)
-                
+
                 print("Address: \(addressString)")
 
             }
@@ -476,7 +483,11 @@ extension MainSwiftUIView
                 self.locationList.append(newLocation)
 
                 let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-                self.region = MKCoordinateRegion(center: newLocation.coordinates, span: span)
+                
+                let center = CLLocationCoordinate2D(latitude: newLocation.coordinates.latitude - 0.02,
+                                                    longitude: newLocation.coordinates.longitude)
+                
+                self.region = MKCoordinateRegion(center: center, span: span)
             }
             else
             {
@@ -484,4 +495,8 @@ extension MainSwiftUIView
             }
         }
     }
+
+
+
+
 }
