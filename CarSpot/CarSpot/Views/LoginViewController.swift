@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
 //        print(profileController.checkCredentials(email: tfEmail.text
 //                                                ?? "", password: tfPassword.text ?? ""))
         if(checkTextFields()) {
-            if(profileController.checkCredentials(email: tfEmail.text ?? "", password: tfPassword.text ?? "")) {
+            if(profileController.checkCredentials(email: tfEmail.text?.lowercased() ?? "", password: tfPassword.text ?? "")) {
                 print("Log In Successful")
                 
                 // set user defaults for current verified user
