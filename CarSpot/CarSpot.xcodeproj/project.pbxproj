@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		025F2DE325B808820063DDCF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F2DE225B808820063DDCF /* UIViewController.swift */; };
-		0297918325BD784F00917F45 /* LicensePlateSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297918225BD784F00917F45 /* LicensePlateSwiftUIView.swift */; };
-		0297918625BD7C8E00917F45 /* PlateListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297918525BD7C8E00917F45 /* PlateListSwiftUIView.swift */; };
 		0297919325BD805800917F45 /* PlateNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297919225BD805800917F45 /* PlateNumber.swift */; };
 		02A0759F25BB3E5500129803 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0759E25BB3E5500129803 /* ProfileController.swift */; };
 		02A075A225BB3E5E00129803 /* LicensePlateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A075A125BB3E5E00129803 /* LicensePlateController.swift */; };
@@ -54,8 +52,6 @@
 
 /* Begin PBXFileReference section */
 		025F2DE225B808820063DDCF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		0297918225BD784F00917F45 /* LicensePlateSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateSwiftUIView.swift; sourceTree = "<group>"; };
-		0297918525BD7C8E00917F45 /* PlateListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateListSwiftUIView.swift; sourceTree = "<group>"; };
 		0297919225BD805800917F45 /* PlateNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateNumber.swift; sourceTree = "<group>"; };
 		02A0759E25BB3E5500129803 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		02A075A125BB3E5E00129803 /* LicensePlateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePlateController.swift; sourceTree = "<group>"; };
@@ -210,8 +206,6 @@
 		E13A271525B5CD870019FD56 /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
-				0297918525BD7C8E00917F45 /* PlateListSwiftUIView.swift */,
-				0297918225BD784F00917F45 /* LicensePlateSwiftUIView.swift */,
 				E13A275225B5D97A0019FD56 /* TicketRow.swift */,
 				E138F32C25BA01AF00257879 /* TicketDetails.swift */,
 				E138F32F25BA05D800257879 /* MapView.swift */,
@@ -321,7 +315,6 @@
 				E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */,
 				025F2DE325B808820063DDCF /* UIViewController.swift in Sources */,
 				02A075A225BB3E5E00129803 /* LicensePlateController.swift in Sources */,
-				0297918325BD784F00917F45 /* LicensePlateSwiftUIView.swift in Sources */,
 				02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */,
 				E138F33025BA05D800257879 /* MapView.swift in Sources */,
 				E13978E625B8734400342933 /* Location.swift in Sources */,
@@ -340,7 +333,6 @@
 				E135125D25BC726300A98B71 /* AddressController.swift in Sources */,
 				E13A274325B5D78B0019FD56 /* MainSwiftUIView.swift in Sources */,
 				E138F32325B9E3B300257879 /* String.swift in Sources */,
-				0297918625BD7C8E00917F45 /* PlateListSwiftUIView.swift in Sources */,
 				E138DBAC25BB25F1003BEEDC /* MainEntryViewController.swift in Sources */,
 				E132D14025BB6C97007867E5 /* GradientView.swift in Sources */,
 				E13A274925B5D7AB0019FD56 /* HistorySwiftUIView.swift in Sources */,
