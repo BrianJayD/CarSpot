@@ -484,8 +484,4 @@ extension MainSwiftUIView
             }
         }
     }
-
-
-
-
 }
