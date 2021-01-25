@@ -20,9 +20,6 @@ class MainViewController: UIViewController
             print(plate)
         }
         
-        
-        UserDefaults.standard.set(true, forKey: Login.LOGGED_IN.rawValue)
-        
         addSubSwiftUIView(swiftUIView: MainSwiftUIView())
     }
 

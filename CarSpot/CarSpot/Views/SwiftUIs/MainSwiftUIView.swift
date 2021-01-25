@@ -19,6 +19,7 @@ struct MainSwiftUIView: View
     @State var currentLocation = Location()
     @State var newLocation: Location = Location()
     @State var newLocationAdded = false
+    @State var currentLocationAdded = false
 
     @ObservedObject private var locationManager = LocationManager()
     @State private var cancellable: AnyCancellable?
@@ -29,6 +30,7 @@ struct MainSwiftUIView: View
     @State var buildingCode: String = ""
     @State var suitNumber: String = ""
     @State var streetAddress: String = ""
+    @State private var addressChanged = false
     @State var noOfHoursSelection = 0
     let noOfHoursList: [String] = [ParkingHours.one.rawValue, ParkingHours.four.rawValue, ParkingHours.twelve.rawValue, ParkingHours.twentyfour.rawValue]
     @State var licensePlateSelection = 0
@@ -41,7 +43,7 @@ struct MainSwiftUIView: View
         }
         else
         {
-            return "BNMETY"
+            return ""
         }
     }
     @State var alertAddLicensePlate: Bool = false
@@ -49,6 +51,11 @@ struct MainSwiftUIView: View
     @State var displayTicketAlert = false
     @State var ticketAlertTitle: String = ""
     @State var ticketAlertMessage: String = ""
+
+    var buttonOutlineColor: Color
+    {
+        return self.addressChanged ? Color("textOnBackgroundSecondary") : Color("buttonOutline")
+    }
 
     init()
     {
@@ -63,21 +70,24 @@ struct MainSwiftUIView: View
     {
         cancellable = locationManager.$location.sink { (location) in
 
-            // get address info for current location
-            getNewLocation(lat: Double(location!.coordinate.latitude), lon: Double(location!.coordinate.longitude))
-
-            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-
-            let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude - 0.02, longitude: location!.coordinate.longitude)
-
-            self.region = MKCoordinateRegion(center: center, span: span)
-
-            // add locations to pin on map (initial)
-            if (self.locationList.count == 0)
+            if(!self.currentLocationAdded)
             {
-                for location in currentUser!.parkingTickets
+                // get address info for current location
+                getNewLocation(lat: Double(location!.coordinate.latitude), lon: Double(location!.coordinate.longitude))
+
+                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+
+                let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude - 0.02, longitude: location!.coordinate.longitude)
+
+                self.region = MKCoordinateRegion(center: center, span: span)
+
+                // add locations to pin on map (initial)
+                if (self.locationList.count == 0)
                 {
-                    self.locationList.append(location.location)
+                    for location in currentUser!.parkingTickets
+                    {
+                        self.locationList.append(location.location)
+                    }
                 }
             }
         }
@@ -100,6 +110,9 @@ struct MainSwiftUIView: View
                                     VStack
                                     {
                                         Text(place.streetAddress)
+                                            .scaledToFill()
+                                            .minimumScaleFactor(0.5)
+                                            .lineLimit(1)
                                     }
                                         .padding(.top, 5)
                                         .padding(.bottom, 5)
@@ -169,6 +182,13 @@ struct MainSwiftUIView: View
 
                             TextField("Street Address", text: $streetAddress)
                                 .keyboardType(.default)
+                                .onChange(of: streetAddress, perform: { value in
+                                    // chack if streetAddress
+                                    if (self.streetAddress.lowercased() != self.currentLocation.streetAddress.lowercased())
+                                    {
+                                        DispatchQueue.main.async { self.addressChanged = true }
+                                    }
+                                })
 
                             VStack
                             {
@@ -340,10 +360,11 @@ struct MainSwiftUIView: View
                                 Spacer()
                             }
                         }
+                            .disabled(addressChanged)
                             .padding(.top, 7)
                             .padding(.bottom, 7)
                             .background(RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color("buttonOutline"), lineWidth: 1))
+                                .stroke(self.buttonOutlineColor, lineWidth: 1))
                             .padding(.top, 7)
                             .padding(.bottom, 7)
 
@@ -355,8 +376,6 @@ struct MainSwiftUIView: View
                               message: Text(self.ticketAlertMessage),
                               dismissButton: .default(Text("OK")))
                     }
-
-
 
                 }
                     .padding(.top, 10)
@@ -399,6 +418,8 @@ extension MainSwiftUIView
 
     func setCurrentLocation(placemarks: [CLPlacemark]?, error: Error?)
     {
+        print(#function)
+
         if (error != nil)
         {
             print("error")
@@ -433,7 +454,7 @@ extension MainSwiftUIView
 
                 // add current location
                 self.locationList.append(currentLocation)
-
+                self.currentLocationAdded = true
                 print("Address: \(addressString)")
 
             }
@@ -455,6 +476,10 @@ extension MainSwiftUIView
     {
         if (error != nil)
         {
+            let alert = UIAlertController(title: "Location Error", message: "There was an error getting this location.", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "CLOSE", style: .cancel, handler: nil))
+
+            UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
             print(#function, "Error getting location")
         }
         else
@@ -483,11 +508,12 @@ extension MainSwiftUIView
                 self.locationList.append(newLocation)
 
                 let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-                
+
                 let center = CLLocationCoordinate2D(latitude: newLocation.coordinates.latitude - 0.02,
                                                     longitude: newLocation.coordinates.longitude)
-                
+
                 self.region = MKCoordinateRegion(center: center, span: span)
+                DispatchQueue.main.async { self.addressChanged = false }
             }
             else
             {

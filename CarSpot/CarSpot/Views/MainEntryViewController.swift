@@ -13,8 +13,6 @@ class MainEntryViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        //  UserDefaults.standard.setValue(false, forKey: Login.LOGGED_IN.rawValue)
         
         loadStartingPage()
     }
@@ -25,6 +23,7 @@ class MainEntryViewController: UIViewController
     }
 
 
+    // decide which page to load
     func loadStartingPage()
     {
         if (UserDefaults.standard.bool(forKey: Login.REMEMBER_ME.rawValue))
@@ -36,6 +35,4 @@ class MainEntryViewController: UIViewController
             performSegue(withIdentifier: "loginSeguaTemp", sender: nil)
         }
     }
-
-
 }

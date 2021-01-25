@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 
-
 @IBDesignable
 public class GradientView: UIView
 {

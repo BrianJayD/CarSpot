@@ -318,9 +318,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hrb-Vw-Lc1">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hrb-Vw-Lc1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPj-un-U1h" customClass="GradientView" customModule="CarSpot" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="558" width="414" height="250"/>
@@ -529,8 +528,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Vit-ch-7Xk" firstAttribute="trailing" secondItem="DPj-un-U1h" secondAttribute="trailing" id="1Sq-zi-fDN"/>
+                            <constraint firstItem="Hrb-Vw-Lc1" firstAttribute="top" secondItem="Vit-ch-7Xk" secondAttribute="top" id="3o4-nL-F9H"/>
+                            <constraint firstItem="Hrb-Vw-Lc1" firstAttribute="bottom" secondItem="Vit-ch-7Xk" secondAttribute="bottom" id="DO8-jD-fqb"/>
+                            <constraint firstItem="Hrb-Vw-Lc1" firstAttribute="leading" secondItem="Vit-ch-7Xk" secondAttribute="leading" id="K8D-fl-fog"/>
                             <constraint firstItem="DPj-un-U1h" firstAttribute="leading" secondItem="Vit-ch-7Xk" secondAttribute="leading" id="S6d-zd-mbq"/>
                             <constraint firstAttribute="bottom" secondItem="DPj-un-U1h" secondAttribute="bottom" id="lFf-K8-MVI"/>
+                            <constraint firstItem="Hrb-Vw-Lc1" firstAttribute="trailing" secondItem="Vit-ch-7Xk" secondAttribute="trailing" id="xK9-QC-MxN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I2H-4u-fLq"/>

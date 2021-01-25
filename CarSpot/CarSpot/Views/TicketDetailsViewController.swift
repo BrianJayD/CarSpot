@@ -33,6 +33,7 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
         setupLocations()
     }
 
+    // setup all label views
     func setupFields()
     {
         self.dateLabel.text = ticket!.dateString
@@ -46,6 +47,7 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
         self.licensePlateLabel.text = ticket!.licensePlate
     }
 
+    // setup current location and ticket location
     func setupLocations()
     {
         print(#function)
@@ -62,23 +64,12 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
             self.locationManager.startUpdatingLocation()
         }
     }
-
-
-    func setupSwiftUIView()
-    {
-        let hostController = UIHostingController(rootView: TicketDetails(ticket: ticket!))
-        self.addChild(hostController)
-        hostController.view.frame = self.view.frame
-        self.view.addSubview(hostController.view)
-        hostController.didMove(toParent: self)
-    }
-
-
 }
 
 
 extension TicketDetailsViewController
 {
+    // set current location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         print(#function)
@@ -118,6 +109,7 @@ extension TicketDetailsViewController
 
 extension TicketDetailsViewController
 {
+    // get ticket location from lat, lon
     func getAddress(lat: Double, lon: Double)
     {
         print(#function)
@@ -167,6 +159,7 @@ extension TicketDetailsViewController
         }
     }
 
+    // display a marker for locations on map
     func displayMarker(locations: [Location])
     {
         print(#function)
@@ -181,6 +174,7 @@ extension TicketDetailsViewController
         print("Finished")
     }
 
+    // display the route between current location and ticket location
     func showRoute(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D)
     {
         print("showRoute")
@@ -203,6 +197,7 @@ extension TicketDetailsViewController
         print("finished route")
     }
 
+    // callback for setting route 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer
     {
         print(#function)

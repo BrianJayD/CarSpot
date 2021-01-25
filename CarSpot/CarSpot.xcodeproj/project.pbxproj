@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		025F2DE325B808820063DDCF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F2DE225B808820063DDCF /* UIViewController.swift */; };
-		0297918325BD784F00917F45 /* LicensePlateSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297918225BD784F00917F45 /* LicensePlateSwiftUIView.swift */; };
-		0297918625BD7C8E00917F45 /* PlateListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297918525BD7C8E00917F45 /* PlateListSwiftUIView.swift */; };
+		0292144425BF343900E81BCE /* LicensePlateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292144325BF343900E81BCE /* LicensePlateList.swift */; };
+		0292144725BF34D300E81BCE /* LicensePlateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292144625BF34D300E81BCE /* LicensePlateRow.swift */; };
 		0297919325BD805800917F45 /* PlateNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297919225BD805800917F45 /* PlateNumber.swift */; };
 		02A0759F25BB3E5500129803 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0759E25BB3E5500129803 /* ProfileController.swift */; };
 		02A075A225BB3E5E00129803 /* LicensePlateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A075A125BB3E5E00129803 /* LicensePlateController.swift */; };
@@ -28,8 +28,6 @@
 		E138F31525B9CA5E00257879 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E138F31425B9CA5E00257879 /* GoogleService-Info.plist */; };
 		E138F31B25B9D3DA00257879 /* ParkingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138F31A25B9D3DA00257879 /* ParkingHours.swift */; };
 		E138F32325B9E3B300257879 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138F32225B9E3B300257879 /* String.swift */; };
-		E138F32D25BA01AF00257879 /* TicketDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138F32C25BA01AF00257879 /* TicketDetails.swift */; };
-		E138F33025BA05D800257879 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138F32F25BA05D800257879 /* MapView.swift */; };
 		E138F33425BA390A00257879 /* TicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E138F33325BA390A00257879 /* TicketCell.swift */; };
 		E13978E625B8734400342933 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13978E525B8734400342933 /* Location.swift */; };
 		E13A272125B5D37B0019FD56 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A271B25B5D3790019FD56 /* UIView.swift */; };
@@ -44,9 +42,7 @@
 		E13A274025B5D7470019FD56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A273F25B5D7470019FD56 /* LoginViewController.swift */; };
 		E13A274325B5D78B0019FD56 /* MainSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274225B5D78B0019FD56 /* MainSwiftUIView.swift */; };
 		E13A274625B5D7970019FD56 /* LoginSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */; };
-		E13A274925B5D7AB0019FD56 /* HistorySwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274825B5D7AB0019FD56 /* HistorySwiftUIView.swift */; };
 		E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */; };
-		E13A275325B5D97A0019FD56 /* TicketRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275225B5D97A0019FD56 /* TicketRow.swift */; };
 		E13A275625B5DA0F0019FD56 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275525B5DA0F0019FD56 /* TabBarController.swift */; };
 		E13A275925B5E6800019FD56 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A275825B5E6800019FD56 /* Login.swift */; };
 		E13BE3EA25B77BBB0022B496 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13BE3E925B77BBB0022B496 /* LocationManager.swift */; };
@@ -54,8 +50,8 @@
 
 /* Begin PBXFileReference section */
 		025F2DE225B808820063DDCF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		0297918225BD784F00917F45 /* LicensePlateSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateSwiftUIView.swift; sourceTree = "<group>"; };
-		0297918525BD7C8E00917F45 /* PlateListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateListSwiftUIView.swift; sourceTree = "<group>"; };
+		0292144325BF343900E81BCE /* LicensePlateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateList.swift; sourceTree = "<group>"; };
+		0292144625BF34D300E81BCE /* LicensePlateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateRow.swift; sourceTree = "<group>"; };
 		0297919225BD805800917F45 /* PlateNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateNumber.swift; sourceTree = "<group>"; };
 		02A0759E25BB3E5500129803 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		02A075A125BB3E5E00129803 /* LicensePlateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicensePlateController.swift; sourceTree = "<group>"; };
@@ -76,8 +72,6 @@
 		E138F31425B9CA5E00257879 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E138F31A25B9D3DA00257879 /* ParkingHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHours.swift; sourceTree = "<group>"; };
 		E138F32225B9E3B300257879 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		E138F32C25BA01AF00257879 /* TicketDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetails.swift; sourceTree = "<group>"; };
-		E138F32F25BA05D800257879 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E138F33325BA390A00257879 /* TicketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCell.swift; sourceTree = "<group>"; };
 		E13978E525B8734400342933 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E13A271B25B5D3790019FD56 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -92,9 +86,7 @@
 		E13A273F25B5D7470019FD56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E13A274225B5D78B0019FD56 /* MainSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSwiftUIView.swift; sourceTree = "<group>"; };
 		E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIView.swift; sourceTree = "<group>"; };
-		E13A274825B5D7AB0019FD56 /* HistorySwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySwiftUIView.swift; sourceTree = "<group>"; };
 		E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwiftUIView.swift; sourceTree = "<group>"; };
-		E13A275225B5D97A0019FD56 /* TicketRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRow.swift; sourceTree = "<group>"; };
 		E13A275525B5DA0F0019FD56 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E13A275825B5E6800019FD56 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E13BE3E925B77BBB0022B496 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -168,7 +160,6 @@
 				E138DBC125BB5588003BEEDC /* SignUpSwiftUIView.swift */,
 				E13A274225B5D78B0019FD56 /* MainSwiftUIView.swift */,
 				E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */,
-				E13A274825B5D7AB0019FD56 /* HistorySwiftUIView.swift */,
 				E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */,
 			);
 			path = SwiftUIs;
@@ -210,12 +201,9 @@
 		E13A271525B5CD870019FD56 /* SupportingViews */ = {
 			isa = PBXGroup;
 			children = (
-				0297918525BD7C8E00917F45 /* PlateListSwiftUIView.swift */,
-				0297918225BD784F00917F45 /* LicensePlateSwiftUIView.swift */,
-				E13A275225B5D97A0019FD56 /* TicketRow.swift */,
-				E138F32C25BA01AF00257879 /* TicketDetails.swift */,
-				E138F32F25BA05D800257879 /* MapView.swift */,
 				E138F33325BA390A00257879 /* TicketCell.swift */,
+				0292144325BF343900E81BCE /* LicensePlateList.swift */,
+				0292144625BF34D300E81BCE /* LicensePlateRow.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -315,15 +303,12 @@
 			files = (
 				02A0759F25BB3E5500129803 /* ProfileController.swift in Sources */,
 				E13A274025B5D7470019FD56 /* LoginViewController.swift in Sources */,
-				E138F32D25BA01AF00257879 /* TicketDetails.swift in Sources */,
 				02C32F5E25B4BC14005CE759 /* CarSpot.xcdatamodeld in Sources */,
 				E13A272525B5D37B0019FD56 /* UITextField.swift in Sources */,
 				E13A274C25B5D7B80019FD56 /* ProfileSwiftUIView.swift in Sources */,
 				025F2DE325B808820063DDCF /* UIViewController.swift in Sources */,
 				02A075A225BB3E5E00129803 /* LicensePlateController.swift in Sources */,
-				0297918325BD784F00917F45 /* LicensePlateSwiftUIView.swift in Sources */,
 				02C32F5425B4BC14005CE759 /* AppDelegate.swift in Sources */,
-				E138F33025BA05D800257879 /* MapView.swift in Sources */,
 				E13978E625B8734400342933 /* Location.swift in Sources */,
 				E13A272325B5D37B0019FD56 /* Int64.swift in Sources */,
 				E138F33425BA390A00257879 /* TicketCell.swift in Sources */,
@@ -340,15 +325,14 @@
 				E135125D25BC726300A98B71 /* AddressController.swift in Sources */,
 				E13A274325B5D78B0019FD56 /* MainSwiftUIView.swift in Sources */,
 				E138F32325B9E3B300257879 /* String.swift in Sources */,
-				0297918625BD7C8E00917F45 /* PlateListSwiftUIView.swift in Sources */,
 				E138DBAC25BB25F1003BEEDC /* MainEntryViewController.swift in Sources */,
+				0292144725BF34D300E81BCE /* LicensePlateRow.swift in Sources */,
 				E132D14025BB6C97007867E5 /* GradientView.swift in Sources */,
-				E13A274925B5D7AB0019FD56 /* HistorySwiftUIView.swift in Sources */,
 				E13A275925B5E6800019FD56 /* Login.swift in Sources */,
-				E13A275325B5D97A0019FD56 /* TicketRow.swift in Sources */,
 				E13A274625B5D7970019FD56 /* LoginSwiftUIView.swift in Sources */,
 				E13BE3EA25B77BBB0022B496 /* LocationManager.swift in Sources */,
 				E13A272125B5D37B0019FD56 /* UIView.swift in Sources */,
+				0292144425BF343900E81BCE /* LicensePlateList.swift in Sources */,
 				02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */,
 				E138DBA725BB2468003BEEDC /* TicketController.swift in Sources */,
 				E13A272A25B5D6630019FD56 /* User.swift in Sources */,
