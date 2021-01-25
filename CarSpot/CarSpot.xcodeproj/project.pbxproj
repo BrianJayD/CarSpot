@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		025F2DE325B808820063DDCF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F2DE225B808820063DDCF /* UIViewController.swift */; };
-		0292143A25BEADD800E81BCE /* LicensePlateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292143925BEADD800E81BCE /* LicensePlateRow.swift */; };
-		0292143D25BEB49300E81BCE /* LicensePlateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292143C25BEB49300E81BCE /* LicensePlateList.swift */; };
 		0297918325BD784F00917F45 /* LicensePlateSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297918225BD784F00917F45 /* LicensePlateSwiftUIView.swift */; };
 		0297918625BD7C8E00917F45 /* PlateListSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297918525BD7C8E00917F45 /* PlateListSwiftUIView.swift */; };
 		0297919325BD805800917F45 /* PlateNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297919225BD805800917F45 /* PlateNumber.swift */; };
@@ -56,8 +54,6 @@
 
 /* Begin PBXFileReference section */
 		025F2DE225B808820063DDCF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		0292143925BEADD800E81BCE /* LicensePlateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateRow.swift; sourceTree = "<group>"; };
-		0292143C25BEB49300E81BCE /* LicensePlateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateList.swift; sourceTree = "<group>"; };
 		0297918225BD784F00917F45 /* LicensePlateSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateSwiftUIView.swift; sourceTree = "<group>"; };
 		0297918525BD7C8E00917F45 /* PlateListSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateListSwiftUIView.swift; sourceTree = "<group>"; };
 		0297919225BD805800917F45 /* PlateNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateNumber.swift; sourceTree = "<group>"; };
@@ -220,8 +216,6 @@
 				E138F32C25BA01AF00257879 /* TicketDetails.swift */,
 				E138F32F25BA05D800257879 /* MapView.swift */,
 				E138F33325BA390A00257879 /* TicketCell.swift */,
-				0292143925BEADD800E81BCE /* LicensePlateRow.swift */,
-				0292143C25BEB49300E81BCE /* LicensePlateList.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -320,7 +314,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A0759F25BB3E5500129803 /* ProfileController.swift in Sources */,
-				0292143A25BEADD800E81BCE /* LicensePlateRow.swift in Sources */,
 				E13A274025B5D7470019FD56 /* LoginViewController.swift in Sources */,
 				E138F32D25BA01AF00257879 /* TicketDetails.swift in Sources */,
 				02C32F5E25B4BC14005CE759 /* CarSpot.xcdatamodeld in Sources */,
@@ -359,7 +352,6 @@
 				02C32F5625B4BC14005CE759 /* SceneDelegate.swift in Sources */,
 				E138DBA725BB2468003BEEDC /* TicketController.swift in Sources */,
 				E13A272A25B5D6630019FD56 /* User.swift in Sources */,
-				0292143D25BEB49300E81BCE /* LicensePlateList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
