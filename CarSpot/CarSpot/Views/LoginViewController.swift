@@ -20,9 +20,16 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tfEmail.delegate = self
+        self.tfPassword.delegate = self
+        
+        //Setup text fields
+        self.styleTextField(uiTextField: tfEmail)
+        self.styleTextField(uiTextField: tfPassword)
 
 //        self.addSubSwiftUIView(swiftUIView: LoginSwiftUIView())
-        //profileController.getAllAccounts()
+        profileController.getAllAccounts()
 
         // if you want to completely remove the nav bar in the login screen
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -30,7 +37,7 @@ class LoginViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
 
         //profileController.getAllAccounts()
-        //CHANGE email depending which user you are checking 
+        //CHANGE email depending which user you are checking
         for plate in licensePlateController.getAllLicensePlatesForUser(email: "b@b.com") {
             print(plate)
         }
@@ -87,5 +94,24 @@ class LoginViewController: UIViewController {
         }
         return true
     }
+    
+    func styleTextField(uiTextField: UITextField) {
+        uiTextField.layer.cornerRadius = 20
+        uiTextField.layer.borderWidth = 1.0
+        uiTextField.layer.borderColor = UIColor(white: 0.5, alpha: 0.3).cgColor
+        uiTextField.borderStyle = .none
+        uiTextField.layer.shadowOpacity = 1
+        uiTextField.layer.shadowRadius = 8
+        uiTextField.layer.shadowColor = UIColor.black.cgColor
+    }
 
 }
+
+//Hides keyboard when pressing return key
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
+}
+

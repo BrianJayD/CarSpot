@@ -67,6 +67,58 @@ class LicensePlateController
         }
         return [String]()
     }
+    
+    func getAllPlateNumbersForUser(email: String) -> [PlateNumber]
+    {
+        do {
+            let result = try moc.fetch(fetchRequest)
+            let licensePlates = result as [LicensePlate]
+
+            var licensePlatesToReturn:[PlateNumber] = []
+
+            for plate in licensePlates
+            {
+                if(plate.email == email)
+                {
+                    licensePlatesToReturn.append(PlateNumber(plateNumber: plate.plateNumber!, email: plate.email!))
+                }
+//                print("Email: \(plate.email) Plate: \(plate.plateNumber)")
+            }
+            return licensePlatesToReturn
+
+        } catch let error {
+            print(#function, "Couldn't fetch records", error.localizedDescription)
+        }
+        return [PlateNumber]()
+    }
+    
+    func removeLicensePlate(plateNumber: String) -> Bool {
+        // Initialize Fetch Request
+        
+
+        // Configure Fetch Request
+        //fetchRequest.includesPropertyValues = false
+
+        do {
+            let result = try moc.fetch(fetchRequest)
+            let licensePlates = result as [LicensePlate]
+            
+            for item in licensePlates {
+                if(item.plateNumber == plateNumber) {
+                    moc.delete(item)
+                }
+            }
+
+            // Save Changes
+            try moc.save()
+            
+            return true
+
+        } catch let error {
+            print(#function, "Could not delete license plate", error.localizedDescription)
+        }
+        return false
+    }
 
     //TODO
     //MARK: This is from my experiment to get firebase to work.
