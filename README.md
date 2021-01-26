@@ -47,4 +47,7 @@ ___
 - MKMapView with current location and route to location of parking ticket
 - Reverse geolocation used to get parking location from latitude and longitude
 ___
-###### Logo, icon, screenshots and screen recording done by Daryl Dyck
+#### Additional items
+- Logo & App Icon by Daryl Dyck
+- Screenshots & Screen Recording by Daryl Dyck
+- All color assets added by Daryl Dyck
