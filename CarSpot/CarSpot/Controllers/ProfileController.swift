@@ -36,8 +36,28 @@ class ProfileController {
                 licensePlateController.insertLicensePlate(email: email.lowercased(), plateNumber: lPlate)
             }
 
-            
+            return InsertStatus.success
 
+        } catch let error as NSError {
+            print(#function, error.localizedDescription)
+            return InsertStatus.failed
+        }
+    }
+    
+    func insertAccount(email: String, password: String, firstName: String, lastName: String, phoneNumber: Int, licensePlate: String) -> InsertStatus {
+        do {
+            let newAccount = NSEntityDescription.insertNewObject(forEntityName: "Profile", into: moc) as! Profile
+
+            newAccount.email = email.lowercased()
+            newAccount.password = password
+            newAccount.firstName = firstName
+            newAccount.lastName = lastName
+            newAccount.phoneNumber = Int64(phoneNumber)
+            try moc.save()
+            
+            let licensePlateController = LicensePlateController()
+            licensePlateController.insertLicensePlate(email: email.lowercased(), plateNumber: licensePlate)
+            
             return InsertStatus.success
 
         } catch let error as NSError {
@@ -138,6 +158,42 @@ class ProfileController {
 
         print(#function, "No account found with \(email)")
         return User()
+    }
+    
+    func updateUser(email: String, user:User) -> Bool {
+        let fetchRequest = NSFetchRequest<Profile>(entityName: "Profile")
+
+        //equivalent to a WHERE statement
+        let predicate = NSPredicate(format: "email == %@", email)
+        fetchRequest.predicate = predicate
+        
+        do {
+            let result = try moc.fetch(fetchRequest).first
+            if result != nil {
+                let account = result! as NSManagedObject
+                if(user.firstName != "") {
+                    account.setValue(user.firstName, forKey: "firstName")
+                }
+                if(user.lastName != "") {
+                    account.setValue(user.lastName, forKey: "lastName")
+                }
+                if(user.email != "") {
+                    account.setValue(user.email, forKey: "email")
+                }
+                if(user.phone != 0) {
+                    account.setValue(user.phone, forKey: "phoneNumber")
+                }
+                if(user.password != "") {
+                    account.setValue(user.password, forKey: "password")
+                }
+            }
+            
+            try moc.save()
+            return true
+        } catch let error {
+            print(#function, error.localizedDescription)
+        }
+        return false
     }
 
 }

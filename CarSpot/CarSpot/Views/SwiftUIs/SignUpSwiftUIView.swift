@@ -17,10 +17,13 @@ struct SignUpSwiftUIView: View {
     @State private var tfNewPlate: String = ""
     
     @State var plateNumbers:[PlateNumber] = []
+    @State private var isLogged:Bool = UserDefaults.standard.bool(forKey: Login.LOGGED_IN.rawValue)
     
     //Error messages
     @State var errorCode:Int = 0
     @State var showAlert = false
+    
+    @State var showPlates = false
     
     let errorTitles:[String] = [
         "Invalid first name/last name",
@@ -37,9 +40,10 @@ struct SignUpSwiftUIView: View {
         "Password must be atleast 8 characters long.",
         "Ensure both password fields match."
     ]
-
+    
     let profileController = ProfileController()
-
+    @State var userInfo:User = User()
+    
     @Environment(\.presentationMode) var presentationMode
     
     private func delete(with indexSet: IndexSet) {
@@ -52,7 +56,23 @@ struct SignUpSwiftUIView: View {
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", regex)
         return emailPredicate.evaluate(with: email)
     }
-
+    
+    let userController = ProfileController()
+    
+    func loadUser() {
+        
+        if(isLogged) {
+            print("Your details...")
+            userInfo = profileController.getUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!)
+            
+            print(userInfo.firstName)
+            print(userInfo.lastName)
+            print(userInfo.email)
+            print(userInfo.phone)
+        }
+        
+    }
+    
     var body: some View {
         var ownedLicensePlates:[PlateNumber] = []
         
@@ -63,20 +83,37 @@ struct SignUpSwiftUIView: View {
                     VStack {
                         Text("Enter Name:")
                         HStack {
-                            TextField("First Name", text: $tfFirstName)
-                            TextField("Last Name", text: $tfLastName)
+                            if(isLogged) {
+                                TextField("\(userInfo.firstName)", text: $tfFirstName)
+                                TextField("\(userInfo.lastName)", text: $tfLastName)
+                            } else {
+                                TextField("First Name", text: $tfFirstName)
+                                TextField("Last Name", text: $tfLastName)
+                            }
                         }
                     }
                     
                     VStack {
                         Text("Enter your phone number:")
-                        TextField("Phone Number", text: $tfPhone)
-                            .multilineTextAlignment(.center)
+                        if(isLogged) {
+                            let phoneNum = Int64(userInfo.phone).toPhoneString()
+                            TextField("\(phoneNum)", text: $tfPhone)
+                                .multilineTextAlignment(.center)
+                        } else {
+                            TextField("Phone Number", text: $tfPhone)
+                                .multilineTextAlignment(.center)
+                        }
                     }
                     VStack {
                         Text("Enter your e-mail:")
-                        TextField("E-mail address", text: $tfEmail)
-                            .multilineTextAlignment(.center)
+                        if(isLogged) {
+                            TextField("\(userInfo.email)", text: $tfEmail)
+                                .multilineTextAlignment(.center)
+                        } else {
+                            
+                            TextField("E-mail address", text: $tfEmail)
+                                .multilineTextAlignment(.center)
+                        }
                     }
                     VStack {
                         Text("Choose new password:")
@@ -90,57 +127,78 @@ struct SignUpSwiftUIView: View {
                     }
                 }
                 
-                Section(header: Text("License Plates")) {
-                    Text("Enter license plate:")
-                    HStack {
-                        
-                        
-                        TextField("License Plate", text: $tfNewPlate)
-                            .multilineTextAlignment(.center)
-                        
-                        Button(action: {
-                            guard tfNewPlate != "" else {
-                                print(#function, "Invalid plates, please try again.")
-                                return
-                            }
-                        
-                            let plateNumber = PlateNumber(plateNumber: tfNewPlate.uppercased())
-                            ownedLicensePlates.append(plateNumber)
-                            plateNumbers.append(PlateNumber(plateNumber: plateNumber.plateNumber))
+                if(!isLogged) {
+                    Section(header: Text("License Plates")) {
+                        Text("Enter license plate:")
+                        HStack {
+                            TextField("License Plate", text: $tfNewPlate)
+                                .multilineTextAlignment(.center)
                             
-                            tfNewPlate = ""
-                            print("NEW PLATE \(plateNumber.plateNumber)")
-                            print("All plates \(ownedLicensePlates)")
-                        }, label: {
-                            Image(systemName: "plus.circle.fill")
-                                .foregroundColor(Color("textOnBackgroundSecondary"))
-                        })
-                        .padding()
+                        }
                     }
                 }
                 
-                //LicensePlateList(plateNumbers: [PlateNumber(plateNumber: "SICKVET", email: "vet@vet.com")])
-                    
-                HStack{
-                    Spacer()
-                    Text("Your License Plates")
-                        .font(.headline)
-                    Spacer()
+                if(isLogged) {
+                    Section(header: Text("License Plates")) {
+                        Button(action: {
+                            self.showPlates.toggle()
+                            
+                            //                        guard tfNewPlate != "" else {
+                            //                            print(#function, "Invalid plates, please try again.")
+                            //                            return
+                            //                        }
+                            //
+                            //                        let plateNumber = PlateNumber(plateNumber: tfNewPlate.uppercased())
+                            //                        ownedLicensePlates.append(plateNumber)
+                            //                        plateNumbers.append(PlateNumber(plateNumber: plateNumber.plateNumber))
+                            //
+                            //                        tfNewPlate = ""
+                            //                        print("NEW PLATE \(plateNumber.plateNumber)")
+                            //                        print("All plates \(ownedLicensePlates)")
+                        }, label: {
+                            HStack {
+                                Spacer()
+                                Text("Add/Remove your plates")
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundColor(Color("textOnBackgroundSecondary"))
+                                Spacer()
+                            }
+                        })
+                        .padding()
+                        .sheet(isPresented: $showPlates, content: {
+                            LicensePlatesSwiftUIView()
+                        })
+                    }
                 }
                 
-                
-                List {
-                    ForEach(plateNumbers) { plateNumber in
-                        HStack {
-                            Spacer()
-                            LicensePlateRow(plateNumber: plateNumber.plateNumber)
-                            Spacer()
-                        }
-                    }.onDelete(perform: delete)
-                }
-            }
+                //                Section {
+                //                    HStack{
+                //                        Spacer()
+                //                        Text("Your License Plates")
+                //                            .font(.headline)
+                //                        Spacer()
+                //                    }
+                //
+                //                    List {
+                //                        ForEach(plateNumbers) { plateNumber in
+                //                            HStack {
+                //                                Spacer()
+                //                                LicensePlateRow(plateNumber: plateNumber.plateNumber)
+                //                                Spacer()
+                //                            }
+                //                        }.onDelete(perform: delete)
+                //                    }
+                //                }
+            }.onAppear(perform: {
+                tfFirstName = ""
+                tfLastName = ""
+                tfEmail = ""
+                tfPhone = ""
+                tfPassword = ""
+                loadUser()
+            })
             
-            
+            Spacer()
             Button(action: {
                 print("\(tfEmail), \(tfPassword)")
                 
@@ -150,42 +208,90 @@ struct SignUpSwiftUIView: View {
                     addedPlates.append(plateNumber.plateNumber)
                 }
                 
-                if(tfFirstName == "" || tfLastName == "") {
-                    self.errorCode = 0
-                    self.showAlert = true
-                    return
-                } else if(tfPhone == "" || tfPhone.count < 10 || tfPhone.count > 10) {
-                    self.errorCode = 1
-                    self.showAlert = true
-                    return
-                } else if(!validateEmail(email: tfEmail) || tfEmail == "") {
-                    self.errorCode = 2
-                    self.showAlert = true
-                    return
-                } else if(tfPassword.count < 8) {
-                    self.errorCode = 3
-                    self.showAlert = true
-                    return
-                } else if(tfConfirmation != tfPassword) {
-                    self.errorCode = 4
-                    self.showAlert = true
-                    return
+                
+                //
+                //                let status = profileController.insertAccount(email: tfEmail.lowercased(), password: tfPassword, firstName: tfFirstName, lastName: tfLastName, phoneNumber: Int(tfPhone)!, licensePlates: addedPlates)
+                var newEmail:String = ""
+                if(isLogged){
+                    if(tfFirstName != "") {
+                        userInfo.firstName = tfFirstName
+                    }
+                    if(tfLastName != "") {
+                        userInfo.lastName = tfLastName
+                    }
+                    if(tfEmail != "") {
+                        userInfo.email = tfEmail
+                    }
+                    if(tfPhone != "") {
+                        userInfo.phone = Int(tfPhone)!
+                    }
+                    if(tfPassword == tfConfirmation) {
+                        userInfo.password = tfPassword
+                    }
+                    
+                    let isUpdated = profileController.updateUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!, user: userInfo)
+                    
+                    if(tfEmail != "" && isUpdated) {
+                        print("CHANGED YOUR EMAIL")
+                        UserDefaults.standard.setValue(userInfo.email, forKey: Login.CURRENT_USER.rawValue)
+                    }
+                    
+                    print("UPDATE(): \(isUpdated)")
+                } else {
+                    if(tfFirstName == "" || tfLastName == "") {
+                        self.errorCode = 0
+                        self.showAlert = true
+                        return
+                    } else if(tfPhone == "" || tfPhone.count < 10 || tfPhone.count > 10) {
+                        self.errorCode = 1
+                        self.showAlert = true
+                        return
+                    } else if(!validateEmail(email: tfEmail) || tfEmail == "") {
+                        self.errorCode = 2
+                        self.showAlert = true
+                        return
+                    } else if(tfPassword.count < 8) {
+                        self.errorCode = 3
+                        self.showAlert = true
+                        return
+                    } else if(tfConfirmation != tfPassword) {
+                        self.errorCode = 4
+                        self.showAlert = true
+                        return
+                    }
+                    let status = profileController.insertAccount(email: tfEmail.lowercased(), password: tfPassword, firstName: tfFirstName, lastName: tfLastName, phoneNumber: Int(tfPhone)!, licensePlate: tfNewPlate)
+                    print(status)
+                    self.presentationMode.wrappedValue.dismiss()
                 }
                 
-                let status = profileController.insertAccount(email: tfEmail.lowercased(), password: tfPassword, firstName: tfFirstName, lastName: tfLastName, phoneNumber: Int(tfPhone)!, licensePlates: addedPlates)
                 
-                print(status)
-                self.presentationMode.wrappedValue.dismiss()
                 
             }, label: {
-                Text("Create Account")
+                if(isLogged) {
+                    Text("Update Account")
+                        .foregroundColor(Color("buttonText"))
+                        
+                } else {
+                    Text("Create Account").foregroundColor(Color("buttonText"))
+                    
+                        
+                }
             })
-            .padding()
+            .padding(.top, 7)
+            .padding(.bottom, 7)
+            .padding(.leading, 7)
+            .padding(.trailing, 7)
+            .background(RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color("buttonOutline"), lineWidth: 1))
+            .padding(.top, 7)
+            .padding(.bottom, 7)
             .alert(isPresented: $showAlert) {
                 Alert(title: Text(self.errorTitles[self.errorCode]), message: Text(self.errorMessages[self.errorCode]), dismissButton: .default(Text("Dismiss")))
             }
             
         }
+        .background(Color("mainBackground"))
+        
     }
 }
 

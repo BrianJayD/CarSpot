@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0204D80E25C0A25E006F18E1 /* LicensePlateSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D80D25C0A25E006F18E1 /* LicensePlateSwiftUIView.swift */; };
 		025F2DE325B808820063DDCF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F2DE225B808820063DDCF /* UIViewController.swift */; };
 		0292144425BF343900E81BCE /* LicensePlateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292144325BF343900E81BCE /* LicensePlateList.swift */; };
 		0292144725BF34D300E81BCE /* LicensePlateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292144625BF34D300E81BCE /* LicensePlateRow.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0204D80D25C0A25E006F18E1 /* LicensePlateSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateSwiftUIView.swift; sourceTree = "<group>"; };
 		025F2DE225B808820063DDCF /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		0292144325BF343900E81BCE /* LicensePlateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateList.swift; sourceTree = "<group>"; };
 		0292144625BF34D300E81BCE /* LicensePlateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensePlateRow.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				E13A274225B5D78B0019FD56 /* MainSwiftUIView.swift */,
 				E13A274525B5D7970019FD56 /* LoginSwiftUIView.swift */,
 				E13A274B25B5D7B80019FD56 /* ProfileSwiftUIView.swift */,
+				0204D80D25C0A25E006F18E1 /* LicensePlateSwiftUIView.swift */,
 			);
 			path = SwiftUIs;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				E13A273D25B5D7310019FD56 /* ProfileViewController.swift in Sources */,
 				E138DB8725BB1405003BEEDC /* TicketDetailsViewController.swift in Sources */,
 				E13A273A25B5D71C0019FD56 /* HistoryViewController.swift in Sources */,
+				0204D80E25C0A25E006F18E1 /* LicensePlateSwiftUIView.swift in Sources */,
 				0297919325BD805800917F45 /* PlateNumber.swift in Sources */,
 				E13A272D25B5D6780019FD56 /* ParkingTicket.swift in Sources */,
 				E13A273625B5D7040019FD56 /* MainViewController.swift in Sources */,
