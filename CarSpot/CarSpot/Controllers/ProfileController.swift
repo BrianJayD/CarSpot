@@ -178,7 +178,7 @@ class ProfileController {
                     account.setValue(user.lastName, forKey: "lastName")
                 }
                 if(user.email != "") {
-                    account.setValue(user.email, forKey: "email")
+                    account.setValue(user.email.lowercased(), forKey: "email")
                 }
                 if(user.phone != 0) {
                     account.setValue(user.phone, forKey: "phoneNumber")
