@@ -24,6 +24,7 @@ struct LicensePlateRow: View {
                 .foregroundColor(Color("primary"))
 
         }
+            .frame(minWidth: 200, maxWidth: 200)
             .padding(7)
             .background(Color("cardBackground"))
             .cornerRadius(10)
@@ -43,7 +44,7 @@ struct LicensePlateRow: View {
 
 struct LicensePlateRow_Previews: PreviewProvider {
     static var previews: some View {
-        LicensePlateRow(plateNumber: "BBBCCC")
+        LicensePlateRow(plateNumber: "MADS4001")
     }
 }
 
