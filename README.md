@@ -2,7 +2,7 @@
 
 ### Authors
 [Brian Domingo](https://github.com/BrianJayD)\
-Student Number: \
+Student Number: 
 
 [Daryl Dyck](https://github.com/daryldyck/)\
 Student Number: 101338429
