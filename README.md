@@ -46,3 +46,5 @@ ___
 - Built in UIKit
 - MKMapView with current location and route to location of parking ticket
 - Reverse geolocation used to get parking location from latitude and longitude
+___
+###### Logo, icon, screenshots and screen recording done by Daryl Dyck
