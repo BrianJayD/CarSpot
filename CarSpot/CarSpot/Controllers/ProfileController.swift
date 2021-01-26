@@ -197,6 +197,33 @@ class ProfileController {
         }
         return false
     }
+    
+    func removeUser(email: String) -> Bool {
+        // Initialize Fetch Request
+        
+        // Configure Fetch Request
+        fetchRequest.includesPropertyValues = false
+
+        do {
+            let result = try moc.fetch(fetchRequest)
+            let profiles = result as [Profile]
+
+            for profile in profiles {
+                if(profile.email == email) {
+                    moc.delete(profile)
+                }
+            }
+
+            // Save Changes
+            try moc.save()
+
+            return true
+
+        } catch let error {
+            print(#function, "Could not delete license plate", error.localizedDescription)
+        }
+        return false
+    }
 
 }
 
