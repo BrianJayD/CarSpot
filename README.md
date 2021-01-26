@@ -10,7 +10,7 @@ ___
 ##### By Brian Domingo
 
 **Features include:**
-- Build in SwiftUI
+- Build in UIKit
 ___
 ### Profile Page
 ##### By Brian Domingo
