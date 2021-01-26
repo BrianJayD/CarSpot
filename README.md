@@ -19,13 +19,10 @@ ___
 
 
 ### Purchase Ticket Page
-**Built in SwiftUI**
-
 **_By Daryl Dyck_**
 
-**Build in SwiftUI**\
 **Features include:**
-
+- Build in SwiftUI
 - Map (SwiftUI 2.0) with current location annotation
 - Forward Geocoding (Fetching location from street address)
 - All user data retrieved from CoreData
