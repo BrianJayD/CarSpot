@@ -30,9 +30,21 @@ class TabBarController: UITabBarController
         titleImage.contentMode = .scaleAspectFit
         self.navigationItem.titleView = titleImage
 
+        // display overflow menu
+        self.navigationItem.rightBarButtonItem =
+            UIBarButtonItem(image: UIImage(named: "ic_about"), style: .plain, target: self, action: #selector(menu(sender:)))
+
         self.navigationItem.leftBarButtonItem =
             UIBarButtonItem(image: UIImage(named: "ic_logout"), style: .plain, target: self, action: #selector(logout(sender:)))
 
+    }
+
+    // about alert dialog
+    @objc func menu(sender: AnyObject)
+    {
+        let aboutDialog = UIAlertController(title: "About", message: "CarSpot: by Brian Domingo and Daryl Dyck", preferredStyle: .alert)
+        aboutDialog.addAction((UIAlertAction(title: "Close", style: .default, handler: nil)))
+        present(aboutDialog, animated: true, completion: nil)
     }
 
     // logout of app
