@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
                 print("Log In Successful")
                 
                 // set user defaults for current verified user
-                UserDefaults.standard.setValue(tfEmail.text!, forKey: Login.CURRENT_USER.rawValue)
+                UserDefaults.standard.setValue(tfEmail.text!.lowercased(), forKey: Login.CURRENT_USER.rawValue)
                 UserDefaults.standard.setValue(true, forKey: Login.LOGGED_IN.rawValue)
                 
                 //check remember me switch
