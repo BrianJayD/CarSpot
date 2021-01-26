@@ -1,8 +1,10 @@
 # CarSpot - iOS Parking App
 
 ### Authors
-[Brian Domingo](https://github.com/BrianJayD) Student Number: \
-[Daryl Dyck](https://github.com/daryldyck/) Student Number: 101338429
+[Brian Domingo](https://github.com/BrianJayD)\
+Student Number: \
+[Daryl Dyck](https://github.com/daryldyck/)\
+Student Number: 101338429
 ___
 ![Screenshots](images/Screenshots.jpg)
 ___
