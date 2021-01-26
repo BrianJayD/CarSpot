@@ -18,12 +18,12 @@ ___
 ##### By Brian Domingo
 
 
-### Purchase Ticket Page **Build in SwiftUI**
+### Purchase Ticket Page
+**Built in SwiftUI**
 
 **_By Daryl Dyck_**
 
-**Build in SwiftUI**
-
+**Build in SwiftUI**\
 **Features include:**
 
 - Map (SwiftUI 2.0) with current location annotation
