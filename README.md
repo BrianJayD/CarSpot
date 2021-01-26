@@ -2,7 +2,19 @@
 
 ### Authors
 ___
+###### Brian Domingo
+###### Daryl Dyck
+___
+![](images/Screenshots.jpg)
+___
+## About The Project
+___ 
+### Login
 
-Brian Domingo
+### Profile
 
-Daryl Dyck
+### Purchase Ticket
+
+### Ticket History
+
+### Ticket Details
