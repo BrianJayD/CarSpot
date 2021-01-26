@@ -22,6 +22,9 @@ class MainViewController: UIViewController
     // when view loads - putting here so when user comes back to this page, it re-loads
     override func viewDidAppear(_ animated: Bool)
     {
+        if(!UserDefaults.standard.bool(forKey: Login.LOGGED_IN.rawValue)) {
+            _ = navigationController?.popViewController(animated: true)
+        }
         addSubSwiftUIView(swiftUIView: MainSwiftUIView())
     }
 
