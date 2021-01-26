@@ -27,7 +27,7 @@ class LicensePlateController
             let newLicensePlate = NSEntityDescription.insertNewObject(forEntityName: "LicensePlate", into: moc) as! LicensePlate
 
             newLicensePlate.email = email
-            newLicensePlate.plateNumber = plateNumber
+            newLicensePlate.plateNumber = plateNumber.uppercased()
 
             try moc.save()
 

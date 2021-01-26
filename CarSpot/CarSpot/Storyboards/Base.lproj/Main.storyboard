@@ -21,7 +21,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="YIX-fE-qNe"/>
                     <connections>
-                        <segue destination="1AB-rV-d2L" kind="show" identifier="loginSegua" id="xhb-6l-fYr"/>
                         <segue destination="uVX-XS-5nt" kind="show" identifier="mainPageSegua" id="UVz-Rf-2eD"/>
                         <segue destination="d3u-or-o7o" kind="show" identifier="loginSeguaTemp" id="1Cb-uQ-oy9"/>
                     </connections>
@@ -29,20 +28,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="793-w8-LAx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1900" y="-1491"/>
-        </scene>
-        <!--Hosting Controller-->
-        <scene sceneID="Fh3-md-fax">
-            <objects>
-                <hostingController id="1AB-rV-d2L" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="B5o-vy-IJt"/>
-                    <connections>
-                        <segue destination="uVX-XS-5nt" kind="show" identifier="LoginToMainSegua" id="SGu-gp-613"/>
-                        <segue destination="Xrh-ta-AMx" kind="showDetail" identifier="profileSegua" id="a31-4m-kxP"/>
-                    </connections>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ddv-2q-Lf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1900" y="-724"/>
         </scene>
         <!--History-->
         <scene sceneID="N2n-ej-PVB">
