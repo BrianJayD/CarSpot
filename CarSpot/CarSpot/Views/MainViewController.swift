@@ -1,8 +1,10 @@
 //
-//  MainViewController.swift
+//  Advanced iOS - MADS4005
 //  CarSpot
 //
-//  Created by Daryl Dyck on 2021-01-18.
+//  Group 7
+//  Brian Domingo - 101330689
+//  Daryl Dyck - 101338429
 //
 
 import UIKit

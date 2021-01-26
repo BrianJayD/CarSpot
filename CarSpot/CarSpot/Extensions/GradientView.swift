@@ -1,3 +1,12 @@
+//
+//  Advanced iOS - MADS4005
+//  CarSpot
+//
+//  Group 7
+//  Brian Domingo - 101330689
+//  Daryl Dyck - 101338429
+//
+
 import Foundation
 import UIKit
 
