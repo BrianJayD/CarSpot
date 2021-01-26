@@ -3,9 +3,13 @@
 ### Authors
 ___
 ###### Brian Domingo
+[GitHub - Brian](https://github.com/BrianJayD)
+
 ###### Daryl Dyck
+[GitHub - Daryl](https://github.com/daryldyck/)
+
 ___
-![](images/Screenshots.jpg)
+![Screenshots](images/Screenshots.jpg)
 ___
 ## About The Project
 ___ 
@@ -18,3 +22,4 @@ ___
 ### Ticket History
 
 ### Ticket Details
+
