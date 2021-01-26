@@ -74,8 +74,6 @@ struct SignUpSwiftUIView: View {
     }
     
     var body: some View {
-        var ownedLicensePlates:[PlateNumber] = []
-        
         VStack {
             Form {
                 Section(header: Text("Account Information")) {
@@ -143,18 +141,6 @@ struct SignUpSwiftUIView: View {
                         Button(action: {
                             self.showPlates.toggle()
                             
-                            //                        guard tfNewPlate != "" else {
-                            //                            print(#function, "Invalid plates, please try again.")
-                            //                            return
-                            //                        }
-                            //
-                            //                        let plateNumber = PlateNumber(plateNumber: tfNewPlate.uppercased())
-                            //                        ownedLicensePlates.append(plateNumber)
-                            //                        plateNumbers.append(PlateNumber(plateNumber: plateNumber.plateNumber))
-                            //
-                            //                        tfNewPlate = ""
-                            //                        print("NEW PLATE \(plateNumber.plateNumber)")
-                            //                        print("All plates \(ownedLicensePlates)")
                         }, label: {
                             HStack {
                                 Spacer()
@@ -170,25 +156,6 @@ struct SignUpSwiftUIView: View {
                         })
                     }
                 }
-                
-                //                Section {
-                //                    HStack{
-                //                        Spacer()
-                //                        Text("Your License Plates")
-                //                            .font(.headline)
-                //                        Spacer()
-                //                    }
-                //
-                //                    List {
-                //                        ForEach(plateNumbers) { plateNumber in
-                //                            HStack {
-                //                                Spacer()
-                //                                LicensePlateRow(plateNumber: plateNumber.plateNumber)
-                //                                Spacer()
-                //                            }
-                //                        }.onDelete(perform: delete)
-                //                    }
-                //                }
             }.onAppear(perform: {
                 tfFirstName = ""
                 tfLastName = ""
@@ -208,10 +175,6 @@ struct SignUpSwiftUIView: View {
                     addedPlates.append(plateNumber.plateNumber)
                 }
                 
-                
-                //
-                //                let status = profileController.insertAccount(email: tfEmail.lowercased(), password: tfPassword, firstName: tfFirstName, lastName: tfLastName, phoneNumber: Int(tfPhone)!, licensePlates: addedPlates)
-                var newEmail:String = ""
                 if(isLogged){
                     if(tfFirstName != "") {
                         userInfo.firstName = tfFirstName
