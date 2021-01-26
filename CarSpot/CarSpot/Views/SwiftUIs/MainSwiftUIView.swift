@@ -52,6 +52,7 @@ struct MainSwiftUIView: View
     @State var ticketAlertTitle: String = ""
     @State var ticketAlertMessage: String = ""
 
+    // check if button is disabled
     var buttonOutlineColor: Color
     {
         return self.addressChanged ? Color("textOnBackgroundSecondary") : Color("buttonOutline")
@@ -66,10 +67,12 @@ struct MainSwiftUIView: View
         UITableView.appearance().isScrollEnabled = false
     }
 
+    // get current location
     private func setCurrentLocation()
     {
         cancellable = locationManager.$location.sink { (location) in
 
+            // only add locations on the map on initial load
             if(!self.currentLocationAdded)
             {
                 // get address info for current location
@@ -144,8 +147,6 @@ struct MainSwiftUIView: View
                         .onAppear {
                             setCurrentLocation()
                     }
-
-                    //  .ignoresSafeArea()
                 }
             }
             else
@@ -169,7 +170,7 @@ struct MainSwiftUIView: View
                 {
                     Form
                     {
-                        Section//(header: Text("Ticket Details"))
+                        Section
                         {
                             HStack
                             {
@@ -229,37 +230,6 @@ struct MainSwiftUIView: View
                                         .pickerStyle(MenuPickerStyle())
 
                                     Spacer()
-
-                                    // add license plate
-//                                    Button(action:
-//                                            {
-//                                            let alert = UIAlertController(title: "Add License Plate", message: "Enter the license plate you would like to add.", preferredStyle: .alert)
-//                                            alert.addTextField ()
-//
-//                                            alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak alert] (_) in
-//
-//                                                if(alert!.textFields![0].checkLicensePlate(min: 2, max: 8))
-//                                                {
-//                                                    addLicensePlate = alert!.textFields![0].text!
-//                                                    self.licensePlateList.append(addLicensePlate)
-//                                                    print("License Plates: \(licensePlateList.count)")
-//                                                }
-//                                                else
-//                                                {
-//                                                    print("Invalid")
-//                                                    alert!.actions[1].isEnabled = false
-//                                                }
-//
-//
-//
-//                                            }))
-//
-//                                            UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-//                                    })
-//                                    {
-//                                        Image(systemName: "plus.circle.fill")
-//                                            .foregroundColor(Color("textOnBackgroundSecondary"))
-//                                    }
                                 }
                             }
                         }
@@ -272,9 +242,9 @@ struct MainSwiftUIView: View
                     {
                         Spacer(minLength: 20)
 
+                        // get new location
                         Button(action:
                                 {
-                                // get new location
                                 self.getLocation(address: "\(self.currentLocation.country), \(self.currentLocation.city), \(self.streetAddress)")
                         })
                         {
@@ -295,6 +265,7 @@ struct MainSwiftUIView: View
 
                         Spacer()
 
+                        // purchase ticket
                         Button(action:
                                 {
                                 let id = UUID()
@@ -403,6 +374,7 @@ struct MainSwiftUIView_Previews: PreviewProvider
 
 extension MainSwiftUIView
 {
+    // get location from lat and lon
     func getNewLocation(lat: Double, lon: Double)
     {
         self.currentLocation.isCurrentLocation = true
@@ -416,6 +388,7 @@ extension MainSwiftUIView
         }
     }
 
+    // get address from location
     func setCurrentLocation(placemarks: [CLPlacemark]?, error: Error?)
     {
         print(#function)
@@ -465,6 +438,7 @@ extension MainSwiftUIView
         }
     }
 
+    // get location from street Address
     func getLocation(address: String)
     {
         self.geoCoder.geocodeAddressString(address) { (placemark, error) in
@@ -472,6 +446,7 @@ extension MainSwiftUIView
         }
     }
 
+    // process response from street address request
     func processGeoResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?)
     {
         if (error != nil)
@@ -521,8 +496,4 @@ extension MainSwiftUIView
             }
         }
     }
-
-
-
-
 }

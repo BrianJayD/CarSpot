@@ -36,7 +36,6 @@ class TabBarController: UITabBarController
 
         self.navigationItem.leftBarButtonItem =
             UIBarButtonItem(image: UIImage(named: "ic_logout"), style: .plain, target: self, action: #selector(logout(sender:)))
-
     }
 
     // about alert dialog
