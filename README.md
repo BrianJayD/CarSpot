@@ -2,14 +2,14 @@
 
 ### Authors
 ___
-[Brian Domingo](https://github.com/BrianJayD)
-[Daryl Dyck](https://github.com/daryldyck/)
+[Brian Domingo](https://github.com/BrianJayD) ,  [Daryl Dyck](https://github.com/daryldyck/)
 
 ___
 ![Screenshots](images/Screenshots.jpg)
 ___
 ## About The Project
-___ 
+
+
 ### Login Page
 ##### By Brian Domingo
 
@@ -19,11 +19,10 @@ ___
 
 
 ### Purchase Ticket Page
-##### By Daryl Dyck
+** _By Daryl Dyck_ **
 
-
-#### Build in SwiftUI
-##### Features include:
+** Build in SwiftUI **
+** Features include: **
 - Map (SwiftUI 2.0) with current location annotation
 - Forward Geocoding (Fetching location from street address)
 - All user data retrieved from CoreData
