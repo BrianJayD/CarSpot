@@ -18,12 +18,13 @@ ___
 ##### By Brian Domingo
 
 
-### Purchase Ticket Page
+### Purchase Ticket Page **Build in SwiftUI**
+
 **_By Daryl Dyck_**
 
-** Build in SwiftUI **
+**Build in SwiftUI**
 
-** Features include: **
+**Features include:**
 
 - Map (SwiftUI 2.0) with current location annotation
 - Forward Geocoding (Fetching location from street address)
