@@ -50,8 +50,6 @@ class TicketDetailsViewController: UIViewController, MKMapViewDelegate, CLLocati
     // setup current location and ticket location
     func setupLocations()
     {
-        print(#function)
-
         self.mapView.delegate = self
 
         locationManager.requestAlwaysAuthorization()
@@ -72,12 +70,10 @@ extension TicketDetailsViewController
     // set current location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        print(#function)
-
         guard let myLocation: CLLocationCoordinate2D = manager.location?.coordinate
             else { return }
 
-        print("Latitude: \(myLocation.latitude) Longitide: \(myLocation.longitude)")
+//        print("Latitude: \(myLocation.latitude) Longitide: \(myLocation.longitude)")
 
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: myLocation, span: span)
@@ -112,8 +108,6 @@ extension TicketDetailsViewController
     // get ticket location from lat, lon
     func getAddress(lat: Double, lon: Double)
     {
-        print(#function)
-
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: lat, longitude: lon)
 
@@ -149,7 +143,7 @@ extension TicketDetailsViewController
                         addressString = addressString + placemark.postalCode! + " "
                     }
 
-                    print("Address String: \(addressString)")
+                  //  print("Address String: \(addressString)")
                 }
                 else
                 {
@@ -162,8 +156,6 @@ extension TicketDetailsViewController
     // display a marker for locations on map
     func displayMarker(locations: [Location])
     {
-        print(#function)
-
         for location in locations
         {
             let annotation = MKPointAnnotation()
@@ -171,14 +163,11 @@ extension TicketDetailsViewController
             annotation.title = location.streetAddress
             self.mapView.addAnnotation(annotation)
         }
-        print("Finished")
     }
 
     // display the route between current location and ticket location
     func showRoute(start: CLLocationCoordinate2D, end: CLLocationCoordinate2D)
     {
-        print("showRoute")
-
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: start, addressDictionary: nil))
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: end, addressDictionary: nil))
@@ -194,13 +183,11 @@ extension TicketDetailsViewController
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets.init(top: 100, left: 100, bottom: 300, right: 100), animated: true)
             }
         }
-        print("finished route")
     }
 
     // callback for setting route 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer
     {
-        print(#function)
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor(named: "accent")
         renderer.lineWidth = 5.0

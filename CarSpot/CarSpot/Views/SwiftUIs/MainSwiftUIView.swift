@@ -391,8 +391,6 @@ extension MainSwiftUIView
     // get address from location
     func setCurrentLocation(placemarks: [CLPlacemark]?, error: Error?)
     {
-        print(#function)
-
         if (error != nil)
         {
             print("error")
@@ -423,12 +421,12 @@ extension MainSwiftUIView
                     self.currentLocation.country = placemark.country!
                 }
 
-                print("Current Location: \(currentLocation.streetAddress)")
+//                print("Current Location: \(currentLocation.streetAddress)")
 
                 // add current location
                 self.locationList.append(currentLocation)
                 self.currentLocationAdded = true
-                print("Address: \(addressString)")
+//                print("Address: \(addressString)")
 
             }
             else

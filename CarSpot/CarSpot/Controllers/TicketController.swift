@@ -86,7 +86,7 @@ struct TicketController
                     parkingTickets.append(ticketToAdd)
                 }
             }
-            print(#function, "Tickets: \(parkingTickets.count)")
+           // print(#function, "Tickets: \(parkingTickets.count)")
             return parkingTickets
         }
         catch let error

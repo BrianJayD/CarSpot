@@ -104,7 +104,7 @@ class ProfileController {
         do {
             let result = try moc.fetch(fetchRequest).first
             if result != nil {
-                print(#function, "Matching account found with email \(email)")
+              //  print(#function, "Matching account found with email \(email)")
 
                 let account = result as! Profile
                 return account
@@ -130,7 +130,7 @@ class ProfileController {
             let result = try moc.fetch(fetchRequest).first
             if result != nil
             {
-                print(#function, "Matching account found wwith email \(email)")
+              //  print(#function, "Matching account found wwith email \(email)")
 
                 let licensePlateController = LicensePlateController()
                 let licensePlates = licensePlateController.getAllLicensePlatesForUser(email: email)
