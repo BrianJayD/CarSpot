@@ -47,6 +47,10 @@ struct SignUpSwiftUIView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    init() {
+        UITableView.appearance().isScrollEnabled = true
+    }
+    
     private func delete(with indexSet: IndexSet) {
         indexSet.forEach { plateNumbers.remove(at: $0) }
     }
