@@ -3,7 +3,6 @@
 ### Authors
 ___
 [Brian Domingo](https://github.com/BrianJayD) ,  [Daryl Dyck](https://github.com/daryldyck/)
-
 ___
 ![Screenshots](images/Screenshots.jpg)
 ___
@@ -13,11 +12,11 @@ ___
 ### Login Page
 ##### By Brian Domingo
 
-
+___
 ### Profile Page
 ##### By Brian Domingo
 
-
+___
 ### Purchase Ticket Page
 **_By Daryl Dyck_**
 
@@ -27,11 +26,11 @@ ___
 - Forward Geocoding (Fetching location from street address)
 - All user data retrieved from CoreData
 
-
+___
 ### Ticket History Page
 ##### By Daryl Dyck
 
-
+___
 ### Ticket Details Page
 ##### By Daryl Dyck
 
