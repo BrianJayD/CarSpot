@@ -3,7 +3,6 @@
 ### Authors
 ___
 [Brian Domingo](https://github.com/BrianJayD)
-
 [Daryl Dyck](https://github.com/daryldyck/)
 
 ___
