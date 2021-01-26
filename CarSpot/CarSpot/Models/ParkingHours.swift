@@ -20,11 +20,11 @@ enum ParkingHours: String
         {
         case 0:
             return 1
-        case 2:
+        case 1:
             return 4
-        case 3:
+        case 2:
             return 12
-        case 4:
+        case 3:
             return 24
         default:
             return 1
