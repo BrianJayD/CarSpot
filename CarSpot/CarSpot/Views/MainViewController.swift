@@ -11,15 +11,16 @@ import SwiftUI
 class MainViewController: UIViewController
 {
     let licensePlateController = LicensePlateController()
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
-            
-        for plate in licensePlateController.getAllLicensePlatesForUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!) {
-            print(plate)
-        }
-        
+    }
+
+    // when view loads - putting here so when user comes back to this page, it re-loads
+    override func viewDidAppear(_ animated: Bool)
+    {
+        print("MainViewController - viewDidAppear")
         addSubSwiftUIView(swiftUIView: MainSwiftUIView())
     }
 
