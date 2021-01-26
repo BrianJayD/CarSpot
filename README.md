@@ -2,11 +2,9 @@
 
 ### Authors
 ___
-###### Brian Domingo
-[GitHub - Brian](https://github.com/BrianJayD)
+[Brian Domingo](https://github.com/BrianJayD)
 
-###### Daryl Dyck
-[GitHub - Daryl](https://github.com/daryldyck/)
+[Daryl Dyck](https://github.com/daryldyck/)
 
 ___
 ![Screenshots](images/Screenshots.jpg)
