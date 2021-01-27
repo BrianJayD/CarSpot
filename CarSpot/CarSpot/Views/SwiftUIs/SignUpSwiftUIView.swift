@@ -1,8 +1,10 @@
 //
-//  SignUpSwiftUIView.swift
-//  CarSpot
+// Advanced iOS - MADS4005
+// CarSpot
 //
-//  Created by Brian Domingo on 2021-01-21.
+// Group 7
+// Brian Domingo - 101330689
+// Daryl Dyck - 101338429
 //
 
 import SwiftUI
@@ -208,19 +210,44 @@ struct SignUpSwiftUIView: View {
                 }
                 
                 if(isLogged){
+                    //first name changes
                     if(tfFirstName != "") {
                         userInfo.firstName = tfFirstName
+                    } else {
+                        self.errorCode = 0
+                        showAlert = true
                     }
+                    
+                    //last name changes
                     if(tfLastName != "") {
                         userInfo.lastName = tfLastName
+                    } else {
+                        self.errorCode = 0
+                        showAlert = true
                     }
+                    
+                    //email changes
                     if(tfEmail != "") {
                         userInfo.email = tfEmail
+                    } else {
+                        self.errorCode = 1
+                        showAlert = true
                     }
-                    if(tfPhone != "") {
+                    
+                    if(tfPhone != "" && tfPhone.count == 10) {
                         userInfo.phone = Int(tfPhone)!
+                    } else {
+                        self.errorCode = 2
+                        showAlert = true
                     }
-                    if(tfPassword == tfConfirmation) {
+                    
+                    if(tfPassword == "") {
+                        self.errorCode = 3
+                        showAlert = true
+                    } else if(tfPassword != tfConfirmation){
+                        self.errorCode = 4
+                        showAlert = true
+                    } else {
                         userInfo.password = tfPassword
                     }
                     
