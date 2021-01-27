@@ -66,7 +66,6 @@ struct MainSwiftUIView: View
         licensePlateList = profileController.getUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!).licensePlates
 
         UITableView.appearance().backgroundColor = .clear
-        UITableView.appearance().isScrollEnabled = false
     }
 
     // get current location
