@@ -602,7 +602,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="logIn:" destination="d3u-or-o7o" eventType="touchUpInside" id="h1T-Cy-PaA"/>
-                                                    <segue destination="uVX-XS-5nt" kind="show" identifier="mainPageSeguaTemp" id="A6T-V2-oZ8"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -663,6 +662,7 @@
                         <outlet property="switchRememberMe" destination="c6w-5w-xfY" id="iiX-L6-IeB"/>
                         <outlet property="tfEmail" destination="Gch-WD-10N" id="q9H-pP-Z8A"/>
                         <outlet property="tfPassword" destination="00l-5w-BIc" id="FB5-Ai-inG"/>
+                        <segue destination="uVX-XS-5nt" kind="show" identifier="mainPageSeguaTemp" id="gPY-Vb-kWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7b-PQ-skr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -671,7 +671,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UVz-Rf-2eD"/>
+        <segue reference="gPY-Vb-kWP"/>
         <segue reference="mNj-Rb-K9i"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
