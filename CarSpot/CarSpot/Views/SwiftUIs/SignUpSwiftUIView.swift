@@ -24,6 +24,7 @@ struct SignUpSwiftUIView: View {
     @State var showAlert = false
     
     @State var showPlates = false
+    @State var confirmDelete = false
     
     let errorTitles:[String] = [
         "Invalid first name/last name",
@@ -45,6 +46,10 @@ struct SignUpSwiftUIView: View {
     @State var userInfo:User = User()
     
     @Environment(\.presentationMode) var presentationMode
+    
+    init() {
+        UITableView.appearance().isScrollEnabled = true
+    }
     
     private func delete(with indexSet: IndexSet) {
         indexSet.forEach { plateNumbers.remove(at: $0) }
@@ -154,6 +159,33 @@ struct SignUpSwiftUIView: View {
                         .sheet(isPresented: $showPlates, content: {
                             LicensePlatesSwiftUIView()
                         })
+                    }
+                    
+                    Section {
+                        Button(action: {
+                            
+                            self.confirmDelete = true
+                            
+                        }, label: {
+                            Text("Delete Account")
+                        }).alert(isPresented: $confirmDelete) {
+                            Alert(title: Text("Are you sure you want to delete profile?"), message: Text("Delete is perminent."), primaryButton: .destructive(Text("Delete")) {
+                                //Delete User
+                                if(profileController.removeUser(email: UserDefaults.standard.string(forKey: Login.CURRENT_USER.rawValue)!)) {
+                                    
+                                    print("Deleting \(Login.CURRENT_USER.rawValue)")
+                                    
+                                    UserDefaults.standard.setValue(false, forKey: Login.LOGGED_IN.rawValue)
+                                    UserDefaults.standard.setValue(false, forKey: Login.REMEMBER_ME.rawValue)
+                                    UserDefaults.standard.setValue("", forKey: Login.CURRENT_USER.rawValue)
+                                    
+                                    self.presentationMode.wrappedValue.dismiss()
+                                } else {
+                                    print("Could not delete profile.")
+                                }
+                                
+                            }, secondaryButton: .cancel())
+                        }
                     }
                 }
             }.onAppear(perform: {
