@@ -52,11 +52,8 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func logIn(_ sender: Any) {
-
-//        print(profileController.checkCredentials(email: tfEmail.text
-//                                                ?? "", password: tfPassword.text ?? ""))
         if(checkTextFields()) {
-            if(profileController.checkCredentials(email: tfEmail.text?.lowercased() ?? "", password: tfPassword.text ?? "")) {
+            if(profileController.checkCredentials(email: tfEmail.text!.lowercased(), password: tfPassword.text!)) {
                 print("Log In Successful")
                 
                 // set user defaults for current verified user
@@ -75,6 +72,9 @@ class LoginViewController: UIViewController {
                     lblErrorMessage.isHidden = true
                 }
                 
+                tfEmail.text = ""
+                tfPassword.text = ""
+                
                 performSegue(withIdentifier: "mainPageSeguaTemp", sender: nil)
                 
             } else {
@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
     }
     
     func checkTextFields() -> Bool {
-        if (tfEmail.text == nil || tfPassword == nil) {
+        if (tfEmail.text == nil || tfPassword.text == nil) {
             return false
         }
         return true
