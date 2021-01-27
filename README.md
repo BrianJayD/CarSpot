@@ -2,7 +2,7 @@
 
 ### Authors
 [Brian Domingo](https://github.com/BrianJayD)\
-Student Number: 
+Student Number: 101330689
 
 [Daryl Dyck](https://github.com/daryldyck/)\
 Student Number: 101338429
@@ -15,12 +15,15 @@ ___
 
 **Features include:**
 - Built in UIKit
+- Uses CoreData to check user credentials
 ___
 ### Profile Page
 ##### By Brian Domingo
 
 **Features include:**
 - Built in SwiftUI
+- SwiftUI changes appearance depending if user is creating a new profile or updating an existing profile.
+- Uses CoreDara for CRUD operations.
 ___
 ### Purchase Ticket Page
 **_By Daryl Dyck_**
