@@ -23,11 +23,10 @@ struct LicensePlatesSwiftUIView: View {
     
     init() {
         UITableView.appearance().isScrollEnabled = true
-        plates = []
+        
         for p in plates {
             print("init(): \(p.plateNumber)")
         }
-        
     }
     
     func loadPlates() {
@@ -75,6 +74,7 @@ struct LicensePlatesSwiftUIView: View {
                         }
                         
                         let plateNumber = PlateNumber(plateNumber: tfAddPlate.uppercased())
+                        
                         plates.append(PlateNumber(plateNumber: plateNumber.plateNumber))
                         
                         
