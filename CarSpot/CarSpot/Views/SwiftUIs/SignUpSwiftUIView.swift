@@ -177,7 +177,7 @@ struct SignUpSwiftUIView: View {
                                     
                                     UserDefaults.standard.setValue(false, forKey: Login.LOGGED_IN.rawValue)
                                     UserDefaults.standard.setValue(false, forKey: Login.REMEMBER_ME.rawValue)
-                                    UserDefaults.standard.setValue("", forKey: Login.CURRENT_USER.rawValue)
+                                    UserDefaults.standard.setValue(nil, forKey: Login.CURRENT_USER.rawValue)
                                     
                                     self.presentationMode.wrappedValue.dismiss()
                                 } else {

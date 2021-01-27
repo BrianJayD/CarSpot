@@ -16,7 +16,6 @@ class MainEntryViewController: UIViewController
     {
         super.viewDidLoad()
         
-        loadStartingPage()
     }
 
     override func viewDidAppear(_ animated: Bool)
