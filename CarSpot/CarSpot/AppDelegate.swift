@@ -1,8 +1,10 @@
 //
-//  AppDelegate.swift
-//  CarSpot
+// Advanced iOS - MADS4005
+// CarSpot
 //
-//  Created by Brian Domingo on 2021-01-17.
+// Group 7
+// Brian Domingo - 101330689
+// Daryl Dyck - 101338429
 //
 
 import UIKit
