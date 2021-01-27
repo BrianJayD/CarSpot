@@ -13,10 +13,16 @@ import SwiftUI
 class MainViewController: UIViewController
 {
     let licensePlateController = LicensePlateController()
+    var initialLoad = true
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
+        if (initialLoad)
+        {
+            addSubSwiftUIView(swiftUIView: MainSwiftUIView())
+        }
     }
 
     // when view loads - putting here so when user comes back to this page, it re-loads
@@ -25,7 +31,15 @@ class MainViewController: UIViewController
         if(!UserDefaults.standard.bool(forKey: Login.LOGGED_IN.rawValue)) {
             _ = navigationController?.popViewController(animated: true)
         }
-        addSubSwiftUIView(swiftUIView: MainSwiftUIView())
+        else
+        {
+            if (!initialLoad)
+            {
+                print("addSubSwiftUIView")
+                addSubSwiftUIView(swiftUIView: MainSwiftUIView())
+            }
+            initialLoad = false
+        }
     }
 
 }
