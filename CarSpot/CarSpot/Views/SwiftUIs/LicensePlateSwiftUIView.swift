@@ -1,8 +1,10 @@
 //
-//  LicensePlatesSwiftUIView.swift
-//  CarSpot
+// Advanced iOS - MADS4005
+// CarSpot
 //
-//  Created by Brian Domingo on 2021-01-26.
+// Group 7
+// Brian Domingo - 101330689
+// Daryl Dyck - 101338429
 //
 
 import SwiftUI
@@ -18,6 +20,8 @@ struct LicensePlatesSwiftUIView: View {
     let licensePlateController = LicensePlateController()
     @State var plates:[PlateNumber] = []
     @State var removedPlates:[PlateNumber] = []
+    
+    @State var showAddError:Bool = false
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -73,20 +77,24 @@ struct LicensePlatesSwiftUIView: View {
                             return
                         }
                         
-                        let plateNumber = PlateNumber(plateNumber: tfAddPlate.uppercased())
-                        
-                        plates.append(PlateNumber(plateNumber: plateNumber.plateNumber))
-                        
-                        
-                        print("NEW PLATE \(plateNumber.plateNumber)")
-                        
-                        licensePlateController.insertLicensePlate(email: currentUserEmail!, plateNumber: tfAddPlate.uppercased())
-                        
-                        for plate in plates {
-                            print(plate.plateNumber)
+                        if(tfAddPlate.count > 1 && tfAddPlate.count < 9 && tfAddPlate != "") {
+                            let plateNumber = PlateNumber(plateNumber: tfAddPlate.uppercased())
+                            
+                            plates.append(PlateNumber(plateNumber: plateNumber.plateNumber))
+                            
+                            
+                            print("NEW PLATE \(plateNumber.plateNumber)")
+                            
+                            licensePlateController.insertLicensePlate(email: currentUserEmail!, plateNumber: tfAddPlate.uppercased())
+                            
+                            for plate in plates {
+                                print(plate.plateNumber)
+                            }
+                            
+                            tfAddPlate = ""
+                        } else {
+                            self.showAddError = true
                         }
-                        
-                        tfAddPlate = ""
                         
                     }, label: {
                         HStack {
@@ -98,6 +106,9 @@ struct LicensePlatesSwiftUIView: View {
                         }
                     })
                     .padding()
+                    .alert(isPresented: $showAddError) {
+                        Alert(title: Text("Invalid License Plate"), message: Text("Invalid email. Must be between 2-8 characters long."), dismissButton: .default(Text("Dismiss")))
+                    }
                 }
                 
                 Section {
